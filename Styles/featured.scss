@@ -1,0 +1,66 @@
+@use "variables" as *;
+
+@use "mixins" as *;
+
+
+
+.featured-collection{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex: 10 1;
+  width: 80%;
+  height: 100vh;
+  background-color: $warmneutral;
+  margin: $am-large;
+  margin-bottom: $bm-large;
+  @include round-corner;
+  @include color-border;
+}
+
+.featured-pic{
+  width: 90%;
+  display: flex;
+  flex: 1;
+  height: auto;
+  margin-right: 2vw;
+  object-fit: cover;
+  object-position: center;
+  align-items: center;
+  border-right: solid 3px $brown;
+  @include round-corner;
+}
+
+.featured-info{
+  width: 15%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+h3{
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 800;
+  font-size: clamp(1.2rem, 2vw, 3.5rem);
+  color: $deep-brown-black;
+  margin-bottom: 3vw;
+}
+
+.featured-header{
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+  font-size: clamp(1.5rem, 2vw, 3rem);
+  line-height: 1;
+  margin-bottom: 1.65vw;
+}
+
+.featured-paragraph{
+  font-family: "Open Sans", sans-serif;
+  font-size: clamp(0.85rem, 1.3vw, 2rem);
+  overflow-wrap: break-word;
+  white-space: normal;
+  margin-bottom: 5vw;
+}

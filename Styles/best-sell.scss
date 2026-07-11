@@ -1,0 +1,142 @@
+@use "variables" as *;
+
+@use "mixins" as *;
+
+.best-sell{
+  margin-bottom: $bm-large;
+}
+
+.best-sell-header{
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 4vw, 5rem);
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+  white-space: nowrap;
+  margin-bottom: $small-bm;
+  color: $warmfeel;
+}
+
+.best-sell-header:active{
+  text-decoration: underline #c89b5d 3px;
+}
+
+.best-sell-grid{
+  width: 90%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  scroll-snap-type: mandatory;
+  object-position: center;
+  white-space: nowrap;
+  height: auto;
+  max-width: 1130px;
+  min-width: 380px;
+  display: flex;
+  flex: 1;
+  gap: 10px;
+  min-height: 35%;
+  flex-direction: row;
+  column-gap: 30px;
+  padding: 10px;
+  margin: $am-large;
+}
+
+.best-sell-grid:active{
+  cursor: grabbing;
+}
+
+.best-sell-pic{
+  display: flex;
+  flex-direction: column;
+  flex: 1 1;
+  gap: 5px;
+  min-width: 350px;
+  background-color: $warm-neutral;
+  cursor: pointer;
+  @include color-border;
+  @include round-corner;
+}
+
+.best-sell-img{
+  display: inline-block;
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+  scroll-snap-align: start;
+  cursor: pointer;
+  @include round-corner;
+}
+
+.best-sell-pic:hover{
+  transform: scale(1.02);
+  transition: ease 0.6s;
+}
+
+
+.best-sell-img:active{
+  box-shadow: rgb(165, 155, 155);
+}
+
+.new-prod-info{
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 1;
+  gap: 0.5rem;
+  justify-content: left;
+  margin: 0.7rem;
+  cursor: pointer;
+}
+
+.new-name-rate{
+  display: flex;
+  flex-direction: row;
+  flex: 2 1;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.new-prod-name{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: clamp(1.35rem, 1.5vw, 2.2rem);
+  color: $warmfeel;
+}
+
+.new-prod-name:active{
+  text-decoration: underline 2px;
+  transition: 0.5s ease;
+}
+
+.rating{
+  color: $gold;
+  text-align: right;
+}
+
+.new-prod-descr{
+  font-size: clamp(1.2rem, 1.35vw, 2rem);
+  font-family: "Playfair Display", serif;
+  color: $warmfeel;
+}
+
+.new-price-shop{
+  display: flex;
+  flex-direction: row;
+  flex: 2 1;
+  gap: 1rem;
+  align-items: center;
+  color: $deep-brown-black;
+}
+
+.new-prod-price{
+  font-size: clamp(1rem, 1.35vw, 2rem);  
+  justify-content: left;
+  color: $warmfeel;
+}
+
+.buy-prod{
+  color: $warmcream;
+  justify-content: right;
+  background-color: $warmcocoabrown;
+}

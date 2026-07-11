@@ -1,0 +1,100 @@
+@use "variables" as *;
+
+@use "mixins" as *;
+
+.wel-body{
+  position: relative;
+  display: flex;
+  margin: 30px auto;
+  height: auto;
+  width: 90%;
+  min-width: 50%;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2rem;
+  min-height: 100vh;
+  max-width: 1200px;
+  overflow: hidden;
+  border-top: #3f2b22 solid 3px;  
+  border-bottom: #3f2b22 solid 3px;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  margin-bottom: $bm-large;
+  cursor: pointer;
+  background: linear-gradient(to right, #f7f3ee 0%, #f8f2ea 55%, #f5ede3 100%);
+}
+
+.wel-cont{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  z-index: 5;
+  left: 3.8%;
+  top: 50%;
+  justify-content: center;
+  gap: 0.8rem;
+  max-width: -30rem;
+}
+
+.wel-top{
+  display: block;
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.4em;
+  color: #c89b5d;
+  margin-bottom: 0.35rem;
+}
+
+h1{
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 5.5vw, 5rem);
+  line-height: 1.0;
+  color: #2b211d;
+  max-width: 8ch;
+}
+
+.wel-sub{
+  display: block;
+  margin-top: 0.8rem;
+  max-width: 34ch;
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(0.85rem, 1.3vw, 2rem);
+  overflow-wrap: break-word;
+  white-space: normal;
+  line-height: 1.8;
+  color: #5a4b42;
+}
+
+.shop-button{
+  z-index: 5;
+  padding: 3px 12px 6px 12px;
+  left: 3.3%;
+  @include shop-button;
+}
+
+.shop-button:hover{
+  background-color: #2b211d;
+  transform: translateY(2px);
+}
+
+.shop-arrow{
+  font-size: 1.5em;
+}
+
+.wel-img{
+  z-index: 1;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  min-width: 30rem;
+  object-fit: fill;
+  display: block;
+  @include round-corner;
+  filter: drop-shadow(0 20px 40px rgba(63, 43, 34, 0.12));
+}

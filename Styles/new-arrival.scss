@@ -1,0 +1,116 @@
+@use "variables" as *;
+
+@use "mixins" as *;
+
+.new-arrival{
+  margin-bottom: $bm-large;
+  margin-top: $small-bm;
+}
+
+.new-arrival-header{
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 4vw, 5rem);
+  font-weight: bold;
+  font-style: italic;
+  color: $warmfeel;
+  text-align: center;
+  white-space: nowrap;
+  margin-bottom: $small-bm;
+  cursor: pointer;
+}
+
+.new-arrival-header:active{
+  text-decoration: underline #3f2b22 3px;
+}
+
+.new-arrival-grid{
+  width: 90%;
+  object-position: center;
+  height: auto;
+  max-width: 1100px;
+  display: flex;
+  flex: 1;
+  gap: 1.2rem;
+  min-width: 50%;
+  min-height: 35%;
+  flex-direction: row;
+  padding: 10px;
+  margin: $am-large;
+}
+
+.new-arrival-main{
+  width: 60%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  align-items: center;
+  cursor: pointer;
+  @include round-corner;
+}
+
+.new-arrival-main-img{
+  @include round-corner;
+  @include color-border;
+}
+
+.new-arrival-main-img:hover{
+  transform: scale(1.02);
+  transition: ease 0.6s;
+}
+
+.new-arrival-mini{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 35%;
+  @include round-corner;
+}
+
+.new-arrival-sub{
+  display: flex;
+  flex-direction: row;
+  flex: 1 1;
+  width: 100%;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  @include round-corner;
+}
+
+.new-arrival-top-sub{
+  display: flex;
+  flex: 1;
+  object-fit: cover;
+  object-position: center;
+  width: 45%;
+  @include round-corner;
+  @include color-border;
+}
+
+.new-arrival-top-sub:hover{
+  transform: scale(1.02);
+  transition: ease 0.6s;
+}
+
+.new-arrival-bottom{
+  display: flex;
+  flex: 1;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  max-height: 15rem;
+  cursor: pointer;
+}
+
+.new-arrival-bottom-sub{
+  object-fit: cover;
+  object-position: center;
+  @include round-corner;
+  @include color-border;
+}
+
+.new-arrival-bottom-sub:hover{
+  transform: scale(1.02);
+  transition: ease 0.6s;
+}

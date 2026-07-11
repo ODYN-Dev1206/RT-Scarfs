@@ -1,0 +1,40 @@
+@use "variables" as *;
+
+@use "mixins" as *;
+
+
+.brand-discovery{
+  margin: $bm-large;
+  margin-top: $small-bm;
+}
+
+
+.brand-id{
+  color: $charcoal;
+  font-size: clamp(2rem, 2.5vw, 3rem);
+  text-align: center;
+  justify-content: center;
+  text-decoration: underline 0.2rem $warmfeel;
+}
+
+.brand-voice{
+  margin: $am-large;
+  color: $deepburgundy;
+  font-family: "Manrope";
+  font-size: clamp(0.8rem, 1vw, 1.65rem);
+  max-width: 50ch;  
+  line-height: 1.5;
+  letter-spacing: 0.15vw;
+  text-align: center;
+  justify-content: center;
+}
+
+.collection-link{
+  color: $brown;
+  background: none;
+  text-decoration: underline;
+  text-align: center;
+  align-items: center;
+  justify-content: flex-end;
+  align-self: flex-end;
+}
