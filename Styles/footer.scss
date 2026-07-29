@@ -3,11 +3,45 @@
 @use "mixins" as *;
 
 footer{
-  margin: auto;
-  bottom: 10rem;
-  width: 100%;
+  bottom: 0;
+  margin: 0;
   text-align: center;
-  border-top: solid 0.5px $deep-brown-black;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.5rem;
+  padding-bottom: 1rem;
+  border-top: solid 3.5px $gold;
+  background-color: $deep-brown-black;
+}
+
+.footer-top{
+  width: 60%;
+  margin: 0.5rem 4rem;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  gap: 4vw;
+  justify-content: center;
+  align-items: center;
+  overflow-wrap: normal;
+}
+
+.footer-top a{
+  color: $beige;
+  justify-content: space-between;
+  letter-spacing: 0.2em;
+  white-space: nowrap;
+  font-size: clamp(0.5rem, 2vw, 1.1rem);
+}
+
+.footer-top a:hover{
+  text-decoration: none;
+  transform: none;
+  color: gray;
+  transition: all ease 0.25s;
 }
 
 .footer-content-info{
@@ -19,50 +53,10 @@ footer{
   cursor: pointer;
 }
 
-.footer-content-paragraph{
-  color: $deep-brown-black;
-  font-size: clamp(0.9rem, 1.2vw, 2rem);
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-.footer-content-info h4{
-  @include footer-h4-style;
-}
-
-.footer-content-shop{
-  @include footer-style;
-}
-
-.footer-content-shop h4{
-  @include footer-h4-style;
-}
-
-.footer-content-contact{
-  @include footer-style;
-}
-
-.footer-content-contact h4{
-  @include footer-h4-style;
-}
-
-.footer-content-newsletter{
-  @include footer-style;
-}
-
-.footer-content-newsletter h4{
-  @include footer-h4-style;
-}
-
-.footer-newsletter-paragraph{
-  font-family: "Lato", sans-serif;
-  color: $deep-brown-black;
-  font-size: clamp(0.9rem, 1.2vw, 2rem);
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  max-width: 30ch;
-  white-space: normal;
-  margin-bottom: 1vw;
+.footer-content-par{
+  font-weight: 350;
+  font-size: clamp(0.7rem, 1.2vw, 1rem);
+  letter-spacing: 0.15em;
+  margin-bottom: 0.1rem;
+  color: $beige;
 }

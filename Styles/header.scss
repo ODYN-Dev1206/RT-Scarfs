@@ -10,14 +10,21 @@
   left: 1.5vw;
 }
 
-.R{
-  font-size: 40px;
-  padding: 0;
+.menu{
+  display: none;
+  flex: 1;
+  color: $warm-neutral;
+  cursor: pointer;
+  width: 1.75vw;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  margin-left: 5%;
 }
 
-.cR{
-  font-size: 0.7vw;
-  padding-left: 0;
+.Logo{
+  background-color: $warm-neutral;
+  display: block;
 }
 
 .center{
@@ -39,19 +46,29 @@
   }
 }
 
-.header-link{
+.center a,
+.right a {
   @include a-link;
-  color: $brown;
-  background-color: $warmneutral;
+  letter-spacing: 1.8px;
+  color: $warmneutral;
+}
+
+.center a:hover,
+.right a:hover {
+  transform: scale(1.15);
+  text-decoration: underline $gold;
+  transition: ease 0.5s;
 }
 
 .right{
   width: 20%;
   display: flex;
   flex-direction: row;
-  flex: 1;
+  flex: 1 5;
   align-items: center;
-  gap: 1rem;
+  justify-content: left;
+  gap: 1.5rem;
+  padding-left: 1rem;
 }
 
 .icon{
@@ -61,25 +78,54 @@
   min-height: 15px;
   cursor: pointer;
   border: none;
-  flex: 1 1 1;
+  flex: 1 1;
 }
 
 .icon:hover{
   opacity: 0.8s rgb(45, 42, 42);
 }
 
-.about{
-  display: flex;
-  height: auto;
-  flex: 1;
-  align-items: center;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: clamp(15px, 0.5vw, 2rem);
-}
-
 .left,
 .center,
 .right{
   min-width: 0;
+}
+
+
+@media (max-width: 640px) {
+  header{
+    height: fit-content;
+    padding: 1rem;
+  }
+
+  .left{
+    gap: 1rem;
+  }
+
+  .Logo{
+    align-self: center;
+    justify-content: center;
+    object-position: center;
+  }
+
+  .menu{
+    width: 25px;
+    display: block;
+    color: #fff;
+    justify-content: top;
+    align-items: center;
+  }
+
+  .menu/**:hover,**/ :active{
+    .header-link{
+      display: flex;
+    }
+  }
+
+  .header-link{
+    display: none;
+    margin-right: 7px;
+    font-size: clamp(0.5rem, 1.2vw, 1.3rem);
+    padding: clamp(0.2rem, 0.175vw, 0.4rem) clamp(0.45rem, 0.7vw, 1.9rem);
+  }
 }

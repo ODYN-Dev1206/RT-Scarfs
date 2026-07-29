@@ -3,140 +3,250 @@
 @use "mixins" as *;
 
 .best-sell{
-  margin-bottom: $bm-large;
+  margin: 2rem auto;
+  margin-top: 15rem;
+  margin-bottom: 20vw;
 }
 
 .best-sell-header{
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.5rem, 4vw, 5rem);
-  font-weight: bold;
-  font-style: italic;
+  font-family: "Playfarir Display", serif;
+  font-weight: 800;
+  margin-bottom: 2rem;
   text-align: center;
   white-space: nowrap;
+  letter-spacing: 0.1em;
+  font-style: italic;
   margin-bottom: $small-bm;
   color: $warmfeel;
+  font-size: clamp(1.3rem, 4vw, 5rem);
+  cursor: pointer;
 }
 
 .best-sell-header:active{
-  text-decoration: underline #c89b5d 3px;
+  text-decoration: underline 2px goldenrod;
+  text-underline-offset: 3px;
 }
 
 .best-sell-grid{
   width: 90%;
-  overflow-x: auto;
-  overflow-y: hidden;
+  margin: 2.5rem auto;
+  min-width: 20rem;
+  height: auto;
+  max-height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  gap: 1rem;
+  overflow-x: scroll;
+  scroll-snap-type: mandatory;
   scroll-behavior: smooth;
   scrollbar-width: none;
-  scroll-snap-type: mandatory;
-  object-position: center;
-  white-space: nowrap;
-  height: auto;
-  max-width: 1130px;
-  min-width: 380px;
-  display: flex;
-  flex: 1;
-  gap: 10px;
-  min-height: 35%;
-  flex-direction: row;
-  column-gap: 30px;
-  padding: 10px;
-  margin: $am-large;
-}
-
-.best-sell-grid:active{
-  cursor: grabbing;
+  margin-bottom: 4rem;
 }
 
 .best-sell-pic{
+  min-width: 20rem;
+  max-width: 25rem;
+  height: auto;
+  justify-content: center;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  flex: 1 1;
-  gap: 5px;
-  min-width: 350px;
-  background-color: $warm-neutral;
-  cursor: pointer;
+  flex: 3 1;
   @include color-border;
   @include round-corner;
 }
 
 .best-sell-img{
-  display: inline-block;
+  height: 300px;
   width: 100%;
-  height: 500px;
+  min-height: 280px;
   object-fit: cover;
   object-position: center;
-  scroll-snap-align: start;
-  cursor: pointer;
+  display: block;
   @include round-corner;
 }
 
-.best-sell-pic:hover{
+.best-sell-img:hover{
   transform: scale(1.02);
-  transition: ease 0.6s;
-}
-
-
-.best-sell-img:active{
-  box-shadow: rgb(165, 155, 155);
+  transition: ease 0.5s;
 }
 
 .new-prod-info{
+  border-top: 1px gray;
   display: flex;
   flex-direction: column;
-  flex: 1 1 1;
+  flex: 1;
   gap: 0.5rem;
-  justify-content: left;
-  margin: 0.7rem;
-  cursor: pointer;
+  width: auto;
+  min-width: 100%;
+  padding: 0.6rem;
 }
 
 .new-name-rate{
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
-  flex: 2 1;
-  gap: 0.8rem;
-  align-items: center;
+  max-width: 100%;
+  flex: 1;
+  margin-bottom: 0.5rem;
+  //gap: clamp(0.3rem, 1.2vw, 1.3rem);
+  //border-bottom: solid 1px gray;
+ // padding-bottom: 0.2rem;
 }
 
 .new-prod-name{
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: clamp(1.35rem, 1.5vw, 2.2rem);
-  color: $warmfeel;
-}
-
-.new-prod-name:active{
-  text-decoration: underline 2px;
-  transition: 0.5s ease;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  white-space: nowrap;
+  text-align: left;
+  font-weight: 400;
+  letter-spacing: 0.0085em;
+  justify-content: left;
 }
 
 .rating{
-  color: $gold;
-  text-align: right;
+  font-size: clamp(1.5rem, 1.5vw, 2.5rem);
 }
 
 .new-prod-descr{
-  font-size: clamp(1.2rem, 1.35vw, 2rem);
-  font-family: "Playfair Display", serif;
-  color: $warmfeel;
+  font-family: "Lato", sans-serif;
+  font-size: clamp(0.85rem, 2vw, 1.5rem);
+  letter-spacing: 0.1em;
+  text-align: left;
 }
 
 .new-price-shop{
-  display: flex;
+  margin-top: 3%;
+  display: inline-flex;
   flex-direction: row;
-  flex: 2 1;
-  gap: 1rem;
+  flex: 4 1.5;
+  justify-content: space-between;
+  gap: 1vw;
   align-items: center;
-  color: $deep-brown-black;
+  padding-right: 0.5rem;
 }
 
 .new-prod-price{
-  font-size: clamp(1rem, 1.35vw, 2rem);  
-  justify-content: left;
-  color: $warmfeel;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: left;
+  font-size: clamp(1.35rem, 2vw, 1.5rem);
 }
 
 .buy-prod{
-  color: $warmcream;
-  justify-content: right;
-  background-color: $warmcocoabrown;
+  align-items: center;
+  justify-content: center;
+  @include shop-button;
 }
+
+.buy-prod:hover{
+  transform: scale(1.1);
+  transition: all 0.1s ease;
+}
+
+.buy-prod:active{
+  background-color: gray;
+  color: black;
+  transition: all 0.1s ease;
+}
+
+
+@media (min-width: 640px) {
+  .best-sell-img{
+    height: 450px;
+  }
+
+  .new-prod-name{
+    font-size: clamp(1.35rem, 3.85vw, 1.75rem);
+  }
+}
+
+
+@media (min-width: 768px) {
+  .best-sell-img{
+    height: 550px;
+  }
+
+  .new-prod-name{
+    font-size: clamp(1.35rem, 3vw, 1.85rem);
+  }
+
+  .new-prod-descr{
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .best-sell-grid{
+    gap: 1.2rem;
+  }
+
+  .best-sell-pic{
+    min-width: 23rem;
+  }
+
+  .best-sell-img{
+    height: 450px;
+  }
+
+  .new-prod-name{
+    font-size: clamp(1.2rem, 2.35vw, 2rem);
+  }
+
+  .new-prod-descr{
+    font-size: clamp(1.2rem, 1.2vw, 1.35rem);
+  }
+}
+
+
+@media (min-width: 1440px) {
+  .best-sell{
+    width: 90%;
+  }
+
+  .best-sell-grid{
+    gap: 2rem;
+  }
+
+  .best-sell-pic{
+    height: auto;
+    min-width: 25rem;
+  }
+
+  .best-sell-img{
+    height: 40rem;
+  }
+
+  .new-prod-name{
+    font-size: clamp(1.6rem, 2vw, 2.3rem);
+  }
+
+  .new-prod-descr{
+    font-size: clamp(1.2rem, 1.35vw, 1.35rem);
+  }
+}
+
+
+
+@media (min-width: 2560px) {
+  .best-sell-grid{
+    gap: 2rem;
+  }
+
+  .best-sell-pic{
+    min-width: 35rem;
+  }
+
+  .best-sell-img{
+    height: 50rem;
+  }
+
+  .new-prod-name{
+    font-size: clamp(1.75rem, 1.5vw, 2.75rem);
+  }
+
+  .new-prod-descr{
+    font-size: clamp(1.3rem, 0.85vw, 1.5rem);
+  }
+}
+
+

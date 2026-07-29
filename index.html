@@ -4,7 +4,7 @@
 
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Total Revision</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,44 +14,55 @@
     <link rel="stylesheet" href="Styles/main.css">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:regular,500,600,700,800,900,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <script src="main.js" defer></script>
   </heaad>
 
 
   <body>
    <header class="header-info">
       <div class="left">
-        <img class="company-name" src="Icons/file.svg" alt="Company logo">
+        <button class="hamburger" aria-label="Toggle-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <img class="menu" src="Icons/hamburger-menu.svg" alt="hamburger-menu-icon">
+        <img class="Logo" src="Icons/file.svg" alt="Company logo">
       </div>
 
       <nav class="center">
-        <a class="header-link" href="#">HOME</a >
-        <a class="header-link" href="#">PRODUCTS</a >
-        <a class="header-link" href="#">ABOUT US</a>
-        <a class="header-link" href="#">BLOG</a >
-        <a class="header-link" href="#">CONTACT US</a >
+        <ul>
+          <li><a class="header-link" href="/index.html">HOME</a ></li>
+          <li><a class="header-link" href="/products">PRODUCTS</a></li>
+          <li><a class="header-link" href="/info">ABOUT US</a></li>
+          <li><a class="header-link" href="/blog">BLOG</a ></li>
+          <li><a class="header-link" href="/contact">CONTACT US</a ></li>
+        </ul>
       </nav>
 
       <div class="right">
-        <div class="about">
-          <img class="icon" src="Icons/shopping-bag_12743468.png" alt="Shopping bag icon">
-          <img class="icon" src="Icons/PinClipart.com_mona-lisa-clipart_5339753.png" alt="Mona Lisa icon">
-          <a class="header-link" href="#">NEWSLETTER</a >
-        </div>
+        <a class="header-link" href="#">NEWSLETTER</a >
+        <img class="icon" src="Icons/shopping-bag_12743468.png" alt="Shopping bag icon">
+        <img class="icon" src="Icons/PinClipart.com_mona-lisa-clipart_5339753.png" alt="Mona Lisa icon">
       </div>
     </header>
 
     <main>>>     
       <div class="website"> 
-        <section class="wel-body">
-          <img class="wel-img" src="Styles Pictures/file_0000000088ac7243b49fe58bd4dabc24.png" loading="lazy" alt="...">
-
+        <section class="wel-body">          
           <div class="wel-cont">
             <p class="wel-top">WELCOME TO</p>
-            <h1>Righteous Scarfs & Accessories</h1>
+            <h1>Righteous Scarfs&nbsp;& Accessories</h1>
             <p class="wel-sub">The hub of fashion scarfs and luxurious accessories that brings out the version you want to be</p>
+            <button class="shop-button">SHOP NOW <span class="shop-arrow">&raquo;</span></button>
           </div>
-          <button class="shop-button">SHOP NOW <span class="shop-arrow">&raquo;</span></button>
-        </section>
+          
+          <div class="wel-pic">
+            <img class="wel-img" src="Styles Pictures/file_0000000088ac7243b49fe58bd4dabc24.png" loading="lazy" alt="...">
+          </div>
+          </section>
 
         <div class="brand-discovery">
           <p class="brand-id">Crafted Elegance for Individuality</p>
@@ -68,7 +79,6 @@
               <div class="new-prod-info">
                 <div class="new-name-rate">
                   <p class="new-prod-name">Velvet Winter Wrap</p>
-                  <p class="rating">&starf;&starf;&starf;</p>
                 </div>
                 <p class="new-prod-descr">
                   Cashmere Blend Scarf
@@ -87,7 +97,6 @@
               <div class="new-prod-info">
                 <div class="new-name-rate">
                   <p class="new-prod-name">Velvet Winter Wrap</p>
-                  <p class="rating">&starf;&starf;&starf;</p>
                 </div>
                 <p class="new-prod-descr">
                   Cashmere Blend Scarf
@@ -106,7 +115,6 @@
               <div class="new-prod-info">
                 <div class="new-name-rate">
                   <p class="new-prod-name">Velvet Winter Wrap</p>
-                  <p class="rating">&starf;&starf;&starf;</p>
                 </div>
                 <p class="new-prod-descr">
                   Cashmere Blend Scarf
@@ -125,7 +133,6 @@
               <div class="new-prod-info">
                 <div class="new-name-rate">
                   <p class="new-prod-name">Velvet Winter Wrap</p>
-                  <p class="rating">&starf;&starf;&starf;</p>
                 </div>
                 <p class="new-prod-descr">
                   Cashmere Blend Scarf
@@ -144,7 +151,6 @@
               <div class="new-prod-info">
                 <div class="new-name-rate">
                   <p class="new-prod-name">Velvet Winter Wrap</p>
-                  <p class="rating">&starf;&starf;&starf;</p>
                 </div>
                 <p class="new-prod-descr">
                   Cashmere Blend Scarf
@@ -163,7 +169,6 @@
               <div class="new-prod-info">
                 <div class="new-name-rate">
                   <p class="new-prod-name">Velvet Winter Wrap</p>
-                  <p class="rating">&starf;&starf;&starf;</p>
                 </div>
                 <p class="new-prod-descr">
                   Cashmere Blend Scarf
@@ -182,7 +187,6 @@
               <div class="new-prod-info">
                 <div class="new-name-rate">
                   <p class="new-prod-name">Velvet Winter Wrap</p>
-                  <p class="rating">&starf;&starf;&starf;</p>
                 </div>
                 <p class="new-prod-descr">
                   Cashmere Blend Scarf
@@ -201,7 +205,6 @@
               <div class="new-prod-info">
                 <div class="new-name-rate">
                   <p class="new-prod-name">Velvet Winter Wrap</p>
-                  <p class="rating">&starf;&starf;&starf;</p>
                 </div>
                 <p class="new-prod-descr">
                   Cashmere Blend Scarf
@@ -220,7 +223,6 @@
               <div class="new-prod-info">
                 <div class="new-name-rate">
                   <p class="new-prod-name">Velvet Winter Wrap</p>
-                  <p class="rating">&starf;&starf;&starf;</p>
                 </div>
                 <p class="new-prod-descr">
                   Cashmere Blend Scarf
@@ -239,7 +241,6 @@
               <div class="new-prod-info">
                 <div class="new-name-rate">
                   <p class="new-prod-name">Velvet Winter Wrap</p>
-                  <p class="rating">&starf;&starf;&starf;</p>
                 </div>
                 <p class="new-prod-descr">
                   Cashmere Blend Scarf
@@ -258,7 +259,6 @@
               <div class="new-prod-info">
                 <div class="new-name-rate">
                   <p class="new-prod-name">Velvet Winter Wrap</p>
-                  <p class="rating">&starf;&starf;&starf;</p>
                 </div>
                 <p class="new-prod-descr">
                   Cashmere Blend Scarf
@@ -277,7 +277,6 @@
               <div class="new-prod-info">
                 <div class="new-name-rate">
                   <p class="new-prod-name">Velvet Winter Wrap</p>
-                  <p class="rating">&starf;&starf;&starf;</p>
                 </div>
                 <p class="new-prod-descr">
                   Cashmere Blend Scarf
@@ -293,11 +292,9 @@
 
 
         <section class="featured-collection">
-          
-            <img class="featured-pic" src="Featured Collection/sarah-crego-ZllJjxtu2ho-unsplash.jpg" alt="...">
-          
+          <img class="featured-pic" src="Featured Collection/sarah-crego-ZllJjxtu2ho-unsplash.jpg" alt="...">
           <div class="featured-info">
-            <h4>COLLECTION</h4>
+            <h3>NEW SEASON</h3>
             <p class="featured-header">Scarf Stories for your Modern Wardrobe</p>
             <p class="featured-paragraph">Check out our time-limited collection if you want something  more luxurious and elegant</p>
             <a href="#" >Our Collection</a>
@@ -364,32 +361,28 @@
     </main>
 
     <footer>
+      <div class="footer-top">
+        <a>SHOP</a>
+        <a class="footer-link">CONTACT US</a>
+        <a class="footer-link">ABOUT US</a>
+        <a class="footer-link">FAQS</a>
+      
+        <!--<div class="footer-content-newsletter">
+          <a class="footer-link">NEWSLETTER</a>
+
+          <div class="news-letter">
+            <p class="footer-newsletter-paragraph"><a href="#">Subscribe</a> to our newsletter and stay updated with the latest arrivals and special offers!</p>
+            <p class="footer-link">Instagram</p>
+            <p class="footer-link">Twitter</p>
+            <p class="footer-link">TikTok</p>
+          </div>
+        </div>-->
+      </div>
+
+      
       <div class="footer-content-info">
-        <p class="footer-content-paragraph">©Copyright Righteous Scarfs.</p>
-        <p>All Rights Reserved.</p>
-      </div>
-
-      <div class="footer-content-shop">
-        <h4>SHOP</h4>
-        <p class="footer-content-paragraph">Scarfs</p>
-        <p class="footer-content-paragraph">Accessories</p>
-        <p class="footer-content-paragraph">Best Selling</p>
-        <p class="footer-content-paragraph">New Arrivals</p>
-        <p></p>
-      </div>
-
-      <div class="footer-content-contact">
-        <h4 class="footer-content-paragraph">CONTACT US</h4>
-        <p class="footer-content-paragraph">ABOUT US</p>
-        <p class="footer-content-paragraph">FAQS</p>
-      </div>
-
-      <div class="footer-content-newsletter">
-        <h4 class="footer-content-paragraph">NEWSLETTER</h4>
-        <p class="footer-newsletter-paragraph"><a href="#">Subscribe</a> to our newsletter and stay updated with the latest arrivals and special offers!</p>
-        <p class="footer-content-paragraph">Instagram</p>
-        <p class="footer-content-paragraph">Twitter</p>
-        <p class="footer-content-paragraph">TikTok</p>
+        <p class="footer-content-par">©Copyright RT Scarfs, 2026.</p>
+        <p class="footer-content-par">All Rights Reserved.</p>
       </div>
        
        

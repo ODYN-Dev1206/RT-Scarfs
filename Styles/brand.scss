@@ -6,22 +6,25 @@
 .brand-discovery{
   margin: $bm-large;
   margin-top: $small-bm;
+  margin-bottom: $small-bm + 2rem;
 }
 
 
 .brand-id{
   color: $charcoal;
-  font-size: clamp(2rem, 2.5vw, 3rem);
+  font-size: clamp(1.5rem, 2.5vw, 3.5rem);
+  line-height: 1.5;
   text-align: center;
   justify-content: center;
-  text-decoration: underline 0.2rem $warmfeel;
+  text-decoration: underline dotted 0.2rem $warmfeel;
+  text-underline-offset: 0.4rem;
 }
 
 .brand-voice{
   margin: $am-large;
   color: $deepburgundy;
   font-family: "Manrope";
-  font-size: clamp(0.8rem, 1vw, 1.65rem);
+  font-size: clamp(0.85rem, 0.85vw, 2rem);
   max-width: 50ch;  
   line-height: 1.5;
   letter-spacing: 0.15vw;

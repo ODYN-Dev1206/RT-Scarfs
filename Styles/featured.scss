@@ -5,62 +5,87 @@
 
 
 .featured-collection{
-  position: relative;
   display: flex;
   flex-direction: row;
   flex: 10 1;
-  width: 80%;
-  height: 100vh;
-  background-color: $warmneutral;
-  margin: $am-large;
+  width: 75%;
+  min-width: 70%;
+  margin: 2rem auto;
+  min-height: 15rem;
+  max-height: 45rem;
+  align-items: center;
+  justify-content: center;
+  //background-color: $warmneutral;
   margin-bottom: $bm-large;
-  @include round-corner;
-  @include color-border;
 }
 
 .featured-pic{
-  width: 90%;
+  width: 70%;
+  min-width: 9.5rem;
+  height: auto;
   display: flex;
   flex: 1;
-  height: auto;
+  flex-shrink: auto;
+  max-height: 45rem;
   margin-right: 2vw;
   object-fit: cover;
-  object-position: center;
-  align-items: center;
-  border-right: solid 3px $brown;
+  object-position: left;
   @include round-corner;
 }
 
 .featured-info{
-  width: 15%;
-  height: auto;
+  max-height: 65%;
   display: flex;
   flex-direction: column;
   flex: 1;
   align-items: center;
   justify-content: center;
+  white-space: wrap;
 }
 
-h3{
+.featured-collection h3{
   font-family: "Cormorant Garamond", serif;
   font-weight: 800;
-  font-size: clamp(1.2rem, 2vw, 3.5rem);
+  font-size: clamp(0.7rem, 2vw, 5rem);
   color: $deep-brown-black;
-  margin-bottom: 3vw;
+  margin-bottom: 5vw;
+  letter-spacing: 0.15em;
+  text-decoration: underline;
 }
 
 .featured-header{
   font-family: "Playfair Display", serif;
   font-weight: 500;
-  font-size: clamp(1.5rem, 2vw, 3rem);
+  font-size: clamp(0.6rem, 2vw, 2rem);
   line-height: 1;
-  margin-bottom: 1.65vw;
+  text-align: center;
+  margin-bottom: 1.85vw;
 }
 
 .featured-paragraph{
   font-family: "Open Sans", sans-serif;
-  font-size: clamp(0.85rem, 1.3vw, 2rem);
+  font-size: clamp(0.45rem, 1.75vw, 1.35rem);
   overflow-wrap: break-word;
   white-space: normal;
   margin-bottom: 5vw;
+  margin-top: 2vw;
+  max-width: 38ch;
+  letter-spacing: 0.085em;
+  text-align: center;
+}
+
+.featured-info a{
+  white-space: nowrap;
+  font-family: "Playfair Display", serif;
+  text-decoration: none;
+  letter-spacing: 0.15em;
+  font-size: clamp(0.6rem, 2.5vw, 2rem);
+  color: $deepburgundy;
+}
+
+
+.featured-info a:hover{
+  text-decoration: underline;
+  transform: translateY(-20%);
+  transition: all ease 0.35s;
 }
