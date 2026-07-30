@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 900" width="700" height="900">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&amp;family=Lato:wght@400;700&amp;display=swap');
+      .letters   { font-family: 'Playfair Display', Georgia, serif; font-weight: 500; }
+      .word-main { font-family: 'Playfair Display', Georgia, serif; font-weight: 500; }
+      .word-sub  { font-family: 'Lato', Arial, sans-serif; font-weight: 700; letter-spacing: 8px; }
+    </style>
+
+    <linearGradient id="goldGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"  stop-color="#EED9A6"/>
+      <stop offset="45%" stop-color="#C8A970"/>
+      <stop offset="100%" stop-color="#9C7245"/>
+    </linearGradient>
+
+    <linearGradient id="goldGradSoft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"  stop-color="#F0DFB2" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#C8A970" stop-opacity="0.75"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ============ ICON: R + T monogram with feather ============ -->
+  <g id="icon">
+
+    <text class="letters" x="450" y="430" font-size="290"
+          text-anchor="middle" fill="#2B1F1A">T</text>
+
+    <text class="letters" x="255" y="430" font-size="290"
+          text-anchor="middle" fill="#2B1F1A">R</text>
+
+    <!-- ============ Elegant feather / calligraphic flourish ============ -->
+    <!-- A single tapered ribbon that curls into a fine spiral tip, -->
+    <!-- with two hairline accent strokes suggesting feather barbs. -->
+    <g>
+      <!-- soft under-shadow ribbon for depth -->
+      <path d="
+        M 268,300
+        C 300,350 322,405 358,448
+        C 400,498 452,528 505,530
+        C 470,548 425,540 385,512
+        C 345,484 315,438 288,392
+        C 274,368 262,340 258,312
+        Z"
+        fill="url(#goldGradSoft)"/>
+
+      <!-- main ribbon body -->
+      <path d="
+        M 262,296
+        C 290,344 308,398 342,440
+        C 380,488 430,516 482,514
+        C 512,513 538,498 552,472
+        C 546,500 522,522 490,528
+        C 440,538 388,510 350,468
+        C 316,430 296,378 276,330
+        C 270,318 265,306 262,296 Z"
+        fill="url(#goldGrad3)"/>
+
+      <!-- spiral curl at the tip -->
+      <path d="
+        M 552,472
+        C 566,490 566,512 550,524
+        C 536,534 516,530 508,516
+        C 516,522 528,522 536,514
+        C 546,504 546,490 536,478
+        C 528,468 514,466 505,472
+        C 512,460 530,456 542,462
+        C 548,465 551,469 552,472 Z"
+        fill="url(#goldGrad3)"/>
+
+      <!-- hairline accent strokes, echoing feather barbs -->
+      <path d="M 280,320 C 310,364 335,408 372,444"
+            fill="none" stroke="#7A5732" stroke-width="1.4" stroke-linecap="round" opacity="0.55"/>
+      <path d="M 298,306 C 330,352 358,394 398,428"
+            fill="none" stroke="#EED9A6" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+      <path d="M 400,470 C 435,494 470,504 502,498"
+            fill="none" stroke="#7A5732" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+    </g>
+  </g>
+
+  <!-- ============ WORDMARK ============ -->
+  <text class="word-main" x="350" y="620" font-size="76"
+        text-anchor="middle" fill="#2B1F1A" letter-spacing="8">RIGHTEOUS</text>
+
+  <text class="word-sub" x="350" y="665" font-size="21"
+        text-anchor="middle" fill="#C8A970">SCARFS &amp; ACCESSORIES</text>
+
+  <!-- ornamental divider -->
+  <g transform="translate(350,700)" stroke="#C8A970" stroke-width="1.5">
+    <line x1="-110" y1="0" x2="-18" y2="0"/>
+    <line x1="18" y1="0" x2="110" y2="0"/>
+    <g fill="#C8A970" stroke="none">
+      <path d="M 0,-14 C 5,-6 5,6 0,14 C -5,6 -5,-6 0,-14 Z"/>
+      <path d="M -14,0 C -6,-5 6,-5 14,0 C 6,5 -6,5 -14,0 Z"/>
+      <circle cx="0" cy="0" r="3"/>
+    </g>
+  </g>
+</svg>
