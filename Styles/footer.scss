@@ -14,7 +14,6 @@ footer{
   gap: 0.5rem;
   padding-bottom: 1rem;
   border-top: solid 3.5px $gold;
-  background-color: $deep-brown-black;
 }
 
 .footer-top{
@@ -30,7 +29,7 @@ footer{
 }
 
 .footer-top a{
-  color: $beige;
+  color: $warmcream;
   justify-content: space-between;
   letter-spacing: 0.2em;
   white-space: nowrap;
@@ -54,10 +53,17 @@ footer{
   cursor: pointer;
 }
 
-.footer-content-par{
-  font-weight: 350;
-  font-size: clamp(0.7rem, 1.2vw, 1rem);
-  letter-spacing: 0.15em;
-  margin-bottom: 0.1rem;
-  color: $beige;
+.social-icons {
+  display: flex;
+  gap: 1.25rem;
+
+  a {
+    color: $richgold;
+    font-size: 18px;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $darkgold;
+    }
+  }
 }

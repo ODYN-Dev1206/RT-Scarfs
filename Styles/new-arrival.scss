@@ -12,7 +12,7 @@
   font-size: clamp(1.3rem, 4vw, 5rem);
   font-weight: 800;
   font-style: italic;
-  color: $warmfeel;
+  color: $softbrown;
   text-align: center;
   white-space: nowrap;
   margin-bottom: 0.85rem;
@@ -24,18 +24,13 @@
 }
 
 .new-arrival-grid{
-  width: 65%;
-  margin: 2.5rem auto;
-  object-position: center;
-  height: auto;
-  display: flex;
-  flex: 1;
-  flex-direction: row;
+  border: solid 2px red;
+  width: 70%;
+  margin: auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 50rem 1fr;
   gap: 1rem;
-  min-width: 300px;
-  min-height: 35%;
-  flex-direction: row;
-  padding: 10px;
 }
 
 .new-arrival-main{

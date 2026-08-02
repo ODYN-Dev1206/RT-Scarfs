@@ -17,7 +17,7 @@
   letter-spacing: 0.1em;
   font-style: italic;
   margin-bottom: $small-bm;
-  color: $warmfeel;
+  color: $softbrown;
   font-size: clamp(1.3rem, 4vw, 5rem);
   cursor: pointer;
 }
@@ -55,6 +55,7 @@
   flex: 3 1;
   @include color-border;
   @include round-corner;
+  background-color: $lightsand;
 }
 
 .best-sell-img{
@@ -64,11 +65,12 @@
   object-fit: cover;
   object-position: center;
   display: block;
-  @include round-corner;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px;
 }
 
 .best-sell-img:hover{
-  transform: scale(1.02);
+  transform: scale(1.005);
   transition: ease 0.5s;
 }
 
@@ -101,6 +103,7 @@
   font-weight: 400;
   letter-spacing: 0.0085em;
   justify-content: left;
+  color: $softbrown;
 }
 
 .rating{
@@ -112,6 +115,7 @@
   font-size: clamp(0.85rem, 2vw, 1.5rem);
   letter-spacing: 0.1em;
   text-align: left;
+  color: $brown;
 }
 
 .new-price-shop{
@@ -129,23 +133,28 @@
   font-family: 'Times New Roman', Times, serif;
   text-align: left;
   font-size: clamp(1.35rem, 2vw, 1.5rem);
+  color: $brown;
 }
 
-.buy-prod{
+.buy-prod {
   align-items: center;
   justify-content: center;
   @include shop-button;
+
+
+  &.active{    
+    background-color: $beige;
+    color: $brown;
+    transition: all ease 0.6s;
+  }
 }
 
-.buy-prod:hover{
+/**.buy-prod:hover{
   transform: scale(1.1);
   transition: all 0.1s ease;
-}
+}**/
 
 .buy-prod:active{
-  background-color: gray;
-  color: black;
-  transition: all 0.1s ease;
 }
 
 
@@ -162,7 +171,7 @@
 
 @media (min-width: 768px) {
   .best-sell-img{
-    height: 550px;
+    height: 500px;
   }
 
   .new-prod-name{

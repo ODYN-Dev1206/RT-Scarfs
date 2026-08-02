@@ -1,0 +1,22 @@
+// _pagination.scss
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 2rem;
+
+  &__btn {
+    min-width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid var(--border-strong, #ccc);
+    background: transparent;
+    cursor: pointer;
+
+    &--active {
+      background: black;
+      color: white;
+      border-color: transparent;
+    }
+  }
+}

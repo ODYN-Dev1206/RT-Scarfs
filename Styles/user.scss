@@ -1,0 +1,45 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.user-account{
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  gap: 0.25rem;
+  padding: 0.2rem;
+  //background-color: $beige;
+  width: auto;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.6rem;
+  border: solid 1.25px $warmneutral;
+
+  @media (min-width: 768px) {
+    max-width: 8rem;
+    margin-left: 2vw;
+    border-radius: 0.75rem; 
+  }
+  
+
+  a {
+    letter-spacing: 1.8px;
+    text-align: center;
+    @include a-link;
+
+    :hover{
+      transition: none;
+      text-decoration: none;
+    }
+  }
+
+
+  p{
+    white-space: nowrap;
+    text-align: center;
+    color: $warmneutral;
+    font-family: 'Playfair Display', sans-serif;
+    font-size: clamp(0.4rem, 1.35vw, 0.75rem);
+    cursor: pointer;
+  }
+}

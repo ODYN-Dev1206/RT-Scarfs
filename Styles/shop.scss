@@ -1,97 +1,7 @@
 @use "variables" as *;
 @use "mixins" as *;
-
-.hamburger {
-  display: none; // hidden by default (desktop)
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  width: 1.75vw;
-  min-width: 25px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin-left: 5%;
-
-  span {
-    display: block;
-    height: 2px;
-    width: 100%;
-    background-color: $warm-neutral;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-  }
-
-  // animated X when menu is open
-  &.is-active {
-    span:nth-child(1) {
-      transform: translateY(7px) rotate(45deg);
-    }
-    span:nth-child(2) {
-      opacity: 0;
-    }
-    span:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg);
-    }
-  }
-}
-
-
-.nav-menu {
-  flex: 2;
-  display: none;
-  flex-wrap: nowrap;
-  width: 45%;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.8vw;
-  box-sizing: border-box;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-
-  ::-webkit-scrollbar {
-    display: none;
-  }
-
-  // shown on desktop by default
-  @media (min-width: 641px) {
-    display: flex;
-    justify-content: center;
-  }
-
-  // mobile open state
-  &.is-open {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-.nav-menu ul {
-  display: flex;
-  flex-direction: row;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 0.8vw;
-  width: 100%;
-
-  @media (max-width: 640px) {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-.nav-menu a,
-.right a {
-  @include a-link;
-  letter-spacing: 1.8px;
-  color: $warm-neutral;
-}
-
-.nav-menu a:hover,
-.right a:hover {
-  transform: scale(1.15);
-  text-decoration: underline $gold;
-  transition: ease 0.5s;
+.website{
+  margin-top: 3rem;
 }
 
 
@@ -100,46 +10,205 @@
   margin: 1rem auto;
 }
 
+/**.brand-voice {
+  margin: 2rem auto;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.5em;
+  font-size: clamp(0.7rem, 1vw, 1.25rem);
+  line-height: normal;
+}**/
+
 .shop-intro {
   text-align: center;
+  align-items: center;
+  margin-top: 3rem;
   padding: 3rem 1rem 2rem;
 
   h1 {
-    font-family: 'Cormorant Garamond', serif;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
     font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    color: $brown;
+    line-height: normal;
+    margin-bottom: 2%;
+    letter-spacing: 0.1em;
+    text-decoration: underline 1.75px;
+    text-underline-offset: 2.8px;
+  }
+
+  p{
+    letter-spacing: 0.1em;
+    font-weight: 400;
+    color: $brown;
+    font-size: clamp(0.85rem, 1.2vw, 1.35rem);
+    line-break: auto;
+    text-align: center;
+    margin-bottom: 0.5rem;
   }
 }
 
-.shop__grid {
+.whole-shop{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 0.5rem;
+  background-color: $champagne;
+}
+
+.filter{
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  //height: 2rem;
+  padding: 0.25rem;
+  margin: 0;
+  overflow: scroll;
+  scrollbar-width: none;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: $softbeige;
+  border-radius: 0.5rem;
+  //box-shadow: 0 2px 10px rgba(21, 20, 20, 0.1);
+
+  
+  .quick-filter{
+    align-items: left;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    gap: 0.35rem;
+    overflow-x: scroll;
+    scrollbar-width: none;
+    padding: 0 0.75rem;
+
+
+    .filter-button {
+      background-color: $softbeige;
+      color: $charcoal;
+      padding: 0.25rem;
+      border-radius: 0;
+      font-family: 'Lato', sans-serif;
+      white-space: nowrap;
+      font-size: clamp(0.65rem, 0.75vw, 1.2rem);
+
+
+      &:active{
+        background-color: $softbrown;
+        color: white;
+        //border-radius: 0.75rem;
+        transition: all ease 0.5s;
+      }
+    }
+
+    @media (min-width: 768px) {
+      gap: 0.85rem;
+    }
+  }
+
+  .search{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    gap: 0.5rem;
+    justify-content: right;
+    align-items: center;
+    padding-right: 0.35rem;
+  }
+
+  .search-bar {
+    display: none;
+    align-self: center;
+    height: 1rem;
+    font-size: clamp(0.5rem, 1.5vw, 0.7rem);
+    color: $darkgold;
+
+    &.visible{
+      display: flex;
+    }
+
+    &.invisible{
+      display: none;
+    }
+  }
+
+  .search-icon {
+    width: 1.35rem;
+    height: auto;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.shop-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: 1rem;
+  margin-top: 0;
 }
 
 .product-card {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  border: 1.75px solid $warm-neutral;
+  border-top-right-radius: 1.35rem;
+  border-top-left-radius: 1.35rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background-color: $softbeige;
+  position: relative;
 
-  &__image img {
+  &:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  &.active::after {
+    position: absolute;
+    content: '';
+    inset: 0;
+    background-color: $brown 0.5s;
+    pointer-events: none;
+    z-index: 1;
+    transition: all ease 0.5s;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  img {
     width: 100%;
-    aspect-ratio: 3 / 4;
+    height: auto;
     object-fit: cover;
+    border-top-right-radius: 1.35rem;
+    border-top-left-radius: 1.35rem;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
-  &__name {
-    font-family: 'Jost', sans-serif;
-    margin-top: 0.75rem;
+  img :hover {
+    transform: scale(1.05); //translateY(-3px);
   }
 
-  &__price {
-    color: #a67c00; // gold accent, matches your hover states
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(0.9rem, 2vw, 1.35rem);
+    margin-bottom: 3%;
+    color: $brown;
+    line-height: normal;
+    letter-spacing: 0.05em;
+    font-weight: 300;
+    white-space: normal;
   }
-}
 
-.product-card h3 {
-  font-family: 'Playfair Display', serif;
-  margin-top: 0.75rem;
+  p {
+    font-family: 'Lato', sans-serif;
+    font-size: clamp(0.75rem, 2vw, 1rem);
+    color: $softbrown;
+    margin-bottom: 1rem;
+  }
 }

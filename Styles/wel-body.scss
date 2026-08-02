@@ -3,173 +3,160 @@
 @use "mixins" as *;
 
 .wel-body{
-  display: flex;
-  flex-direction: row;
-  margin: 50px auto;
-  width: 80%;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  width: 90%;
   overflow: hidden;
-  cursor: pointer;
+  margin: 2rem auto;
+  grid-template-areas: "stack";
   @include color-border;
   @include round-corner;
-  margin-bottom: 15rem;
-  background: linear-gradient(to right, #f8f3ed 0%, #f7f1e9 60%, #f5eee6 100%);
+
+  > * {
+    grid-area: stack;
+  }
+
+ @media (min-width: 768px) {
+    width: 70%;
+    margin: 5rem auto;
+  }
+}
+
+.wel-image {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  object-fit: cover;
+  object-position: center;
+
+  @media (min-width: 768px) {
+    object-position: center;
+  }
 }
 
 .wel-cont{
-  position: absolute;
-  max-width: 35ch;
-  max-height: 100%;
-  top: 10%;
-  left: 3%;
-  z-index: 5;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 0.1rem 4%;
+  text-align: left;
+
+
+  @media (min-width: 640px) {
+    padding: 0.8rem 0 0.1rem 4%;
+  }
+
+
+  @media (min-width: 768px) {
+    padding: 0.5rem 0 1rem 1.75rem;
+  }
 }
 
 .wel-top{
   font-family: "Lato", sans-serif;
   font-size: clamp(0.25rem, 2vw, 0.75rem);
-  margin-left: 5%;
-  margin-bottom: 1.3%;
+  margin: 5% auto 0.35% 6%;
   letter-spacing: 0.4em;
   color: $deepburgundy;
 }
 
 .wel-cont h1{
-  position: relative;
   font-family: "Playfair Display", serif;
-  font-size: clamp(1.5rem, 5vw, 3rem);
+  font-size: clamp(1.2rem, 7vw, 2rem);
   max-width: 10ch;
-  font-weight: 700;
-  color: $warmfeel;
-  margin-bottom: 3%;
-  line-height: normal;
+  font-weight: 600;
+  color: $brown;
+  line-height: 1.25;
+  margin-bottom: 1%;
+
+
+  @media (min-width: 768px) {
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
 }
 
 .wel-sub{
   font-family: "Lato", sans-serif;
-  font-size: clamp(0.75rem, 2.5vw, 1.5rem);
-  max-width: 34ch;
+  font-size: clamp(0.5rem, 2.5vw, 1rem);
+  max-width: 30ch;
   letter-spacing: 0.2em;
   line-height: 1.5;
   color: $brown;
-  margin-bottom: 3%;
+  margin-bottom: 0.3%;
+
+
+  @media (min-width: 768px) {
+    margin-bottom: 2%;
+  }
 }
 
-.wel-img{
-  z-index: 2;
-  display: block;
-  position: sticky;
-  object-fit: cover;
-  object-position: center;
-  width: 100%;
-  height: auto
-}
 
 .shop-button{
-  @include shop-button;
-  margin-left: 5%;
-  position: absolute;
-  align-self: flex-end;
+  font-size: clamp(0.5rem, 1.25vw, 1.3rem);
+  padding: 0.25rem 0.5rem;
+  margin-left: 3%;
+  text-align: center;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  border-radius: 999px;
+  color: $warmcream;
+  font-family: 'Lato', sans-serif;
+  background-color: $softbrown;
+  white-space: nowrap;
+  text-decoration: none;
+
+  &.active{
+    background-color: $beige;
+    color: $brown;
+    //text-decoration: underline 1px $gold;
+    transition: all ease 0.6s;
+  }
+
+  @media (min-width: 640px) {
+    margin-top: 2%;
+  }
+   
 }
 
-.shop-button:active{
-  @include button-style;
-}
 
 
 
 
-@media (min-width: 320px) and (max-width: 639px) {
-  .wel-body{
-    min-height: 10rem;
-    width: 90%;
-    margin: 1rem;
-    margin-bottom: 15rem;
-  }
-
-  .wel-img{
-    min-height: 15rem;
-  }
-
-
-  .wel-top{
-    margin-left: 8%;
-  }
-
+@media (min-width: 640px) {
   .wel-cont h1{
-    font-size: clamp(1.2rem, 7vw, 2rem);
-    //line-height: 1;
-    margin-bottom: 1.3%;
-  }
-
-  .wel-sub{
-    display: inline-block;
-    font-size: clamp(0.35rem, 2.5vw, 1rem);
-    max-width: 26ch;
-    margin-bottom: 0.75%;
-  }
-
-  .shop-button{
-    display: inline-flex;
-    font-size: clamp(0.5rem, 1.75vw, 0.7rem);
-    padding: 5px 7px;
-    letter-spacing: 0.1em;
-    margin-bottom: 0%;
-    text-align: center;
-    align-self: flex-end;
-    margin-left: 5%;
-    width: auto;
-  }
-}
-
-
-@media (min-width: 640px) and (max-width: 767px) {
-  .wel-top{
-    margin-bottom: 2%;
-    font-size: clamp(0.75rem, 1.75vw, 1rem);
-  }
-
-  .wel-cont h1{
-    font-size: clamp(2.5rem, 6.5vw, 3.5rem);
+    font-size: clamp(2.5rem, 6.5vw, 3.75rem);
   }
 
   .wel-sub{
     font-size: clamp(1rem, 2.2vw, 1.2rem);
     max-width: 30ch;
   }
-
-  .shop-button{
-    display: flex;
-  }
 }
 
 
-@media (min-width: 768px) and (max-width: 1023px) {
-  .wel-body{
-    width: 70%;
-  }
-
+@media (min-width: 768px) {
   .wel-top{
-    font-size: clamp(0.75rem, 1.2vw, 1rem);
+    font-size: clamp(0.5rem, 1vw, 1rem);
   }
 
   .wel-cont h1{
-    font-size: clamp(3rem, 5.5vw, 3.5rem);
+    line-height: normal;
+    font-size: clamp(2.75rem, 3.5vw, 4.5rem);
   }
 
   .wel-sub{
-    font-size: clamp(1rem, 1.85vw, 1.35rem);
+    font-size: clamp(1rem, 1vw, 1.35rem);
   }
 }
 
 
-@media (min-width: 1024px) and (max-width: 1439px) {
-  .wel-body{
-    width: 65%;
+@media (min-width: 1024px) {
+  .wel-cont{
+    padding-bottom: 0.25rem;
   }
+
 
   .wel-top{
     font-size: clamp(0.75rem, 1vw, 1rem);
@@ -177,24 +164,19 @@
 
   .wel-cont h1{
     font-size: clamp(3.75rem, 5vw, 4.5rem);
-    margin-bottom: 5%;
   }
 
   .wel-sub{
     letter-spacing: 0.25em;
-    font-size: clamp(1.1rem, 1.85vw, 1.35rem);
-    margin-bottom: 3%;
+    font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+    margin-bottom: 0.5rem;
   }
 }
 
 
-@media (min-width: 1440px) and (max-width: 2559px) {
+@media (min-width: 1440px) {
   .wel-body{
-    width: 70%;
-  }
-
-  .wel-cont{
-    top: 10%;
+    width: 60%;
   }
 
   .wel-top{
@@ -202,7 +184,8 @@
   }
 
   .wel-cont h1{
-    font-size: clamp(4rem, 6vw, 5rem);
+    font-size: clamp(4rem, 5.35vw, 5rem);
+    margin-bottom: 0.5rem;
   }
 
   .wel-sub{

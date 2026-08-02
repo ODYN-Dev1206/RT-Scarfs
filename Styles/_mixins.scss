@@ -1,17 +1,37 @@
 @use "variables" as *;
 
-@mixin button-style($bg-color, $text-color) {
-  background-color: $bg-color;
-  color: $text-color;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 5px;
+
+
+@mixin pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 2rem;
+
+  &__btn {
+    min-width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid var(--border-strong, #ccc);
+    background: transparent;
+    cursor: pointer;
+
+    &--active {
+      background: black;
+      color: white;
+      border-color: transparent;
+    }
+  }
 }
 
-
-
+@mixin header-right {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  gap: 0.6rem;
+  align-items: center;
+  justify-content: center;
+}
 
 
 @mixin flex-center {
@@ -26,6 +46,13 @@
   border-top-left-radius: 30px;
   border-bottom-right-radius: 30px;
   border-bottom-left-radius: 30px;
+}
+
+@mixin small-corner{  
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 @mixin color-border{
@@ -69,6 +96,7 @@
 }
 
 @mixin a-link{
+  color: $warmcream;
   gap: 1.5vw;
   font-family: "Playfair Display", serif;
   font-size: clamp(0.75rem, 0.8vw, 1.1rem);
@@ -84,6 +112,7 @@
   border-radius: 999px;
   border: none;
   text-align: center;
+  white-space: nowrap;
   //transform: scale(1.2);
   color: $beige;
   font-family: 'Lato', sans-serif;

@@ -3,36 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RT Scarfs/shop</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap">
-  <link rel="stylesheet" href="css/main.css">
+  <title>RT Shop</title>
 
-  <script src="main.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+
+
+  <link rel="stylesheet" href="/Styles/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:regular,500,600,700,800,900,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <script src="Scripts/shop.js" defer></script>
+  <script src="Scripts/main.js" defer></script>
 </head>
 <body>
 
-  <!-- ============ HEADER ============ -->
   <header class="site-header">
-    <div class="site-header__inner">
-      <a href="index.html" class="site-header__logo">Righteous Scarfs</a>
+    <div class="left">
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <p><span class="main-name">Righteous</span> <span class="sub-name">Scarfs&nbsp;&&nbsp;Accessories</span></p>
+    </div>
 
       <nav class="nav-menu">
         <ul>
           <li><a class="header-link" href="index.html">HOME</a></li>
           <li><a class="header-link" href="shop.html">SHOP</a></li>
-          <li><a class="header-link" href="#about">ABOUT US</a></li>
-          <li><a class="header-link" href="#blog">BLOG</a></li>
-          <li><a class="header-link" href="#contact">CONTACT US</a></li>
+          <li><a class="header-link" href="about.html">ABOUT US</a></li>
+          <li><a class="header-link" href="blog.html">BLOG</a></li>
+          <li><a class="header-link" href="contact.html">CONTACT US</a></li>
         </ul>
       </nav>
 
-      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
+      <div class="right">
+        <img class="icon" src="Icons/shopping-bag_12743468.png" alt="Shopping bag icon">
+        <div class="user-account">
+          <img class="icon" src="Icons/PinClipart.com_mona-lisa-clipart_5339753.png" alt="Mona Lisa icon">
+          <a class="user-sign-in" href="#">
+            <p>Sign In</p>
+          </a>
+        </div>
+      </div>
 
     <!-- Mobile overlay menu 
     <div class="mobile-menu">
@@ -43,34 +58,484 @@
     </div>-->
   </header>
 
-  <!-- ============ PAGE HEADING ============ -->
-  <section class="shop-intro">
-    <h1>The Collection</h1>
-    <p>Silk. Wool. Cashmere. Crafted for the discerning few.</p>
-  </section>
-
-  <!-- ============ SHOP GRID ============ -->
-  <main class="shop">
-    <section class="shop__grid">
-
-      <article class="product-card">
-        <!--<a href="product.html?id=shemagh-style-scarf">-->
-          <div class="product-card__image">
-            <img src="Scarfs n Accessories/mhrezaa-v-NdrZB1rMg-unsplash.jpg" alt="Silk Paisley Scarf">
-          </div>
-          <h3 class="product-card__name">Shemagh-style Scarf</h3>
-          <p class="product-card__price">$120</p>
-        </a>
-      </article>
-
-      <!-- Add more product-card articles as needed -->
-
+  <div class="website">
+    <section class="shop-intro">
+      <h1>The Collection</h1>
+      <p>Silk. Wool. Cashmere.</p>
+      <p>Elegance for Individuality.</p>
     </section>
-  </main>
+
+    <!-- ============ SHOP GRID ============ -->
+    <main class="shop">
+      <section class="whole-shop">
+        <div class="filter">
+          <div class="quick-filter">
+            <button class="filter-button">All</button>
+            <button class="filter-button">Fashion</button>
+            <button class="filter-button">Styling Tips</button>
+            <button class="filter-button">Care Guide</button>
+            <button class="filter-button">New Collection</button>
+            <button class="filter-button">Behind the Brand</button>
+          </div>
+          <div class="search">
+            <input class="search-bar" type="text" placeholder="Search">
+            <img class="search-icon" src="Icons/search.svg" alt="search-icon">
+          </div>
+        </div>
+
+
+        <section class="shop-grid">
+          <article class="product-card">
+            <a href="#">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-serdargoksu-29182819.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-aminnaderloei-31976998.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-sam2piccs-14455241.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$20</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-mohammad-saaraan-3679231-5567211.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-mahdibafande-11830673.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-manzano-27230001.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-luizmartins-4185810.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-cottonbro-4972940.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-rodrigo-ortega-2044210904-30213222.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-rasul-lotfi-16110887-14416487.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-momo-183274690-37609721.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-seljansalim-27954375.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-viktoria-stelmakh-31300553-15017422.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-esra-salturk-1165434438-38264776.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-brianasarejr-12422261.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-benedict-7029065.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-bobbydimas-30769966.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-mitrofan-pictures-9438661.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-mizunokozuki-12887032.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-mahdibafande-11830673.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-sepehr-ghadrdan-409202650-19552829.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-sasha-kim-8484307.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-tarek-shahin-153182669-12369786.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-hiday-t-i-sg-nd-rsoy-1178625345-23092144.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-amirali-parsa-150087344-12744309.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-anuj-yadav-34803963-7870646.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-aminnaderloei-32031992.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-sol-pinto-3266054-13257488.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-spaceprince-8891490.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-thirdman-6500614.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-thisisjooh-31714352.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-hiday-t-i-sg-nd-rsoy-1178625345-23092144.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-khaliifah-hussein-1904370898-34225153.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-jonathanborba-5533842.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-carmel-nsenga-735492-11214241.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-bobbydimas-30769966.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-donald-dondada-matsoga-2557845-4625992.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-dauphotographer-36455711.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-sara-kazemi-2148049458-30676581.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+              
+            </a>
+          </article>
+
+          
+          <article class="product-card">
+            <a href="product.html?id=shemagh-style-scarf">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-kwnos-iv-250460536-27609511.jpg" alt="Silk Paisley Scarf">
+              </div>
+              <h3 class="product-card__name">Shemagh-style Scarf</h3>
+              <p class="product-card__price">Price: &nbsp$120</p>
+            </a>
+          </article>
+
+          <!-- Add more product-card articles as needed -->
+
+        </section>
+      </section>
+      <p class="brand-voice">Elegance for Individuality.</p>
+    </main>
+  </div>
 
   <!-- ============ FOOTER ============ -->
   <footer class="site-footer">
-    <p>&copy; 2026 Righteous Scarfs & Accessories</p>
+    <p class="footer-content-par">&copy; 2026 Righteous Blog Scarfs</p>
   </footer>
 
 </body>

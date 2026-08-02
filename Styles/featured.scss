@@ -15,8 +15,9 @@
   max-height: 45rem;
   align-items: center;
   justify-content: center;
-  //background-color: $warmneutral;
+  background-color: $champagne;
   margin-bottom: $bm-large;
+  @include round-corner;
 }
 
 .featured-pic{
@@ -47,10 +48,11 @@
   font-family: "Cormorant Garamond", serif;
   font-weight: 800;
   font-size: clamp(0.7rem, 2vw, 5rem);
-  color: $deep-brown-black;
+  color: $softbrown;
   margin-bottom: 5vw;
   letter-spacing: 0.15em;
-  text-decoration: underline;
+  text-decoration: underline 1.25px;
+  text-underline-offset: 3px;
 }
 
 .featured-header{
@@ -59,6 +61,7 @@
   font-size: clamp(0.6rem, 2vw, 2rem);
   line-height: 1;
   text-align: center;
+  color: $warmtaupe;
   margin-bottom: 1.85vw;
 }
 
@@ -69,6 +72,7 @@
   white-space: normal;
   margin-bottom: 5vw;
   margin-top: 2vw;
+  color: $warmtaupe;
   max-width: 38ch;
   letter-spacing: 0.085em;
   text-align: center;

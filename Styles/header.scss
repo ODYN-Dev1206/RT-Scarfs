@@ -2,54 +2,111 @@
 @use "mixins" as *;
 
 
-header {
-  transition: all 0.3s ease; // smooth animation when the change happens
-  
-  &.scrolled {
-    padding: 0.5rem 1rem; // shrinks from your original 1rem
-    box-shadow: 0 2px 10px rgba(21, 20, 20, 0.1);
-    background-color: #fef5f6; // in case your header is currently transparent
-  }
-}
+header{
+  z-index: 200;
+  position: fixed;
+  top: 0;
+  background-color: $softbrown;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  gap: 2rem;
+  height: 3.5rem;
+  padding: 2px;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
 
-.header-link.active {
-  color: $gold;
-  font-weight: 600;
+  &.scrolled {
+    box-shadow: 0 2px 10px rgba(21, 20, 20, 0.1);
+  }
+
+
+  @media (min-width: 768px) {
+    gap: 1.5rem;
+    padding: 0.5rem;
+  }
 }
 
 
 .left {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 1rem;
+  justify-self: center;
+  width: 60vw;
+  padding: 5px;
+  white-space: normal;
+  overflow: hidden;
+  margin-left: 0;
+
+  p {
+    white-space: normal;
+    line-height: 1;
+    line-break: auto;
+    max-width: 10ch;
+    color: $warm-cream;
+    margin-left: 0.5rem;
+
+    @media (min-width: 768px) {
+      padding-left: 1rem;
+    }
+
+    .main-name{
+      letter-spacing: 0.07em;
+      text-decoration: underline 1.25px $richgold;
+      text-underline-offset: 6px;
+      text-align: center;
+      font-size: clamp(0.75rem, 1.25vw, 1.5rem);
+    }
+
+    .sub-name {
+      white-space: nowrap;
+      font-size: clamp(0.6rem, 0.85vw, 1.6rem);
+      text-align: left;
+      letter-spacing: 0;
+      margin-top: 0;
+      text-decoration: none;
+    }
+  }
+
+  img{
+    color: $warm-neutral;
+  }
+
+
+  @media (min-width: 768px) {
+    width: 25vw;
+  }
 }
 
-.left img{
-  color: $warm-neutral;
-}
 
 .hamburger {
-  display: none; // hidden by default (desktop)
+  background-color: transparent;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 5px;
-  width: 1.75vw;
-  min-width: 25px;
-  background: none;
+  width: 3vw;
+  height: 100%;
+  align-items: center;
   border: none;
   cursor: pointer;
-  margin-left: 5%;
+  margin-left: 1.5%;
+  margin-right: 5%;
 
   span {
     display: block;
-    height: 2px;
-    width: 100%;
-    background-color: $warm-neutral;
+    height: 1.5px;
+    width: 2vw;
+    background-color: $warmcream;
     transition: transform 0.3s ease, opacity 0.3s ease;
   }
 
-  // animated X when menu is open
-  &.is-active {
+
+
+  &.active {
     span:nth-child(1) {
       transform: translateY(7px) rotate(45deg);
     }
@@ -60,107 +117,110 @@ header {
       transform: translateY(-7px) rotate(-45deg);
     }
   }
-}
 
-.Logo {
-  background-color: $warm-neutral;
-  display: block;
+  @media (min-width: 768px) {
+    display: none;
+  }
 }
 
 .nav-menu {
-  flex: 2;
   display: none;
-  flex-wrap: nowrap;
-  width: 45%;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.8vw;
-  box-sizing: border-box;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
 
-  ::-webkit-scrollbar {
-    display: none;
+  a {
+    @include a-link;
   }
 
-  // shown on desktop by default
-  @media (min-width: 641px) {
-    display: flex;
-    justify-content: center;
-  }
-
-  // mobile open state
-  &.is-open {
+  &.open {
     display: flex;
     flex-direction: column;
-  }
-}
-
-.nav-menu ul {
-  display: flex;
-  flex-direction: row;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 0.8vw;
-  width: 100%;
-
-  @media (max-width: 640px) {
-    flex-direction: column;
+    position: absolute;
+    top: 100%;
     align-items: center;
+    left: 0;
+    width: 100%;
+    background-color: $warmtaupe;
+    padding: 1rem;
+  }
+
+  
+
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-position: center;
+    flex: 1;
+    width: 45vw;
+    gap: 0.8vw;
+
+    a.active-page {
+      border-radius: 0.5rem;
+      background-color: $warmtaupe;
+      padding: 0.35rem 1rem;
+    }
+  }
+
+
+
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 1vw;
+    width: 100%;
+    align-items: center;
+    letter-spacing: 1.8px;
+    color: $warm-neutral;
+    text-align: center;
+    padding: 0.5rem 0;
+
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: center;      
+
+      /**a:hover {
+        transform: scale(1.05);
+        text-decoration: underline $gold;
+        transition: all ease 0.5s;
+      }**/
+    }
   }
 }
 
-.nav-menu a,
-.right a {
-  @include a-link;
-  letter-spacing: 1.8px;
-  color: $warm-neutral;
-}
-
-.nav-menu a:hover,
-.right a:hover {
-  transform: scale(1.15);
-  text-decoration: underline $gold;
-  transition: ease 0.5s;
-}
 
 .right {
-  width: 20%;
-  display: flex;
-  flex-direction: row;
-  flex: 1 5;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 1.5rem;
-  padding-left: 1rem;
+  width: 20vw;
+  padding: 5px;
+  margin: 0;
+  justify-content: center;
+  @include header-right;
+  overflow: hidden;
+  
+
+  .icon {
+    display: inline-flex;
+    max-width: 1.5rem;
+    min-width: 0.85rem;
+    //width: clamp(0.7rem, 1.25vw, 1.35rem);
+    height: auto;
+    //min-height: 15px;
+    cursor: pointer;
+    border: none;
+    flex: 1 1;
+  }
+
+  @media (min-width: 768px) {
+    width: 15vw;
+    padding: 0.15rem;
+    margin-right: 0.75rem;
+  }
 }
 
-.icon {
-  max-width: 25px;
-  min-width: 15px;
-  height: 25px;
-  min-height: 15px;
-  cursor: pointer;
-  border: none;
-  flex: 1 1;
-}
-
-.icon:hover {
-  opacity: 0.8;
-  transform: scale(1.15);
-  transition: ease 0.5s;
-}
-
-.left,
-.nav-menu,
-.right {
-  min-width: 0;
-}
-
-@media (max-width: 640px) {
+/**@media (max-width: 640px) {
   header {
-    height: fit-content;
+    height: 4rem;
     padding: 1rem;
   }
 
@@ -189,4 +249,9 @@ header {
     font-size: clamp(0.5rem, 1.2vw, 1.3rem);
     padding: clamp(0.2rem, 0.175vw, 0.4rem) clamp(0.45rem, 0.7vw, 1.9rem);
   }
-}
+
+  right {
+    justify-content: left;
+    gap: 1rem;
+  }
+}**/
