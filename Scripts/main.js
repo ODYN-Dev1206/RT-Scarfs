@@ -22,8 +22,6 @@ window.addEventListener('scroll', () => {
     document.querySelector('header').classList.remove('scrolled');    
   }
 });
-console.log(hamBurger);
-console.log(navMenu);
 
 
 navLinks.forEach(link => {
@@ -35,25 +33,18 @@ navLinks.forEach(link => {
   const current = currentPage.replace(/^\//, ''); 
 
 
-    if (linkPaTh === current){
+    if (linkPaTh === current) {
         link.classList.add('active-page');
     }
-    
-  console.log(linkPaTh);
-  console.log(current);
 });
-console.log(navLinks);
-console.log('current:', currentPage);
 
 heroBtn.addEventListener('click', () => {
   heroBtn.classList.toggle('active');
 });
-console.log(heroBtn);
 
 shopNow.forEach((button) => {
   button.addEventListener('click', () => {
     button.classList.toggle('active');
   });
 });
-console.log(shopNow);
 

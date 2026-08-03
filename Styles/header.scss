@@ -138,8 +138,13 @@ header{
     align-items: center;
     left: 0;
     width: 100%;
-    background-color: $warmtaupe;
+    background-color: $lightsand;
     padding: 1rem;
+
+    a {
+      color: $brown;
+      font-weight: bold;
+    }
   }
 
   

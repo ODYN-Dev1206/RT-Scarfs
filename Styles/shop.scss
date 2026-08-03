@@ -1,8 +1,5 @@
 @use "variables" as *;
 @use "mixins" as *;
-.website{
-  margin-top: 3rem;
-}
 
 
 .shop{
@@ -22,8 +19,7 @@
 .shop-intro {
   text-align: center;
   align-items: center;
-  margin-top: 3rem;
-  padding: 3rem 1rem 2rem;
+  margin-top: 6rem;
 
   h1 {
     text-align: center;
@@ -54,6 +50,7 @@
   flex-direction: column;
   flex: 1;
   padding: 0.5rem;
+  margin-top: 2rem;
   background-color: $champagne;
 }
 
@@ -80,31 +77,60 @@
     flex-direction: row;
     flex: 1;
     gap: 0.35rem;
-    overflow-x: scroll;
-    scrollbar-width: none;
     padding: 0 0.75rem;
 
+    .filter-icon{
+      display: block;
+      width: 3vw;
+      align-items: center;
 
-    .filter-button {
-      background-color: $softbeige;
-      color: $charcoal;
-      padding: 0.25rem;
-      border-radius: 0;
-      font-family: 'Lato', sans-serif;
-      white-space: nowrap;
-      font-size: clamp(0.65rem, 0.75vw, 1.2rem);
-
-
-      &:active{
-        background-color: $softbrown;
-        color: white;
-        //border-radius: 0.75rem;
-        transition: all ease 0.5s;
+      @media (min-width: 1024px) {
+        width: 1.5vw;
       }
     }
 
-    @media (min-width: 768px) {
-      gap: 0.85rem;
+    .filter-btn-row {
+      display: none;
+
+
+      &.visible {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        overflow-y: auto;
+        scrollbar-width: none;
+        height: 3.2rem;
+        padding: 0.15rem;
+        align-items: center;
+        justify-content: center;
+        //background-color: $brown;
+      }
+
+      .filter-button {
+        background-color: $softbeige;
+        color: $charcoal;
+        padding: 0.25rem;
+        border-radius: 0;
+        text-align: center;
+        justify-content: center;
+        font-family: 'Lato', sans-serif;
+        white-space: nowrap;
+        font-size: clamp(0.65rem, 0.75vw, 1.2rem);
+
+
+        &.active{
+          background-color: $softbrown;
+          color: white;
+          border-radius: 0.5rem;
+          transition: all ease 0.5s;
+          padding: 0.25rem 0.5rem;
+        }
+      }
+
+      @media (min-width: 768px) {
+        gap: 0.85rem;
+      }
     }
   }
 
@@ -147,6 +173,13 @@
   grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
   gap: 1rem;
   margin-top: 0;
+  max-height: 70vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+
+  @media (min-width: 768px) {
+    max-height: 90vh;
+  }
 }
 
 .product-card {
@@ -164,6 +197,10 @@
 
   &:hover {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  &.hide {
+    display: none;
   }
 
   &.active::after {

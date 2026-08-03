@@ -18,12 +18,12 @@
   font-style: italic;
   margin-bottom: $small-bm;
   color: $softbrown;
-  font-size: clamp(1.3rem, 4vw, 5rem);
+  font-size: clamp(1.5rem, 4vw, 5rem);
   cursor: pointer;
 }
 
 .best-sell-header:active{
-  text-decoration: underline 2px goldenrod;
+  text-decoration: underline 1.25px $richgold;
   text-underline-offset: 3px;
 }
 
