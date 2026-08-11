@@ -1,0 +1,191 @@
+@use "variables" as *;
+
+@use "mixins" as *;
+
+
+.header-paragraph {
+  margin-top: 5rem;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  color: $brown;
+}
+.cart-product__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 0.8rem;
+  padding: 0.1rem;
+
+  @media (min-width: 1440px) {
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 0.35rem;
+  }
+}
+
+.cart-product {
+  display: grid;
+  grid-template-columns: 8.5rem 1fr;
+  grid-template-rows: 10rem;
+  gap: 0.35rem;
+  align-items: left;
+  justify-content: center;
+  margin: 1.5rem auto;
+  margin-bottom: 0.1rem;
+  width: 100%;
+  padding: 0.5rem;
+  border: 2px solid $charcoal !important;
+  border-radius: 5px;
+
+
+  @media (min-width: 1440px) {
+    grid-template-rows: 10.75rem;
+  }
+
+
+  @media (min-width: 2560px) {
+    grid-template-rows: 13.35rem;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    min-width: 0;
+    object-fit: cover;
+    object-position: center;
+    @include small-corner;
+  }
+
+  .cart-product-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+    padding: 0.2rem;
+    align-items: center;
+    margin-top: 1.5%;
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+      white-space: nowrap;
+      margin-top: 0.75rem;
+      letter-spacing: 0.075em;
+      font-size: clamp(1rem, 1.2vw, 1.5rem);
+
+      @media (min-width: 1440px) {
+        margin-top: 0.35rem;
+      }
+    }
+    .cart-product-detail {
+      font-family: 'Lato', sans-serif;
+      font-weight: 100;
+      font-size: clamp(0.65rem, 1vw, 1rem);
+      margin-top: 0.2rem;
+      max-width: 20ch;
+      text-overflow: hidden;
+      white-space: wrap;
+    }
+    .cart-product-price {
+      .price-p,
+      .currency,
+      .price {
+        font-family: 'Playfair Display', serif;
+        font-weight: 200;
+        font-size: clamp(0.75rem, 1.3vw, 1rem);
+      }
+      .currency {
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    .cart-product-action {
+      display: grid;
+      grid-template-columns: repeat(2, 5rem);
+      gap: 0.85rem;
+      padding: 0.2rem;
+      text-align: center;
+      align-items: center;
+      justify-content: space-between;
+
+
+      .cart-product-quantity {
+        @media (min-width: 2560px) {
+          display: flex;
+          flex-direction: row;
+          gap: 0.5rem;
+        }
+      }
+
+      .qty-p {
+        font-family: 'Lato', sans-serif;
+        font-size: clamp(0.5rem, 2.5vw, 1.1rem);
+        letter-spacing: 0.075em;
+
+        @media (max-width: 640px) {
+          font-size: clamp(0.5rem, 3.5vw, 1.35rem);
+        }
+      }
+
+      .qty-input {
+        width: 1.35rem;
+        height: 1.1rem;
+        margin: auto;
+        margin: 0 0.3rem;
+        color: $charcoal;
+        text-align: center;
+        font-size: 0.85rem;
+
+        &::placeholder {
+          text-align: center;
+          color: rgba($warmtaupe, 0.25);
+        }
+      }
+
+
+      .product-qty {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        justify-content: center;
+        padding: 0.1rem;
+
+
+        .qty__inc {
+          background-color: $softbrown;
+          color: $warmcream;
+          padding: 0.2rem 0.5rem;
+          border-radius: 3.5px;
+          justify-content: center;
+        }
+      }
+
+      .remove {
+        margin-top: 1.2rem;
+        max-height: 2rem;
+        padding: 0.15rem;
+
+        @media (min-width: 1440px) {
+          margin-top: 1.35rem;
+        }
+
+        .remove-button {
+          text-align: center;
+          background-color: $softbrown;
+          color: $whitesilk;
+          padding: 0.3rem 0.65rem;
+          border-radius: 5px;
+          font-size: clamp(0.75rem, 1.5vw, 1rem);
+
+          @media (min-width: 1440px) {
+            padding: 0.2rem 0.45rem;
+            
+          }
+
+          /*&.clicked {
+            overlay: gray 0.3s;
+          }*/
+        }
+      }
+    }
+  }
+}

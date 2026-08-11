@@ -5,6 +5,7 @@
 
 html{
   font-size: 15px;
+  height: 100%;
 }
 
 *{
@@ -28,6 +29,10 @@ p{
 }
 
 body{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   /**background-image: url(pawel-czerwinski-VlgBaRLkpX0-unsplash.jpg);**/
   background-color: $warm-cream;
   background-size: cover;
@@ -37,8 +42,8 @@ body{
   background-blend-mode: multiply;
 }
 
-body.no-scroll {
-  overflow: hidden;
+main {
+  flex: 1 0 auto;
 }
 
 button{
@@ -70,10 +75,9 @@ footer{
   display: flex;
   flex-direction: row;
   background-color: $softbrown;
-  flex: 1;
   justify-content: space-between;
-  bottom: 1vw;
   padding: 1.5rem;
+  flex-shrink: 0;
 
   a {
     font-family: 'Playfair Display', serif;

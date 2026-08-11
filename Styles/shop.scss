@@ -85,7 +85,7 @@
       align-items: center;
 
       @media (min-width: 1024px) {
-        width: 1.5vw;
+        width: 2.35vw;
       }
     }
 
@@ -98,17 +98,20 @@
         flex-direction: row;
         gap: 0.5rem;
         flex-wrap: wrap;
-        overflow-y: auto;
-        scrollbar-width: none;
-        height: 3.2rem;
-        padding: 0.15rem;
+        width: 45vw;
+        height: 3.5rem;
         align-items: center;
-        justify-content: center;
-        //background-color: $brown;
+        justify-content: space-evenly;
+
+        @media (min-width: 768px) {
+          width: 20vw;
+          max-width: 18rem;
+          height: 7rem;
+        }
       }
 
       .filter-button {
-        background-color: $softbeige;
+        background-color: $whitesilk;
         color: $charcoal;
         padding: 0.25rem;
         border-radius: 0;
@@ -172,7 +175,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
   gap: 1rem;
-  margin-top: 0;
+  margin-top: 1rem;
   max-height: 70vh;
   overflow-y: auto;
   scrollbar-width: none;
@@ -219,7 +222,9 @@
 
   img {
     width: 100%;
-    height: auto;
+    height:100%;
+    min-width: 0;
+    min-height: 0;
     object-fit: cover;
     border-top-right-radius: 1.35rem;
     border-top-left-radius: 1.35rem;

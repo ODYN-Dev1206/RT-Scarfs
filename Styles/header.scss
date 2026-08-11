@@ -14,7 +14,7 @@ header{
   gap: 2rem;
   height: 3.5rem;
   padding: 2px;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   transition: all 0.3s ease;
 
@@ -40,7 +40,6 @@ header{
   white-space: normal;
   overflow: hidden;
   margin-left: 0;
-
   p {
     white-space: normal;
     line-height: 1;
@@ -50,7 +49,7 @@ header{
     margin-left: 0.5rem;
 
     @media (min-width: 768px) {
-      padding-left: 1rem;
+      padding-left: 0.75rem;
     }
 
     .main-name{
@@ -77,7 +76,7 @@ header{
 
 
   @media (min-width: 768px) {
-    width: 25vw;
+    width: 20vw;
   }
 }
 
@@ -88,7 +87,7 @@ header{
   flex-direction: column;
   justify-content: center;
   gap: 5px;
-  width: 3vw;
+  width: 2rem;
   height: 100%;
   align-items: center;
   border: none;
@@ -135,7 +134,7 @@ header{
     flex-direction: column;
     position: absolute;
     top: 100%;
-    align-items: center;
+    align-items: left;
     left: 0;
     width: 100%;
     background-color: $lightsand;
@@ -155,7 +154,7 @@ header{
     justify-content: center;
     object-position: center;
     flex: 1;
-    width: 45vw;
+    width: 40vw;
     gap: 0.8vw;
 
     a.active-page {
@@ -163,6 +162,15 @@ header{
       background-color: $warmtaupe;
       padding: 0.35rem 1rem;
     }
+  }
+  
+
+  @media (min-width: 1024px) {
+    padding-right: 2.35rem;
+  }
+
+  @media (min-width: 1440px) {
+    padding-right: 5.5rem;
   }
 
 
@@ -202,24 +210,51 @@ header{
   justify-content: center;
   @include header-right;
   overflow: hidden;
+
+  .cart-section {
+    display: inline-block;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.4rem;
+
+    .notification {
+      position: absolute;
+      top: 2.5px;
+      right: 0.15px;
+      color: $charcoal;
+      justify-content: top;
+      padding: 1.5px 2.5px 1px 0;
+      font-size: clamp(0.45rem, 0.7vw, 0.65rem);
+      font-family: 'Lato', sans-serif;
+      background-color: $warm-neutral;
+      border-radius: 7px;
+    }
+  }
   
 
   .icon {
     display: inline-flex;
-    max-width: 1.5rem;
-    min-width: 0.85rem;
+    max-width: 1.75rem;
+    min-width: 0.95rem;
     //width: clamp(0.7rem, 1.25vw, 1.35rem);
     height: auto;
     //min-height: 15px;
     cursor: pointer;
     border: none;
-    flex: 1 1;
+    flex: 1;
   }
 
   @media (min-width: 768px) {
-    width: 15vw;
+    max-width: 10rem;
     padding: 0.15rem;
-    margin-right: 0.75rem;
+    margin-right: 0.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 15rem;
+    padding: 0.15rem;
+    margin-right: 0.85rem;
   }
 }
 

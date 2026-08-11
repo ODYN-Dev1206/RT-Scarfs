@@ -32,10 +32,6 @@ body {
   background-blend-mode: multiply;
 }
 
-body.no-scroll {
-  overflow: hidden;
-}
-
 button {
   width: auto;
   font-size: clamp(0.85rem, 1vw, 1.5rem);
@@ -43,6 +39,16 @@ button {
   border: none;
   border-radius: 12px;
   cursor: pointer;
+}
+button .back-to-top {
+  display: flex;
+  border-radius: 50%;
+  background-color: #2b2b2b;
+  color: #fcf8f3;
+  font-size: 3rem;
+  right: 0;
+  bottom: 3.5rem;
+  font-weight: 900;
 }
 
 /**button:hover{
@@ -58,6 +64,7 @@ img {
 
 .website {
   z-index: 7;
+  position: relative;
 }
 
 footer {
@@ -467,7 +474,7 @@ header.scrolled {
 
 .shop-button {
   font-size: clamp(0.5rem, 1.25vw, 1.3rem);
-  padding: 0.25rem 0.5rem;
+  padding: 0.5rem 1rem;
   margin-left: 3%;
   text-align: center;
   font-weight: 300;
@@ -480,7 +487,7 @@ header.scrolled {
   text-decoration: none;
 }
 .shop-button.active {
-  background-color: #b89d7b;
+  background-color: #f8f5f0;
   color: #f8f5f0;
   transition: all ease 0.6s;
 }
@@ -1060,8 +1067,6 @@ header.scrolled {
 }
 
 footer {
-  bottom: 0;
-  position: fixed;
   margin: 0;
   text-align: center;
   justify-content: center;
@@ -1202,7 +1207,7 @@ footer {
 }
 @media (min-width: 1024px) {
   .filter .quick-filter .filter-icon {
-    width: 1.5vw;
+    width: 2.35vw;
   }
 }
 .filter .quick-filter .filter-btn-row {
@@ -1213,15 +1218,20 @@ footer {
   flex-direction: row;
   gap: 0.5rem;
   flex-wrap: wrap;
-  overflow-y: auto;
-  scrollbar-width: none;
-  height: 3.2rem;
-  padding: 0.15rem;
+  width: 45vw;
+  height: 3.5rem;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+}
+@media (min-width: 768px) {
+  .filter .quick-filter .filter-btn-row.visible {
+    width: 20vw;
+    max-width: 18rem;
+    height: 7rem;
+  }
 }
 .filter .quick-filter .filter-btn-row .filter-button {
-  background-color: #e4d2be;
+  background-color: #fcf8f3;
   color: #2b2b2b;
   padding: 0.25rem;
   border-radius: 0;
@@ -1276,7 +1286,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
   gap: 1rem;
-  margin-top: 0;
+  margin-top: 1rem;
   max-height: 70vh;
   overflow-y: auto;
   scrollbar-width: none;
@@ -1348,7 +1358,7 @@ footer {
 }
 
 .website {
-  margin-top: 0;
+  margin-top: 3rem;
 }
 
 .blog-sect {
@@ -1533,11 +1543,12 @@ footer {
   padding: 0.25rem;
   margin: 0;
   overflow: scroll;
-  margin-bottom: 1rem;
   scrollbar-width: none;
   justify-content: space-between;
   align-items: center;
   gap: 1.5rem;
+  background-color: #e4d2be;
+  border-radius: 0.5rem;
 }
 .filter .quick-filter {
   align-items: left;
@@ -1545,49 +1556,89 @@ footer {
   flex-direction: row;
   flex: 1;
   gap: 0.35rem;
-  overflow-x: scroll;
-  scrollbar-width: none;
+  padding: 0 0.75rem;
 }
-.filter .quick-filter button {
-  border-radius: 0.5rem;
+.filter .quick-filter .filter-icon {
+  display: block;
+  width: 3vw;
+  align-items: center;
+}
+@media (min-width: 1024px) {
+  .filter .quick-filter .filter-icon {
+    width: 1.5vw;
+  }
+}
+.filter .quick-filter .filter-btn-row {
+  display: none;
+}
+.filter .quick-filter .filter-btn-row.visible {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  scrollbar-width: none;
+  height: 3.2rem;
+  padding: 0.15rem;
+  align-items: center;
+  justify-content: center;
+}
+.filter .quick-filter .filter-btn-row .filter-button {
+  background-color: #e4d2be;
   color: #2b2b2b;
   padding: 0.25rem;
+  border-radius: 0;
+  text-align: center;
+  justify-content: center;
   font-family: "Lato", sans-serif;
   white-space: nowrap;
   font-size: clamp(0.65rem, 0.75vw, 1.2rem);
 }
-.filter .quick-filter button:active {
-  background-color: #b68a3d;
-  color: #f8f5f0;
-  transition: all ease 0.25s;
+.filter .quick-filter .filter-btn-row .filter-button.active {
+  background-color: #4d4035;
+  color: white;
+  border-radius: 0.5rem;
+  transition: all ease 0.5s;
+  padding: 0.25rem 0.5rem;
 }
 @media (min-width: 768px) {
-  .filter .quick-filter {
+  .filter .quick-filter .filter-btn-row {
     gap: 0.85rem;
   }
 }
 .filter .search {
   display: flex;
-  flex-direction: row;
-  flex: 1;
-  gap: 0.5rem;
-  justify-content: right;
   align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  width: 2vw;
+  max-width: 3vw;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
-.filter .search-bar {
-  display: none;
-  align-self: center;
-  height: 1rem;
-  font-size: clamp(0.5rem, 1.5vw, 0.7rem);
+.filter .search .search-bar {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  color: #2b2b2b;
+  letter-spacing: 0.02em;
+}
+.filter .search .search-bar::placeholder {
+  color: rgba(31, 26, 23, 0.5);
+}
+.filter .search .search-bar:focus {
   color: #9a6e2a;
 }
-.filter .search-bar.visible {
-  display: flex;
+.filter .search .search-bar.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
 }
-.filter .search-bar.invisible {
-  display: none;
-}
-.filter .search-icon {
+.filter .search .search-icon {
+  cursor: pointer;
+  flex-shrink: 0;
   width: 1.35rem;
   height: auto;
   display: flex;
@@ -1598,10 +1649,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));
   gap: 0.85rem;
-  max-height: 70vh;
-  overflow-y: auto;
-  scroll-snap-type: y mandatory;
-  scrollbar-gutter: stable;
+  margin-top: 1rem;
 }
 .blog-detail * {
   scroll-snap-align: center;
@@ -1610,9 +1658,6 @@ footer {
   .blog-detail {
     grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
     gap: 0.5rem;
-    max-height: 80vh;
-    overflow-y: auto;
-    scroll-snap-type: y mandatory;
   }
   .blog-detail * {
     scroll-snap-align: center;
@@ -1769,6 +1814,112 @@ footer {
   font-size: clamp(0.05rem, 1.5vw, 0.7rem);
   color: #2b2b2b;
   font-weight: 300;
+}
+
+.newsletter-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+  background-color: #b89d7b;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+@media (min-width: 768px) {
+  .newsletter-section {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.newsletter-section .newsletter-highlight {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 0.7rem;
+  margin-right: 0.35rem;
+}
+@media (min-width: 768px) {
+  .newsletter-section .newsletter-highlight {
+    margin-left: 3.5rem;
+  }
+}
+.newsletter-section .newsletter-highlight .icon-circle {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #f8f5f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2b2b2b;
+}
+.newsletter-section .newsletter-highlight .icon-circle svg {
+  width: 24px;
+  height: 24px;
+}
+.newsletter-section .newsletter-highlight .text-content h3 {
+  font-family: "Playfair Display", serif;
+  margin: 0 0 0.25rem;
+  font-weight: 300;
+  white-space: nowrap;
+  font-size: clamp(1.35rem, 3.75vw, 2.75rem);
+}
+.newsletter-section .newsletter-highlight .text-content p {
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  font-weight: 300;
+  font-size: clamp(0.85rem, 1.5vw, 1.5rem);
+  color: #4d4035;
+  white-space: normal;
+  max-width: 24ch;
+  margin-bottom: 0.3rem;
+}
+.newsletter-section .newsletter-highlight .text-content a {
+  color: #fcf8f3;
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  margin: 0.5rem 0;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.newsletter-section .newsletter-subscribe {
+  display: none;
+}
+.newsletter-section .newsletter-subscribe.subscribe {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  margin-right: 0;
+}
+.newsletter-section .newsletter-subscribe .newsletter-bar {
+  width: 100%;
+  max-width: 15rem;
+  height: 1.75rem;
+  margin: 0.25rem 0;
+  border: none;
+}
+.newsletter-section .newsletter-subscribe .newsletter-bar::placeholder {
+  padding: 0 0.2rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  color: #2b2b2b;
+  font-size: clamp(0.35rem, 1vw, 0.7rem);
+}
+.newsletter-section .newsletter-subscribe .newsletter-sub-btn {
+  width: 8rem;
+  border-radius: 0;
+  padding: 0.5rem 1rem;
+  margin-top: 0.35rem;
+  background-color: #2b2b2b;
+  color: #f8f5f0;
+  font-family: "Lato", sans-serif;
+  font-size: clamp(0.35rem, 1.2vw, 0.85rem);
 }
 
 .pagination {

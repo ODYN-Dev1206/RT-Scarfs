@@ -3,15 +3,12 @@
 @use "mixins" as *;
 
 footer{
-  bottom: 0;
-  position: fixed;
   margin: 0;
   text-align: center;
   justify-content: center;
   align-items: center;
   display: flex;
   flex-direction: column;
-  flex: 1;
   gap: 0.5rem;
   padding-bottom: 1rem;
   border-top: solid 3.5px $gold;
@@ -22,7 +19,6 @@ footer{
   margin: 0.5rem 4rem;
   display: flex;
   flex-direction: row;
-  flex: 1;
   gap: 4vw;
   justify-content: center;
   align-items: center;
@@ -36,14 +32,33 @@ footer{
   white-space: nowrap;
   text-decoration: none;
   font-size: clamp(0.5rem, 2vw, 1.1rem);
+
+  .contact {
+    display: flex;
+    flex: 1;
+    width: 2rem;
+    overflow: hidden;
+
+
+    .social-icons {
+      display: flex;
+      flex-direction: row;
+
+      a {
+        color: $warmcream;
+        font-size: 18px;
+        transition: color 0.2s ease;
+      }
+    }
+  }  
 }
 
-.footer-top a:hover{
+/*.footer-top a:hover{
   text-decoration: none;
   transform: none;
   color: gray;
   transition: all ease 0.25s;
-}
+}*/
 
 .footer-content-info{
   display: flex;
@@ -52,19 +67,4 @@ footer{
   justify-content: center;
   align-items: center;
   cursor: pointer;
-}
-
-.social-icons {
-  display: flex;
-  gap: 1.25rem;
-
-  a {
-    color: $richgold;
-    font-size: 18px;
-    transition: color 0.2s ease;
-
-    &:hover {
-      color: $darkgold;
-    }
-  }
 }

@@ -11,10 +11,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 
 
-  <link rel="stylesheet" href="Styles/main.css">
-  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:regular,500,600,700,800,900,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <script src="Scripts/main.js" defer></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons-font@latest/font/simple-icons.min.css">
+
+
+  <link rel="stylesheet" href="Styles/main.scss">
+  <script type="module" src="Scripts/main.js"></script>
 </head>
 
 
@@ -26,7 +27,7 @@
         <span></span>
         <span></span>
       </button>
-      <p><span class="main-name">Righteous</span> <span class="sub-name">Scarfs&nbsp;&&nbsp;Accessories</span></p>
+      <a href="index.html"><p><span class="main-name">Righteous</span> <span class="sub-name">Scarfs&nbsp;&&nbsp;Accessories</span></p></a>
     </div>
 
     <nav class="nav-menu">
@@ -40,10 +41,15 @@
     </nav>
 
     <div class="right">
-      <img class="icon" src="Icons/bag.svg" alt="Shopping bag icon">
-      
+      <div class="cart-section">
+        <a href="cart.html">
+          <img class="icon" src="/Icons/bag.svg" alt="Shopping bag icon">
+        </a>
+        <p id="cart-no" class="notification cart-quantity"></p>
+      </div>
+
       <div class="user-account">
-        <img class="icon" src="Icons/user.svg" alt="Mona Lisa icon">
+        <img class="icon" src="/Icons/user.svg" alt="Mona Lisa icon">
         <a class="user-sign-in" href="#">
           <p>Sign In</p>
         </a>
@@ -52,14 +58,14 @@
   </header>
 
   <main>>>     
-    <div class="website"> 
-      <section class="wel-body">  
-        <img class="wel-img" src="Styles Pictures/file_0000000088ac7243b49fe58bd4dabc24.png" loading="lazy" alt="...">         
+    <div class="website">
+      <section class="wel-body">
+        <img class="wel-img" src="Styles Pictures/file_0000000088ac7243b49fe58bd4dabc24.png" loading="lazy"  alt="...">
         <div class="wel-cont">
           <p class="wel-top">WELCOME TO</p>
           <h1>Righteous Scarfs&nbsp;& Accessories</h1>
           <p class="wel-sub">The hub of fashion scarfs and luxurious accessories that brings out the version you want to be</p>
-          <a href="shop.html"><button class="shop-button">SHOP NOW&nbsp;<span class="shop-arrow">&rAarr;</span></button></a>
+          <a href="shop.html"><button class="shop-button">SHOP NOW&nbsp;<span class="shopn-arrow">&rAarr;</span></button></a>
         </div>
         </section>
 
@@ -72,8 +78,10 @@
         <a href="shop.html?filter=best-sell"><h2 class="best-sell-header">BEST SELLING</h2></a>
 
         <div class="best-sell-grid">
-          <article class="best-sell-pic" data-category="best-sell">
-            <img class="best-sell-img" src="Scarfs n Accessories/flaviu-costin-oqCZdctdaL4-unsplash.jpg" loading="lazy" alt="...">
+          <article class="best-sell-card" data-category="best-sell" data-id="velvet-winter-wrap" data-price="49" data-name="Velvet winter wrap">
+            <a href="product.html?id=velvet-winter-wrap">
+              <img class="best-sell-img" src="Scarfs_n_Accessories/flaviu-costin-oqCZdctdaL4-unsplash.jpg" loading="lazy" alt="...">
+            </a>
 
             <div class="new-prod-info">
               <div class="new-name-rate">
@@ -83,225 +91,231 @@
                 Cashmere Blend Scarf
               </p>
               <div class="new-price-shop">
-                <p class="new-prod-price">#18,000</p>
-                <a href="shop.html"><button class="buy-prod">Shop</button></a>
+                <p class="new-product-price">
+                  <span class="currency">$</span>45
+                </p>
+                <button id ="velvet-winer-wrap" data-id="velvet-winter-wrap" class="buy-prod">Add</button>
               </div>
             </div>
           </article>
 
-          
-          <article class="best-sell-pic" data-category="best-sell">
-            <img class="best-sell-img" src="Scarfs n Accessories/nonresident-QZY-fSDat3w-unsplash.jpg" loading="lazy" alt="...">
+         
+          <article class="best-sell-card" data-category="best-sell" data-id="bahareh-moradian-scarf" data-price="20" data-name="Long Yellow Scarf">
+            <a href="product.html?id=bahareh-moradian-scarf">
+              <img class="best-sell-img" src="Scarfs_n_Accessories/bahareh-moradian-_jKQbGGLUGI-unsplash.jpg" loading="lazy" alt="...">
+            </a>
 
             <div class="new-prod-info">
               <div class="new-name-rate">
-                <p class="new-prod-name">Velvet Winter Wrap</p>
+                <p class="new-prod-name">Long Yellow Scarf</p>
+              </div>
+              <p class="new-prod-descr">
+                Indian Sari Scarf
+              </p>
+              <div class="new-price-shop">
+                <p class="new-product-price">
+                  <span class="currency">$</span>20
+                </p>
+                <button id="bahareh-moradian-scarf" data-id="bahareh-moradian-scarf" class="buy-prod">Add</button>
+              </div>
+            </div>
+          </article>
+
+         
+          <article class="best-sell-card" data-category="best-sell" data-id="the-hijab-company" data-price="35" data-name="Stylish Hijab">
+            <a href="product.html?id=the-hijab-company">
+              <img class="best-sell-img" src="Scarfs_n_Accessories/the-hijab-company-EtlgHvq0s90-unsplash.jpg" loading="lazy" alt="...">
+            </a>
+
+            <div class="new-prod-info">
+              <div class="new-name-rate">
+                <p class="new-prod-name">Stylish Hijab</p>
+              </div>
+              <p class="new-prod-descr">
+                Hijabi Sisters Style
+              </p>
+              <div class="new-price-shop">
+                <p class="new-product-price">
+                  <span class="currency">$</span>35
+                </p>
+                <button id="the-hijab-company" data-id="the-hijab-company" class="buy-prod">Add</button>
+              </div>
+            </div>
+          </article>
+
+         
+          <article class="best-sell-card" data-category="best-sell" data-id="masoud-razeghi" data-price="45" data-name="Easy Wrap Scarf">
+            <a href="product.html?id=masoud-raseghi">
+              <img class="best-sell-img" src="Scarfs_n_Accessories/masoud-razeghi-UPKo6hMUfHg-unsplash.jpg" loading="lazy" alt="...">
+            </a>
+
+            <div class="new-prod-info">
+              <div class="new-name-rate">
+                <p class="new-prod-name">Easy Wrap Scarf</p>
+              </div>
+              <p class="new-prod-descr">
+                Quick Elegant Scarf
+              </p>
+              <div class="new-price-shop">
+                <p class="new-product-price">
+                  <span class="currency">$</span>45
+                </p>
+                <button id="masoud-raseghi" data-id="masoud-razeghi" class="buy-prod">Add</button>
+              </div>
+            </div>
+          </article>
+
+         
+          <article class="best-sell-card" data-category="best-sell" data-id="sarah-crego" data-price="75" data-name="Golden Vintage Scarf">
+            <a href="product.html?id=sarah-crego">
+              <img class="best-sell-img" src="Scarfs_n_Accessories/sarah-crego-ZllJjxtu2ho-unsplash.jpg" loading="lazy" alt="...">
+            </a>
+
+            <div class="new-prod-info">
+              <div class="new-name-rate">
+                <p class="new-prod-name">Golden Vintage Scarf</p>
+              </div>
+              <p class="new-prod-descr">
+                Luxurious Vintage Style
+              </p>
+              <div class="new-price-shop">
+                <p class="new-product-price">
+                  <span class="currency">$</span>75
+                </p>
+                <button id="sarah-crego" data-id="sarah-crego" class="buy-prod">Add</button>
+              </div>
+            </div>
+          </article>
+
+         
+          <article class="best-sell-card" data-category="best-sell" data-id="altansukh-e" data-price="55" data-name="Northern Winter Wrap">
+            <a href="product.html?id=altansukh-e">
+              <img class="best-sell-img" src="Scarfs_n_Accessories/altansukh-e-ymCgvsne3Y8-unsplash.jpg" loading="lazy" alt="...">
+            </a>
+
+            <div class="new-prod-info">
+              <div class="new-name-rate">
+                <p class="new-prod-name">Northern Winter Wrap</p>
               </div>
               <p class="new-prod-descr">
                 Cashmere Blend Scarf
               </p>
               <div class="new-price-shop">
-                <p class="new-prod-price">#18,000</p>
-                <button class="buy-prod">Shop</button>
+                <p class="new-product-price">
+                  <span class="currency">$</span>55
+                </p>
+                <button id="altansukh-e" data-id="altansukh-e" class="buy-prod">Add</button>
               </div>
             </div>
           </article>
 
-          
-          <article class="best-sell-pic" data-category="best-sell">
-            <img class="best-sell-img" src="Scarfs n Accessories/ariyan-dv-jSD3BqxYa2Q-unsplash.jpg" loading="lazy" alt="...">
+         
+          <article class="best-sell-card" data-category="best-sell" data-id="karen-cantu" data-price="50" data-name="Winter Wrap">
+            <a href="product.html?id=karen-cantu">
+              <img class="best-sell-img" src="Scarfs_n_Accessories/karen-cantu-q-uYF7pziBO8Y-unsplash.jpg" loading="lazy" alt="...">
+            </a>
 
             <div class="new-prod-info">
               <div class="new-name-rate">
-                <p class="new-prod-name">Velvet Winter Wrap</p>
+                <p class="new-prod-name">Winter Wrap</p>
               </div>
               <p class="new-prod-descr">
-                Cashmere Blend Scarf
+                Warm Neck Wrap
               </p>
               <div class="new-price-shop">
-                <p class="new-prod-price">#18,000</p>
-                <button class="buy-prod">Shop</button>
+                <p class="new-product-price">
+                  <span class="currency">$</span>50
+                </p>
+                <button id="karen-cantu" data-id="karen-cantu" class="buy-prod">Add</button>
               </div>
             </div>
           </article>
 
-          
-          <article class="best-sell-pic" data-category="best-sell">
-            <img class="best-sell-img" src="Scarfs n Accessories/sarah-crego-ZllJjxtu2ho-unsplash.jpg" loading="lazy" alt="...">
+         
+          <article class="best-sell-card" data-category="best-sell" data-id="mhrezaa-v" data-price="105" data-name="Arabian Scarf">
+            <a href="product.html?id=mhrezaa-v">
+              <img class="best-sell-img" src="Scarfs_n_Accessories/mhrezaa-v-NdrZB1rMg-unsplash.jpg" loading="lazy" alt="...">
+            </a>
 
             <div class="new-prod-info">
               <div class="new-name-rate">
-                <p class="new-prod-name">Velvet Winter Wrap</p>
+                <p class="new-prod-name">Arabian Scarf</p>
               </div>
               <p class="new-prod-descr">
-                Cashmere Blend Scarf
+                Sheikh Al-Ghazal Scarf
               </p>
               <div class="new-price-shop">
-                <p class="new-prod-price">#18,000</p>
-                <button class="buy-prod">Shop</button>
+                <p class="new-product-price">
+                  <span class="currency">$</span>105
+                </p>
+                <button id="mhrezaa-v" data-id="mhrezaa-v" class="buy-prod">Add</button>
               </div>
             </div>
           </article>
 
-          
-          <article class="best-sell-pic" data-category="best-sell">
-            <img class="best-sell-img" src="Scarfs n Accessories/courtney-smith-l2NryXUJFaY-unsplash.jpg" loading="lazy" alt="...">
+         
+          <article class="best-sell-card" data-category="best-sell" data-id="khaled-ghareeb" data-price="25" data-name="Brown Silk Scarf">
+            <a href="product.html?id=khaled-ghareeb">
+              <img class="best-sell-img" src="Scarfs_n_Accessories/khaled-ghareeb-n84s3jgzhKk-unsplash.jpg" loading="lazy" alt="...">
+            </a>
 
             <div class="new-prod-info">
               <div class="new-name-rate">
-                <p class="new-prod-name">Velvet Winter Wrap</p>
+                <p class="new-prod-name">Brown Silk Scarf</p>
               </div>
               <p class="new-prod-descr">
-                Cashmere Blend Scarf
+                Feminine Style
               </p>
               <div class="new-price-shop">
-                <p class="new-prod-price">#18,000</p>
-                <button class="buy-prod">Shop</button>
-              </div>
+                <p class="new-product-price">
+                  <span class="currency">$</span>25
+                </p>
+                
+                <button id="khaled-ghareeb" data-id="khaled-ghareeb" class="buy-prod">Add</button>
             </div>
           </article>
 
-          
-          <article class="best-sell-pic" data-category="best-sell">
-            <img class="best-sell-img" src="Scarfs n Accessories/babak-eshaghian-yIbHCtlWRik-unsplash.jpg" loading="lazy" alt="...">
+         
+          <article class="best-sell-card" data-category="best-sell" data-id="ash-edmonds" data-price="49" data-name="Cashmere Blend Scarf">
+            <a href="product.html?id=ash-edmonds">
+              <img class="best-sell-img" src="Scarfs_n_Accessories/ash-edmonds-vxxeDvOWbvQ-unsplash.jpg" loading="lazy" alt="...">
+            </a>
 
             <div class="new-prod-info">
               <div class="new-name-rate">
-                <p class="new-prod-name">Velvet Winter Wrap</p>
+                <p class="new-prod-name">Cashmere Blend Scarf</p>
               </div>
               <p class="new-prod-descr">
-                Cashmere Blend Scarf
+                Unknown Style
               </p>
               <div class="new-price-shop">
-                <p class="new-prod-price">#18,000</p>
-                <button class="buy-prod">Shop</button>
+                <p class="new-product-price">
+                  <span class="currency">$</span>70
+                </p>
+                <button id="ash-edmonds" data-id="ash-edmonds" class="buy-prod">Add</button>
               </div>
             </div>
           </article>
 
-          
-          <article class="best-sell-pic" data-category="best-sell">
-            <img class="best-sell-img" src="Scarfs n Accessories/juan-lagunas-MqUHwCEF5sM-unsplash.jpg" loading="lazy" alt="...">
-
-            <div class="new-prod-info">
-              <div class="new-name-rate">
-                <p class="new-prod-name">Velvet Winter Wrap</p>
-              </div>
-              <p class="new-prod-descr">
-                Cashmere Blend Scarf
-              </p>
-              <div class="new-price-shop">
-                <p class="new-prod-price">#18,000</p>
-                <button class="buy-prod">Shop</button>
-              </div>
-            </div>
-          </article>
-
-          
-          <article class="best-sell-pic" data-category="best-sell">
-            <img class="best-sell-img" src="Scarfs n Accessories/karen-cantu-q-uYF7pziBO8Y-unsplash.jpg" loading="lazy" alt="...">
-
-            <div class="new-prod-info">
-              <div class="new-name-rate">
-                <p class="new-prod-name">Velvet Winter Wrap</p>
-              </div>
-              <p class="new-prod-descr">
-                Cashmere Blend Scarf
-              </p>
-              <div class="new-price-shop">
-                <p class="new-prod-price">#18,000</p>
-                <button class="buy-prod">Shop</button>
-              </div>
-            </div>
-          </article>
-
-          
-          <article class="best-sell-pic" data-category="best-sell">
-            <img class="best-sell-img" src="Scarfs n Accessories/simona-sergi-KYBzCBBGyvg-unsplash.jpg" loading="lazy" alt="...">
-
-            <div class="new-prod-info">
-              <div class="new-name-rate">
-                <p class="new-prod-name">Velvet Winter Wrap</p>
-              </div>
-              <p class="new-prod-descr">
-                Cashmere Blend Scarf
-              </p>
-              <div class="new-price-shop">
-                <p class="new-prod-price">#18,000</p>
-                <button class="buy-prod">Shop</button>
-              </div>
-            </div>
-          </article>
-
-          
-          <article class="best-sell-pic" data-category="best-sell">
-            <img class="best-sell-img" src="Scarfs n Accessories/altansukh-e-ymCgvsne3Y8-unsplash.jpg" loading="lazy" alt="...">
-
-            <div class="new-prod-info">
-              <div class="new-name-rate">
-                <p class="new-prod-name">Velvet Winter Wrap</p>
-              </div>
-              <p class="new-prod-descr">
-                Cashmere Blend Scarf
-              </p>
-              <div class="new-price-shop">
-                <p class="new-prod-price">#18,000</p>
-                <button class="buy-prod">Shop</button>
-              </div>
-            </div>
-          </article>
-
-          
-          <article class="best-sell-pic" data-category="best-sell">
-            <img class="best-sell-img" src="Scarfs n Accessories/ash-edmonds-vxxeDvOWbvQ-unsplash.jpg" loading="lazy" alt="...">
-
-            <div class="new-prod-info">
-              <div class="new-name-rate">
-                <p class="new-prod-name">Velvet Winter Wrap</p>
-              </div>
-              <p class="new-prod-descr">
-                Cashmere Blend Scarf
-              </p>
-              <div class="new-price-shop">
-                <p class="new-prod-price">#18,000</p>
-                <button class="buy-prod">Shop</button>
-              </div>
-            </div>
-          </article>
-
-          
-          <article class="best-sell-pic" data-category="best-sell">
-            <img class="best-sell-img" src="Scarfs n Accessories/khaled-ghareeb-n84s3jgzhKk-unsplash.jpg" loading="lazy" alt="...">
-
-            <div class="new-prod-info">
-              <div class="new-name-rate">
-                <p class="new-prod-name">Velvet Winter Wrap</p>
-              </div>
-              <p class="new-prod-descr">
-                Cashmere Blend Scarf
-              </p>
-              <div class="new-price-shop">
-                <p class="new-prod-price">#18,000</p>
-                <button class="buy-prod">Shop</button>
-              </div>
-            </div>
-          </article>
+          <a href="shop.html?filter=best-sell"><p class="more Product">&rAarr;</p></a>
         </div>
       </section>
 
 
       <section class="featured-collection">
-        <img class="featured-pic" src="Featured Collection/pexels-esra-salturk-1165434438-38264776.jpg" alt="...">
+        <a href="product.html?id=esra-saltuk">
+          <img class="featured-pic" src="Featured Collection/pexels-esra-salturk-1165434438-38264776.jpg" loading="lazy" alt="...">
+        </a>
         <div class="featured-info">
-          <h3>NEW SEASON</h3>
+          <a href="shop.html?filter=new-season"><h3>NEW SEASON</h3></a>
           <p class="featured-header">Scarf Stories for your Modern Wardrobe</p>
           <p class="featured-paragraph">Check out our time-limited collection if you want something  more luxurious and elegant</p>
-          <a href="shop.html" >Our Collection</a>
+          <a href="shop.html?filter=collection">Our Collection</a>
         </div>
       </section>
 
       <section class="new-arrival">
-        <h2 class="new-arrival-header">NEW ARRIVALS</h2>
+        <a href="shop.html?filter=new-arrival"><h2 class="new-arrival-header">NEW ARRIVALS</h2></a>
 
         <article class="new-arrival-grid">
           <div class="new-arrival-main">
@@ -365,17 +379,6 @@
       <a class="footer-link" href="contact.html">CONTACT US</a>
       <a class="footer-link" href="about.html">ABOUT US</a>
       <a class="footer-link" href="faqs.html">FAQS</a>
-    
-      <!--<div class="footer-content-newsletter">
-        <a class="footer-link">NEWSLETTER</a>
-
-        <div class="news-letter">
-          <p class="footer-newsletter-paragraph"><a href="#">Subscribe</a> to our newsletter and stay updated with the latest arrivals and special offers!</p>
-          <p class="footer-link">Instagram</p>
-          <p class="footer-link">Twitter</p>
-          <p class="footer-link">TikTok</p>
-        </div>
-      </div>-->
     </div>
 
     

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RT Shop</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons-font@latest/font/simple-icons.min.css">
+
+
+  <link rel="stylesheet" href="/Styles/main.scss">
+  <script type="module" src="Scripts/cart.js"></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="left">
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <a href="index.html"><p><span class="main-name">Righteous</span> <span class="sub-name">Scarfs&nbsp;&&nbsp;Accessories</span></p></a>
+    </div>
+
+      <nav class="nav-menu">
+        <ul>
+          <li><a class="header-link" href="index.html">HOME</a></li>
+          <li><a class="header-link" href="shop.html">SHOP</a></li>
+          <li><a class="header-link" href="about.html">ABOUT US</a></li>
+          <li><a class="header-link" href="blog.html">BLOG</a></li>
+          <li><a class="header-link" href="contact.html">CONTACT US</a></li>
+        </ul>
+      </nav>
+
+    <div class="right">
+      <div class="cart-section">
+        <a href="cart.html">
+          <img class="icon" src="/Icons/bag.svg" alt="Shopping bag icon">
+        </a>
+        <p id="cart-no" class="notification cart-quantity"></p>
+      </div>
+
+      <div class="user-account">
+        <img class="icon" src="/Icons/user.svg" alt="Mona Lisa icon">
+        <a class="user-sign-in" href="#">
+          <p>Sign In</p>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <h1 class="header-paragraph">CHECK OUT &rAarr;</h1>
+    <section class="cart-product__grid">
+      <article class="cart-product" hidden>
+        <img id="product-img" class="cart-product-img product-img" src="" loading="lazy" alt="...">
+        <div class="cart-product-info">
+          <h2 class="product-name"></h2>
+          <p id="product-detail" class="cart-product-detail product-detail"></p>
+          <p class="cart-product-price">
+            <span class="price-p">PRICE:</span>
+            <span class="currency">$</span>
+            <span class="price product-price"></span>
+          </p>
+          <div class="cart-product-action">
+            <div class="cart-product-quantity">
+              <p class="qty-p">Pcs</p>
+              <div class="product-qty">
+                <button id="dcr-btn" class="qty__inc">-</button>
+                <input id="product-qty" placeholder="-" type="text" inputmode="numeric" class="qty-input cart-quantity">
+                <button id="inc-btn" class="qty__inc">+</button>
+              </div>
+            </div>
+            
+            <div class="remove">
+              <button class="remove-button">Remove</button>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
