@@ -72,7 +72,7 @@ function populateBlogArticles() {
 
     card.dataset.category = category;
     if (image) {
-      image.src = `Blog Scarfs/${shuffledImages[index % shuffledImages.length]}`;
+      image.src = `/Blog Scarfs/${shuffledImages[index % shuffledImages.length]}`;
       image.alt = `${title} editorial image`;
       image.width = 1289;
       image.height = 1612;
