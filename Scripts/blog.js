@@ -4,6 +4,8 @@ const urlParams = new URLSearchParams(window.location.search);
 const filterFromURL = urlParams.get('filter');
 const filterIcon = document.querySelector('.filter-icon');
 const filterRow = document.querySelector('.filter-btn-row');
+import "./button-feedback.js";
+
 const filterBtns = document.querySelectorAll('.filter-button');
 const searchIcon = document.querySelector('.search-icon');
 const searchBar = document.querySelector('.search-bar');

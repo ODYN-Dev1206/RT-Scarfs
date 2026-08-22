@@ -1,5 +1,7 @@
 import { activeNavLink } from "./main";
 import { hamburgerAction } from "./main";
+import "./button-feedback.js";
+
 import { PRODUCTS } from "./product-data";
 
 const urlParams = new URLSearchParams(window.location.search);

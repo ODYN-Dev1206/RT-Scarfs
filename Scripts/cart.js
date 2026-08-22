@@ -1,3 +1,5 @@
+import "./button-feedback.js";
+
 import { PRODUCTS } from "./product-data";
 import { activeNavLink, hamburgerAction } from "./main";
 
@@ -117,8 +119,9 @@ function qtyChange(productId, qty = 1) {
   const incBtn = document.querySelectorAll('.qty-inc');
   const dcrBtn = document.querySelectorAll('.qty-dcr');
   const removeBtn = document.querySelectorAll('.remove-button');
+  const qtyInputs = document.querySelectorAll('.qty-input');
 
-  if (incBtn.length === 0 && dcrBtn.length === 0 && removeBtn.length === 0) return;
+  if (incBtn.length === 0 && dcrBtn.length === 0 && removeBtn.length === 0 && qtyInputs.length === 0) return;
 
   const updateQuantity = (button, changeAmount) => {
     const targetId = button?.dataset.id || button?.closest('.cart-product')?.dataset.id;
@@ -153,6 +156,32 @@ function qtyChange(productId, qty = 1) {
     btn.onclick = (e) => {
       e.preventDefault();
       updateQuantity(e.currentTarget, -(Number(qty) || 1));
+    };
+  });
+
+  qtyInputs.forEach((input) => {
+    const saveQuantity = () => {
+      const targetId = input.dataset.id || input.closest('.cart-product')?.dataset.id;
+      if (!targetId) return;
+
+      const nextQty = Number.parseInt(input.value, 10);
+      const cart = readCart();
+      const itemIndex = cart.findIndex((item) => item.id === targetId);
+
+      if (itemIndex === -1) return;
+
+      cart[itemIndex].qty = Number.isFinite(nextQty) && nextQty > 0 ? nextQty : 1;
+      localStorage.setItem('cart', JSON.stringify(cart));
+      renderCart();
+      cartUpdate();
+    };
+
+    input.onchange = saveQuantity;
+    input.onkeydown = (event) => {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        saveQuantity();
+      }
     };
   });
 

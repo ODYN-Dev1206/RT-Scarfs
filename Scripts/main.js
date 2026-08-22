@@ -1,5 +1,6 @@
 import { addToCart, cartUpdate } from "./cart";
 import { PRODUCTS } from "./product-data";
+import "./button-feedback.js";
 
 import "./auth.js";
 
