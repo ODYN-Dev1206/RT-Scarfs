@@ -1,0 +1,491 @@
+@use "variables" as *;
+
+.catalog-page,
+.journal-page {
+  background: $warm-cream;
+  color: $warmfeel;
+}
+
+.catalog-page .website,
+.journal-page .website {
+  width: min(100%, 90rem);
+  margin: 0 auto;
+}
+
+.catalog-page .shop-intro {
+  width: min(90%, 75rem);
+  margin: 0 auto;
+  padding: clamp(5rem, 11vw, 9rem) 0 clamp(2.5rem, 6vw, 5rem);
+  text-align: left;
+}
+
+.catalog-page .shop-intro h1 {
+  max-width: 9ch;
+  margin: 0;
+  color: $brown;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 0.95;
+  text-transform: none;
+}
+
+.catalog-page .shop-intro p {
+  display: inline-block;
+  margin: 1.25rem 1.25rem 0 0;
+  color: $softbrown;
+  font-family: "Lato", sans-serif;
+  font-size: clamp(0.75rem, 1vw, 0.95rem);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.catalog-page .shop {
+  width: min(90%, 75rem);
+  margin: 0 auto;
+  padding: 0 0 6rem;
+}
+
+.catalog-page .whole-shop {
+  gap: 2rem;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.catalog-page .filter {
+  position: sticky;
+  top: 4.5rem;
+  z-index: 3;
+  min-height: 3.5rem;
+  padding: 0.65rem 0.85rem;
+  overflow: hidden;
+  border: 1px solid $lightsand;
+  border-radius: 0;
+  background: rgba($warm-cream, 0.96);
+  box-shadow: 0 0.5rem 1.25rem rgba($deep-brown-black, 0.06);
+}
+
+.catalog-page .filter .quick-filter {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.catalog-page .filter .search {
+  flex: 0 1 auto;
+  width: auto;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.catalog-page .filter .filter-btn-row {
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.catalog-page .filter .filter-button {
+  border: 1px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  color: $softbrown;
+  font-family: "Lato", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.catalog-page .filter .filter-button:hover,
+.catalog-page .filter .filter-button.active {
+  transform: none;
+  border-color: $richgold;
+  background: $brown;
+  color: $whitesilk;
+  box-shadow: none;
+}
+
+.catalog-page .filter .search-bar {
+  width: 12rem;
+  min-width: 0;
+  height: 2rem;
+  box-sizing: border-box;
+  border: 0;
+  border-bottom: 1px solid $lightsand;
+  border-radius: 0;
+  background: transparent;
+  font-family: "Lato", sans-serif;
+  font-size: 0.78rem;
+  padding: 0.25rem 0.45rem;
+}
+
+.catalog-page .filter .search-bar.visible {
+  display: block;
+}
+
+.catalog-page .shop-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+  padding: 0;
+}
+
+.catalog-page .product-card {
+  gap: 0;
+  min-width: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid $lightsand;
+  border-radius: 0;
+  background: $whitesilk;
+  box-shadow: none;
+}
+
+.catalog-page .product-card:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0 1rem 2rem rgba($deep-brown-black, 0.12);
+}
+
+.catalog-page .product-card a {
+  gap: 0;
+}
+
+.catalog-page .product-card-image {
+  border-radius: 0;
+  background: $softbeige-white;
+}
+
+.catalog-page .product-card-image img {
+  height: clamp(15rem, 22vw, 21rem);
+  object-fit: cover;
+}
+
+.catalog-page .product-card__name {
+  margin: 1rem 1rem 0.35rem;
+  overflow: hidden;
+  color: $brown;
+  font-family: "Playfair Display", serif;
+  font-size: 1.08rem;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.catalog-page .product-card__price {
+  margin: 0 1rem 1rem;
+  color: $softbrown;
+  font-family: "Lato", sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+}
+
+.catalog-page .product-card > .buy-prod,
+.catalog-page .product-card a > .buy-prod {
+  align-self: stretch;
+  margin: 0 1rem 1rem;
+  border-radius: 0;
+  background: $brown;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.journal-page .website {
+  padding-bottom: 5rem;
+}
+
+.journal-page .blog-sect {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
+.journal-page .blog-hero {
+  box-sizing: border-box;
+  width: 100%;
+  height: clamp(14rem, 20vw, 21rem);
+  max-width: 100%;
+  margin: 0;
+  background: $champagne;
+}
+
+.journal-page .hero-image {
+  object-position: center 50%;
+  opacity: 0.82;
+}
+
+.journal-page .blog-hero::after {
+  content: "";
+  grid-area: stack;
+  background: linear-gradient(90deg, rgba($warm-cream, 0.86), rgba($warm-cream, 0.2) 72%);
+}
+
+.journal-page .hero-content {
+  align-self: end;
+  justify-self: start;
+  z-index: 1;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0 clamp(1.5rem, 8.5vw, 8rem) 3.25rem;
+  color: $brown;
+  text-align: left;
+}
+
+.journal-page .hero-content h1 {
+  margin: 0;
+  color: $brown;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 0.9;
+}
+
+.journal-page .hero-content p {
+  box-sizing: border-box;
+  width: min(100%, 30rem);
+  margin: 0.9rem 0 0;
+  color: $brown;
+  font-family: "Lato", sans-serif;
+  font-size: clamp(0.78rem, 1vw, 0.95rem);
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+}
+
+.journal-page .detail-sect {
+  width: min(90%, 90rem);
+  margin: 1.25rem auto 0;
+  padding: 0 0 5rem;
+  gap: 2rem;
+  border: 0;
+  border-radius: 0;
+  background: $warm-cream;
+  box-shadow: none;
+}
+
+.journal-page .featured-sect {
+  grid-template-columns: 1.28fr 0.72fr;
+  grid-template-rows: auto;
+  height: clamp(21rem, 22vw, 24rem);
+  min-height: 21rem;
+  align-items: stretch;
+  gap: 0;
+  padding: 0;
+  background: $champagne;
+}
+
+.journal-page .featured-sect img {
+  align-self: stretch;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  max-height: none;
+  padding: 0;
+  border-radius: 0;
+  object-position: center 42%;
+}
+
+.journal-page .featured-sect > div {
+  min-width: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+}
+
+.journal-page .featured-sect p:first-child {
+  margin: 0 0 1rem;
+  color: $richgold;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.journal-page .featured-sect h2 {
+  margin: 0;
+  color: $brown;
+  max-width: 12ch;
+  font-size: clamp(1.7rem, 3vw, 3rem);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.journal-page .featured-sect .featured-par {
+  max-width: 30ch;
+  margin: 0.8rem 0 1.25rem;
+  color: $softbrown;
+  font-size: clamp(0.75rem, 1vw, 0.9rem);
+  line-height: 1.35;
+}
+
+.journal-page .featured-sect > div p,
+.journal-page .featured-sect > div h2,
+.journal-page .featured-sect > div a {
+  flex-shrink: 0;
+}
+
+.journal-page .article-button {
+  border: 0;
+  border-radius: 0;
+  background: $brown;
+  color: $whitesilk;
+  font-family: "Lato", sans-serif;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.journal-page .detail-sect > section > .filter {
+  margin: 0 0 0.75rem;
+  padding: 0.65rem 1rem;
+  border: 0;
+  border-bottom: 1px solid $lightsand;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.journal-page .detail-sect > section > .filter .quick-filter {
+  padding: 0;
+}
+
+.journal-page .detail-sect > section > .filter .filter-icon {
+  width: 1.2rem;
+}
+
+.journal-page .detail-sect > section > .filter .search {
+  width: auto;
+  max-width: none;
+  padding: 0;
+}
+
+.journal-page .detail-sect > section > .filter .filter-button {
+  border-radius: 0;
+  color: $softbrown;
+  font-family: "Lato", sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.journal-page .detail-sect > section > .filter .filter-button.active,
+.journal-page .detail-sect > section > .filter .filter-button:hover {
+  background: $brown;
+  color: $whitesilk;
+}
+
+.journal-page .blog-detail {
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.55rem;
+  margin-top: 0;
+  overflow-x: hidden;
+  padding: 0.1rem 0 0.75rem;
+}
+
+.journal-page .blog-article {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid $lightsand;
+  border-bottom: 0 !important;
+  background: $whitesilk;
+  box-shadow: none;
+}
+
+.journal-page .blog-article > div:first-child {
+  height: clamp(7rem, 10vw, 10rem);
+  overflow: hidden;
+}
+
+.journal-page .blog-article img {
+  border-radius: 0;
+  transition: transform 0.45s ease;
+}
+
+.journal-page .blog-article:hover img {
+  transform: scale(1.04);
+}
+
+.journal-page .blog-info {
+  padding: 1rem 1rem 0;
+}
+
+.journal-page .blog-info .title,
+.journal-page .blog-info .date {
+  padding: 0;
+  color: $richgold;
+  font-family: "Lato", sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.journal-page .blog-info .date {
+  color: $softbrown;
+  letter-spacing: 0.04em;
+  text-transform: none;
+}
+
+.journal-page .blog-article h3 {
+  max-width: none;
+  margin: 0.6rem 1rem 0.35rem;
+  padding: 0;
+  color: $brown;
+  font-size: clamp(0.95rem, 1.35vw, 1.25rem);
+  font-weight: 500;
+}
+
+.journal-page .blog-article > p {
+  max-width: none;
+  margin: 0 1rem 1.25rem;
+  padding: 0;
+  color: $softbrown;
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.journal-page .blog-article .read {
+  width: auto;
+  margin: auto 1rem 1rem;
+  padding: 0.7rem 0;
+  border: 0;
+  border-top: 1px solid $lightsand;
+  background: transparent;
+  color: $brown;
+  font-size: 0.7rem;
+  text-align: left;
+}
+
+@media (max-width: 900px) {
+  .catalog-page .shop-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .journal-page .blog-detail { grid-template-columns: repeat(4, minmax(10.5rem, 1fr)); }
+}
+
+@media (max-width: 640px) {
+  .catalog-page .shop-intro,
+  .catalog-page .shop { width: calc(100% - 2rem); }
+  .catalog-page .shop-intro { padding-top: 4.5rem; }
+  .catalog-page .shop-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.7rem; }
+  .catalog-page .product-card-image img { height: 12rem; }
+  .catalog-page .product-card__name { margin: 0.7rem 0.7rem 0.3rem; font-size: 0.92rem; }
+  .catalog-page .product-card__price { margin: 0 0.7rem 0.7rem; font-size: 0.7rem; }
+  .catalog-page .product-card > .buy-prod,
+  .catalog-page .product-card a > .buy-prod { margin: 0 0.7rem 0.7rem; padding: 0.55rem 0.5rem; font-size: 0.62rem; }
+  .catalog-page .filter { position: static; border-radius: 0; }
+  .journal-page .blog-hero { height: 18rem; }
+  .journal-page .hero-content { width: 100%; padding-right: 2rem; padding-bottom: 2.5rem; padding-left: 2rem; }
+  .journal-page .detail-sect { width: calc(100% - 2rem); margin-top: 1.25rem; gap: 2.5rem; }
+  .journal-page .featured-sect { grid-template-columns: 1fr; gap: 0; }
+  .journal-page .featured-sect { height: auto; min-height: 0; }
+  .journal-page .featured-sect img { height: 15rem; min-height: 15rem; max-height: none; }
+  .journal-page .featured-sect > div { padding: 1.5rem; }
+  .journal-page .blog-detail { grid-template-columns: repeat(2, minmax(10rem, 1fr)); }
+  .journal-page .blog-article > div:first-child { height: 14rem; }
+}

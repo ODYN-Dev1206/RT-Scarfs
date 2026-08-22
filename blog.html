@@ -15,7 +15,7 @@
   <script type="module" src="Scripts/blog.js"></script>
 </head>
 
-<body>
+<body class="journal-page">
   <header class="header-info">
     <div class="left">
       <button class="hamburger" aria-label="Toggle menu">
@@ -57,7 +57,7 @@
     <div class="website">
       <section class="blog-sect">
         <div class="blog-hero">
-          <img class="hero-image" src="Blog Scarfs/puscas-adryan-0iLzAb4_-lA-unsplash (1).jpg" alt="">
+          <img class="hero-image" src="Blog Scarfs/puscas-adryan-0iLzAb4_-lA-unsplash (1).jpg" width="1289" height="1612" decoding="async" alt="Ivory scarf styled in the Righteous editorial collection">
           <div class="hero-content">
             <h1>Our Journal</h1>
             <p>Stories of Elegance satisfying Individual Uniqueness. Styling you the version you want to be.</p>
@@ -90,7 +90,7 @@
               </div>
             </div>
             <div class="search">
-              <input class="search-bar" type="text" placeholder="Search articles...">
+                <input class="search-bar" type="search" aria-label="Search stories by title or category" placeholder="Search stories by title or category">
               <img class="search-icon" src="Icons/search.svg" alt="search-icon">
             </div>
           </div>
@@ -530,7 +530,7 @@
         </section>
       </section>
 
-      <section class="newsletter-section">
+      <section id="newsletter-section" class="newsletter-section">
         <div class="newsletter-highlight">
           <div class="icon-circle">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -560,28 +560,39 @@
   </main>
 
   <footer>
-    <div class="footer-top">
-      <a class="footer-link" href="newsletter.html">NEWSLETTER</a>
-      <div class="contact">
-        <h5 class="footer-link">CONTACT US</h5>      
-      
-        <div class="social-icons">
-          <a href="https://gmail.com/@yourhandle" aria-label="Gmail"><i class="si si-gmail"></i></a>
-          <a href="https://facebook.com/@yourhandle" aria-label="Facebook"><i class="si si-facebook"></i></a>
-          <a href="https://x.com/@yourhandle" aria-label="X"><i class="si si-x"></i></a>
-          <a href="https://instagram.com/yourhandle" aria-label="Instagram"><i class="si si-instagram"></i></a>
-          <a href="https://pinterest.com/yourhandle" aria-label="Pinterest"><i class="si si-pinterest"></i></a>
-          <a href="https://tiktok.com/@yourhandle" aria-label="TikTok"><i class="si si-tiktok"></i></a>
+    <div class="luxury-footer">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <p class="footer-eyebrow">RT Scarfs</p>
+          <h4>Refined pieces for graceful dressing.</h4>
+          <p class="footer-intro">Timeless silk and sculptural accessories designed to elevate every moment.</p>
+        </div>
+
+        <div class="footer-links">
+          <a class="footer-link" href="blog.html#newsletter-section">Newsletter</a>
+          <a class="footer-link" href="about.html">About Us</a>
+          <a class="footer-link" href="contact.html#faq-section">FAQs</a>
+          <a class="footer-link" href="contact.html">Contact Us</a>
+        </div>
+
+        <div class="footer-contact">
+          <h5>Visit the Atelier</h5>
+          <a href="mailto:odunayo2305@gmail.com">odunayo2305@gmail.com</a>
+          <div class="social-icons">
+            <a href="mailto:odunayo2305@gmail.com" aria-label="Email"><i class="si si-gmail"></i></a>
+            <a href="https://facebook.com/@yourhandle" aria-label="Facebook"><i class="si si-facebook"></i></a>
+            <a href="https://x.com/thee__odunayor" aria-label="X"><i class="si si-x"></i></a>
+            <a href="https://instagram.com/yourhandle" aria-label="Instagram"><i class="si si-instagram"></i></a>
+            <a href="https://pinterest.com/yourhandle" aria-label="Pinterest"><i class="si si-pinterest"></i></a>
+            <a href="https://tiktok.com/@yourhandle" aria-label="TikTok"><i class="si si-tiktok"></i></a>
+          </div>
         </div>
       </div>
-      <a class="footer-link" href="about.html">ABOUT US</a>
-      <a class="footer-link" href="faqs.html">FAQS</a>
-    </div>
 
-    
-    <div class="footer-content-info">
-      <p class="footer-content-par">©Copyright RT Scarfs, 2026.</p>
-      <p class="footer-content-par">All Rights Reserved.</p>
+      <div class="footer-content-info">
+        <p class="footer-content-par">© 2026 RT Scarfs. All Rights Reserved.</p>
+        <p class="footer-content-par">Crafted elegance for Individuality.</p>
+      </div>
     </div>
   </footer>
 </body>

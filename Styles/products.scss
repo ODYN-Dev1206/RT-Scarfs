@@ -11,7 +11,7 @@
   gap: 1rem;
 
   .product-img-cont{
-    aspect-ratio: 4/5;
+    aspect-ratio: 8/7;
     overflow: hidden;
     img {
       width: 100%;
@@ -19,10 +19,11 @@
       object-position: center;
       object-fit: contain;
       cursor: pointer;
+      @include round-corner;
     }
 
     @media (min-width: 1024px) {
-      aspect-ratio: 16/9;
+      aspect-ratio: 16/6.3;
     }
   }
 
@@ -72,8 +73,8 @@
         font-family: 'Playfair Display', serif;
         font-weight: 500;
         white-space: nowrap;
-        background-color: $brown;
-        color: $warmcream;
+        background: linear-gradient(05deg, $brown, $softbrown);
+        color: $whitesilk;  
         padding: 0.5rem;
         border-radius: 5px;
         align-items: center;
@@ -92,6 +93,8 @@
         padding: 0.5rem;
         border-radius: 5px;
         text-align: center;
+        background: linear-gradient(05deg, $brown, $softbrown);
+        color: $whitesilk; 
 
         &.active{    
           background-color: $gold;
@@ -133,7 +136,6 @@
     //grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
     padding: 0.5rem;
-    scrollbar-width: none;
 
 
     img {
@@ -171,5 +173,426 @@
     font-weight: 700;
     color: $brown;
     font-size: clamp(1.35rem, 3.75vw, 2.5rem);
+  }
+}
+
+// Product page editorial layout
+.product-page {
+  background: $warm-cream;
+  color: $warmfeel;
+
+  .website {
+    width: min(92%, 78rem);
+    margin: 0 auto;
+  }
+
+  .product-breadcrumb {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    padding: 5.5rem 0 1.5rem;
+    color: $softbrown;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    a {
+      color: $darkgold;
+      text-decoration: none;
+    }
+  }
+
+  .about-product {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(20rem, 0.95fr);
+    gap: clamp(2rem, 6vw, 7rem);
+    align-items: center;
+    margin: 0;
+    padding: 0 0 clamp(5rem, 10vw, 9rem);
+  }
+
+  .product-gallery {
+    position: relative;
+
+    &__eyebrow,
+    &__note {
+      margin: 0;
+      color: $darkgold;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    &__eyebrow {
+      margin-bottom: 0.8rem;
+    }
+
+    &__note {
+      position: relative;
+      z-index: 1;
+      margin-top: 0.85rem;
+      color: $softbrown;
+      letter-spacing: 0.04em;
+      text-transform: none;
+    }
+
+    @media (min-width: 601px) {
+      &__note {
+        margin-top: 2.5rem;
+      }
+    }
+
+    @media (min-width: 901px) {
+      &__note {
+        margin-top: 3rem;
+      }
+    }
+  }
+
+  .product-img-cont {
+    position: relative;
+    aspect-ratio: 5 / 6;
+    max-height: 38rem;
+    overflow: hidden;
+    background: $champagne;
+    border-radius: 0;
+    box-shadow: 1.25rem 1.25rem 0 $softbeige;
+
+    img {
+      border-radius: 0;
+      object-fit: cover;
+    }
+  }
+
+  .product-gallery__label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1;
+    padding: 0.45rem 0.7rem;
+    background: $brown;
+    color: $whitesilk;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .product-info {
+    display: block;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+
+    &__eyebrow {
+      margin: 0 0 1rem;
+      color: $darkgold;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 10ch;
+      margin: 0;
+      color: $brown;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 0.92;
+    }
+
+    .product-detail {
+      max-width: 42ch;
+      margin: 1.75rem 0 0;
+      color: $softbrown;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0;
+      line-height: 1.7;
+    }
+  }
+
+  .product-rating-row {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    margin-top: 1.4rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid $lightsand;
+
+    .rating {
+      margin: 0;
+      color: $darkgold;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.12em;
+    }
+
+    span {
+      color: $softbrown;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.75rem;
+    }
+  }
+
+  .product-purchase {
+    margin-top: 2rem;
+    padding: 1.25rem 0;
+    border-top: 1px solid $lightsand;
+    border-bottom: 1px solid $lightsand;
+
+    .product-price-shop {
+      display: flex;
+      gap: 1rem;
+      align-items: end;
+      justify-content: space-between;
+      padding: 0;
+    }
+
+    .product-price__label {
+      display: block;
+      margin-bottom: 0.3rem;
+      color: $softbrown;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .product-price {
+      display: block;
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      color: $brown;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .buy-prod {
+      min-width: 10rem;
+      padding: 0.9rem 1.25rem;
+      border: 1px solid $brown;
+      border-radius: 0;
+      background: $brown;
+      color: $whitesilk;
+      cursor: pointer;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: background 0.25s ease, color 0.25s ease;
+
+      &:hover,
+      &:focus-visible {
+        background: $richgold;
+        border-color: $richgold;
+        outline: none;
+      }
+    }
+
+    &__note {
+      margin: 1rem 0 0;
+      color: $softbrown;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.72rem;
+
+      i {
+        margin-right: 0.35rem;
+        color: $darkgold;
+      }
+    }
+  }
+
+  .product-perks {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+
+    div {
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    strong {
+      color: $richgold;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.65rem;
+    }
+
+    span {
+      color: $softbrown;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.7rem;
+      line-height: 1.35;
+    }
+  }
+
+  .product-rec {
+    width: 100%;
+    margin: 0;
+    padding: clamp(3rem, 7vw, 6rem) 0;
+    border-top: 1px solid $lightsand;
+  }
+
+  .section-heading {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    gap: 0.5rem 2rem;
+    margin-bottom: 2rem;
+
+    p {
+      grid-column: 1 / -1;
+      margin: 0;
+      color: $darkgold;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0;
+      color: $brown;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 3.4rem);
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    a {
+      color: $brown;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+  }
+
+  .similar-products {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    height: auto;
+    padding: 0;
+    overflow: visible;
+  }
+
+  .product-rec-card {
+    display: grid;
+    min-width: 0;
+    color: $brown;
+    text-decoration: none;
+
+    img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      height: auto;
+      border-radius: 0;
+      background: $champagne;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    div {
+      display: flex;
+      gap: 0.5rem;
+      align-items: start;
+      justify-content: space-between;
+      padding-top: 0.75rem;
+    }
+
+    h3 {
+      margin: 0;
+      color: $brown;
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 500;
+      text-align: left;
+    }
+
+    span {
+      flex: 0 0 auto;
+      color: $softbrown;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.78rem;
+    }
+
+    &:hover img,
+    &:focus-visible img {
+      transform: translateY(-0.35rem);
+    }
+
+    &:focus-visible {
+      outline: 2px solid $richgold;
+      outline-offset: 0.3rem;
+    }
+  }
+
+  .collection {
+    width: 100%;
+    padding: clamp(3rem, 7vw, 6rem) 0 clamp(5rem, 10vw, 9rem);
+    border-top: 1px solid $lightsand;
+  }
+
+  @media (max-width: 900px) {
+    .about-product {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .product-info h1 {
+      max-width: 14ch;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .product-breadcrumb {
+      padding-top: 5rem;
+    }
+
+    .product-img-cont {
+      box-shadow: 0.75rem 0.75rem 0 $softbeige;
+    }
+
+    .product-purchase .product-price-shop {
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    .product-purchase .buy-prod {
+      width: 100%;
+    }
+
+    .product-perks {
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+    }
+
+    .section-heading {
+      grid-template-columns: 1fr;
+
+      a {
+        margin-top: 0.5rem;
+      }
+    }
+
+    .similar-products {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem 0.75rem;
+    }
+
+    .product-rec-card h3 {
+      font-size: 0.9rem;
+    }
   }
 }

@@ -2,18 +2,30 @@
 
 @use "mixins" as *;
 
+.cart-page-main {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding-bottom: 1.5rem;
+}
+
 
 .header-paragraph {
-  margin-top: 5rem;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  //margin-top: 4rem;
   text-align: center;
+  margin-bottom: 1rem;
+  color: $charcoal;
+ margin-top: 5rem;
   font-family: 'Playfair Display', serif;
-  color: $brown;
 }
 .cart-product__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   gap: 0.8rem;
   padding: 0.1rem;
+  width: min(100%, 90rem);
+  margin: 0 auto 2rem;
 
   @media (min-width: 1440px) {
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
@@ -60,6 +72,7 @@
     grid-template-columns: 1fr;
     gap: 0.2rem;
     padding: 0.2rem;
+    min-width: 0;
     align-items: center;
     margin-top: 1.5%;
 
@@ -78,41 +91,84 @@
     .cart-product-detail {
       font-family: 'Lato', sans-serif;
       font-weight: 100;
-      font-size: clamp(0.65rem, 1vw, 1rem);
+      font-size: clamp(0.65rem, 1.3vw, 1rem);
       margin-top: 0.2rem;
-      max-width: 20ch;
-      text-overflow: hidden;
-      white-space: wrap;
+      min-width: 0;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      @media (min-width: 1440px) {
+       max-width: 30ch;
+      }
     }
     .cart-product-price {
       .price-p,
-      .currency,
-      .price {
+      .cart-page-main {
+        display: flex;
+        flex-direction: column;
+        min-height: 0;
+        padding-bottom: 1.5rem;
         font-family: 'Playfair Display', serif;
         font-weight: 200;
         font-size: clamp(0.75rem, 1.3vw, 1rem);
       }
       .currency {
         margin: 0;
-        padding: 0;
+        width: min(100%, 90rem);
+        margin: 0 auto 2rem;
       }
     }
 
+        display: grid;
+        flex: 1;
+        min-height: 18rem;
+        place-content: center;
+        justify-items: center;
+        gap: 1rem;
+        padding: 2rem;
+        text-align: center;
+
+        p {
+          max-width: 28ch;
+          margin: 0;
+          color: $brown;
+          font-family: 'Playfair Display', serif;
+          font-size: clamp(1.3rem, 3vw, 2rem);
+          line-height: 1.2;
+        }
+
+        a {
+          color: $darkgold;
+          font-family: 'Lato', sans-serif;
+          font-size: 0.8rem;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+        }
+      }
+
+      .checkout-action {
+        display: flex;
+        justify-content: center;
+        margin-top: auto;
+        padding: 1rem 1rem 0;
+        border-top: 1px solid $lightsand;
+      }
     .cart-product-action {
-      display: grid;
-      grid-template-columns: repeat(2, 5rem);
-      gap: 0.85rem;
-      padding: 0.2rem;
-      text-align: center;
-      align-items: center;
+        display: block;
+        width: min(100%, 32rem);
+        padding: 0.85rem 1rem;
       justify-content: space-between;
 
 
       .cart-product-quantity {
         @media (min-width: 2560px) {
           display: flex;
-          flex-direction: row;
-          gap: 0.5rem;
+        &:hover,
+        &:focus-visible {
+          background-color: $richgold;
+          outline: none;
         }
       }
 
@@ -188,4 +244,62 @@
       }
     }
   }
+}
+
+.checkout-btn {
+  display: block;
+  width: min(100%, 32rem);
+  padding: 0.85rem 1rem;
+  text-align: center;
+  border-radius: 3px;
+  background-color: $brown;
+  color: $whitesilk;
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    background-color: $richgold;
+    outline: none;
+  }
+}
+
+.cart-empty-state {
+  display: grid;
+  flex: 1;
+  min-height: 18rem;
+  place-content: center;
+  justify-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  text-align: center;
+
+  p {
+    max-width: 28ch;
+    margin: 0;
+    color: $brown;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.3rem, 3vw, 2rem);
+    line-height: 1.2;
+  }
+
+  a {
+    color: $darkgold;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+}
+
+.cart-empty-state[hidden],
+.checkout-action[hidden] {
+  display: none;
+}
+
+.checkout-action {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  padding: 1rem 1rem 0;
+  border-top: 1px solid $lightsand;
 }

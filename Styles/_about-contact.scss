@@ -1,0 +1,80 @@
+@use "variables" as *;
+
+.brand-page { background: $warm-cream; color: $warmfeel; }
+.brand-main { width: min(100%, 90rem); margin: 0 auto; padding-bottom: 5rem; }
+.brand-eyebrow { margin: 0 0 0.75rem; color: $richgold; font-family: "Lato", sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.brand-rule { display: block; width: 2rem; height: 2px; margin: 1.2rem 0; background: $richgold; }
+.brand-hero { display: grid; grid-template-columns: 0.82fr 1.18fr; min-height: 28rem; background: $champagne; }
+.brand-hero__copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(2rem, 7vw, 7rem); }
+.brand-hero h1 { margin: 0; color: $brown; font-family: "Playfair Display", serif; font-size: clamp(3rem, 6vw, 6rem); font-weight: 500; line-height: 0.88; text-transform: uppercase; }
+.brand-hero__copy > p:last-child { max-width: 29ch; margin: 0; color: $softbrown; font-family: "Lato", sans-serif; font-size: 0.82rem; line-height: 1.55; }
+.brand-hero > img { width: 100%; height: 100%; min-height: 28rem; object-fit: cover; object-position: center; }
+.brand-band { display: grid; grid-template-columns: 1fr 1fr; align-items: stretch; background: $softbeige-white; }
+.brand-band > img { width: 100%; height: 100%; min-height: 19rem; object-fit: cover; }
+.brand-band > div { display: flex; flex-direction: column; justify-content: center; padding: clamp(2rem, 6vw, 5rem); }
+.brand-band h2, .brand-section-heading h2, .contact-workspace h2, .contact-connect h2 { margin: 0; color: $brown; font-family: "Playfair Display", serif; font-size: clamp(1.8rem, 3.4vw, 3rem); font-weight: 500; line-height: 1; }
+.brand-band p:not(.brand-eyebrow), .contact-connect p:not(.brand-eyebrow) { max-width: 38ch; margin: 1rem 0 0; color: $softbrown; font-family: "Lato", sans-serif; font-size: 0.84rem; line-height: 1.65; }
+.brand-philosophy, .brand-values, .faq-section { padding: clamp(2.5rem, 5vw, 5rem); background: $warm-cream; }
+.brand-section-heading { margin-bottom: 2rem; text-align: center; }
+.brand-section-heading .brand-eyebrow { margin-bottom: 0.5rem; }
+.brand-section-heading h2 { font-size: clamp(1.8rem, 3vw, 2.8rem); }
+.philosophy-grid, .brand-values { display: grid; grid-template-columns: repeat(3, 1fr); }
+.philosophy-grid article { padding: 1rem clamp(1rem, 3vw, 3rem); border-right: 1px solid $lightsand; text-align: center; }
+.philosophy-grid article:last-child { border-right: 0; }
+.philosophy-grid span { color: $richgold; font-family: "Lato", sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; }
+.philosophy-grid h3 { margin: 0.65rem 0 0.4rem; color: $brown; font-family: "Playfair Display", serif; font-size: 1.3rem; font-weight: 500; }
+.philosophy-grid p, .brand-values p { margin: 0; color: $softbrown; font-family: "Lato", sans-serif; font-size: 0.75rem; line-height: 1.5; }
+.brand-craft { background: $champagne; }
+.brand-craft > img { order: 2; }
+.brand-link { display: inline-flex; gap: 0.6rem; margin-top: 1.5rem; color: $brown; font-family: "Lato", sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-decoration: none; }
+.brand-link span { font-size: 1.1rem; }
+.brand-values { grid-template-columns: repeat(4, 1fr); padding: 2rem clamp(1rem, 4vw, 4rem); border-top: 1px solid $lightsand; }
+.brand-values article { padding: 0 1.5rem; border-right: 1px solid $lightsand; text-align: center; }
+.brand-values article:last-child { border-right: 0; }
+.brand-values strong { display: block; margin-bottom: 0.5rem; color: $brown; font-family: "Lato", sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.contact-hero > img { object-position: center; }
+.contact-workspace { display: grid; grid-template-columns: 1.1fr 0.9fr; background: $softbeige-white; }
+.contact-form-panel, .contact-info { padding: clamp(2rem, 5vw, 4.5rem); }
+.contact-form-panel { border-right: 1px solid $lightsand; }
+.contact-form-panel h2 { margin-bottom: 1.5rem; }
+.contact-form-panel form { display: grid; gap: 0.45rem; }
+.contact-form-panel label { color: $softbrown; font-family: "Lato", sans-serif; font-size: 0.68rem; }
+.contact-form-panel input, .contact-form-panel textarea { width: 100%; box-sizing: border-box; border: 1px solid $lightsand; border-radius: 0; padding: 0.7rem; background: $warm-cream; color: $brown; font-family: "Lato", sans-serif; font-size: 0.78rem; resize: vertical; }
+.contact-form-panel input:focus, .contact-form-panel textarea:focus { outline: 1px solid $richgold; }
+.contact-form-panel button { margin-top: 0.75rem; border: 0; border-radius: 0; padding: 0.8rem; background: $brown; color: $whitesilk; font-family: "Lato", sans-serif; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; }
+.contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
+.contact-info > .brand-eyebrow { margin-bottom: 0; }
+.contact-info div { padding-left: 1rem; border-left: 2px solid $richgold; }
+.contact-info strong { display: block; color: $brown; font-family: "Lato", sans-serif; font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.contact-info a, .contact-info p { display: block; margin: 0.35rem 0 0; color: $softbrown; font-family: "Lato", sans-serif; font-size: 0.8rem; line-height: 1.5; text-decoration: none; }
+.contact-connect { display: grid; grid-template-columns: 0.85fr 1.15fr; background: $champagne; }
+.contact-connect > div { display: flex; flex-direction: column; justify-content: center; padding: clamp(2rem, 5vw, 4rem); }
+.contact-connect img { width: 100%; height: 100%; min-height: 19rem; object-fit: cover; }
+.contact-socials { display: flex; gap: 0.6rem; margin-top: 1.5rem; }
+.contact-socials a { display: grid; width: 2.2rem; height: 2.2rem; place-items: center; border: 1px solid $lightsand; color: $brown; font-size: 0.85rem; text-decoration: none; transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease; }
+.contact-socials a:hover { background: $brown; color: $whitesilk; transform: translateY(-2px); }
+.contact-socials i { line-height: 1; }
+.faq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.65rem; max-width: 65rem; margin: 0 auto; }
+.faq-grid details { border-bottom: 1px solid $lightsand; padding: 0.85rem 0; }
+.faq-grid summary { color: $brown; cursor: pointer; font-family: "Lato", sans-serif; font-size: 0.75rem; font-weight: 700; list-style: none; }
+.faq-grid summary::-webkit-details-marker { display: none; }
+.faq-grid summary::after { content: "+"; float: right; color: $richgold; font-size: 1rem; }
+.faq-grid details[open] summary::after { content: "-"; }
+.faq-grid details p { max-width: 36ch; margin: 0.7rem 0 0; color: $softbrown; font-family: "Lato", sans-serif; font-size: 0.75rem; line-height: 1.5; }
+
+@media (max-width: 700px) {
+  .brand-main { width: 100%; }
+  .brand-hero, .brand-band, .contact-workspace, .contact-connect { grid-template-columns: 1fr; }
+  .brand-hero { min-height: 0; }
+  .brand-hero__copy { min-height: 20rem; padding: 2.5rem 1.25rem; }
+  .brand-hero > img { min-height: 17rem; max-height: 23rem; }
+  .brand-band > img { min-height: 15rem; max-height: 20rem; }
+  .brand-craft > img { order: 0; }
+  .philosophy-grid, .brand-values { grid-template-columns: repeat(2, 1fr); }
+  .philosophy-grid article:nth-child(2), .brand-values article:nth-child(2) { border-right: 0; }
+  .philosophy-grid article:nth-child(-n + 2), .brand-values article:nth-child(-n + 2) { border-bottom: 1px solid $lightsand; }
+  .brand-values article { padding: 1rem 0.7rem; }
+  .contact-form-panel { border-right: 0; border-bottom: 1px solid $lightsand; }
+  .contact-connect img { min-height: 16rem; max-height: 22rem; }
+  .faq-grid { grid-template-columns: 1fr; }
+}

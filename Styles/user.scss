@@ -15,6 +15,15 @@
   border-radius: 0.6rem;
   border: solid 1.25px $warmneutral;
 
+  .profile-picture {
+    width: 1.35rem;
+    height: 1.35rem;
+    border: 1px solid $warmneutral;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+  }
+
   @media (min-width: 768px) {
     max-width: 8rem;
     margin-left: 2vw;
@@ -23,11 +32,10 @@
   
 
   a {
-    letter-spacing: 1.8px;
     text-align: center;
     @include a-link;
 
-    :hover{
+    &:hover {
       transition: none;
       text-decoration: none;
     }
@@ -37,9 +45,9 @@
   p{
     white-space: nowrap;
     text-align: center;
-    color: $warmneutral;
-    font-family: 'Playfair Display', sans-serif;
-    font-size: clamp(0.4rem, 1.35vw, 0.75rem);
+    color: inherit;
+    font: inherit;
+    margin: 0;
     cursor: pointer;
   }
 }

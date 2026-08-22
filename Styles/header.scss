@@ -6,7 +6,7 @@ header{
   z-index: 200;
   position: fixed;
   top: 0;
-  background-color: $softbrown;
+  background: linear-gradient(135deg, $deep-brown-black 0%, $brown 100%);
   width: 100vw;
   display: flex;
   flex-direction: row;
@@ -17,9 +17,11 @@ header{
   justify-content: space-between;
   align-items: center;
   transition: all 0.3s ease;
+  border-bottom: 1px solid rgba($richgold, 0.28);
+  box-shadow: 0 6px 20px rgba($deep-brown-black, 0.18);
 
   &.scrolled {
-    box-shadow: 0 2px 10px rgba(21, 20, 20, 0.1);
+    box-shadow: 0 8px 24px rgba($deep-brown-black, 0.24);
   }
 
 
@@ -45,7 +47,7 @@ header{
     line-height: 1;
     line-break: auto;
     max-width: 10ch;
-    color: $warm-cream;
+    color: $warmcream;
     margin-left: 0.5rem;
 
     @media (min-width: 768px) {
@@ -58,6 +60,7 @@ header{
       text-underline-offset: 6px;
       text-align: center;
       font-size: clamp(0.75rem, 1.25vw, 1.5rem);
+      color: $warmcream;
     }
 
     .sub-name {
@@ -67,6 +70,7 @@ header{
       letter-spacing: 0;
       margin-top: 0;
       text-decoration: none;
+      color: rgba($warmcream, 0.84);
     }
   }
 
@@ -99,7 +103,7 @@ header{
     display: block;
     height: 1.5px;
     width: 2vw;
-    background-color: $warmcream;
+    background-color: $lightsand;
     transition: transform 0.3s ease, opacity 0.3s ease;
   }
 
@@ -137,12 +141,13 @@ header{
     align-items: left;
     left: 0;
     width: 100%;
-    background-color: $lightsand;
+    background: rgba($warmcream, 0.97);
     padding: 1rem;
+    border-bottom: 1px solid rgba($richgold, 0.28);
 
     a {
       color: $brown;
-      font-weight: bold;
+      font-weight: 600;
     }
   }
 
@@ -159,8 +164,10 @@ header{
 
     a.active-page {
       border-radius: 0.5rem;
-      background-color: $warmtaupe;
+      background-color: rgba($richgold, 0.2);
+      color: $lightsand;
       padding: 0.35rem 1rem;
+      border: 1px solid rgba($richgold, 0.32);
     }
   }
   
@@ -222,13 +229,14 @@ header{
       position: absolute;
       top: 2.5px;
       right: 0.15px;
-      color: $charcoal;
+      color: $whitesilk;
       justify-content: top;
-      padding: 1.5px 2.5px 1px 0;
+      padding: 0.1rem;
       font-size: clamp(0.45rem, 0.7vw, 0.65rem);
       font-family: 'Lato', sans-serif;
-      background-color: $warm-neutral;
-      border-radius: 7px;
+      background-color: $softbrown;
+      border-radius: 50%;
+
     }
   }
   
@@ -243,6 +251,7 @@ header{
     cursor: pointer;
     border: none;
     flex: 1;
+    filter: brightness(1.05);
   }
 
   @media (min-width: 768px) {

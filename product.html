@@ -57,100 +57,136 @@
     </div>
   </header>
 
-  <main>
+  <main class="product-page">
     <div class="website">
+      <nav class="product-breadcrumb" aria-label="Breadcrumb">
+        <a href="shop.html">Shop</a>
+        <span aria-hidden="true">/</span>
+        <span id="product-crumb">Product</span>
+      </nav>
+
       <section class="about-product">
-        <div class="product-img-cont">
-          <img class="product-img" id="product-img" src="" loading="lazy" alt="">
+        <div class="product-gallery">
+          <p class="product-gallery__eyebrow">The Righteous edit</p>
+          <div class="product-img-cont">
+            <span class="product-gallery__label">Featured piece</span>
+            <img class="product-img" id="product-img" src="" loading="lazy" alt="">
+          </div>
+          <p class="product-gallery__note">Designed to be worn, layered, and returned to.</p>
         </div>
 
         <div class="product-info">
-          <h2 id="product-name"></h2>
-          <div class="product-par">
-            <p id="product-detail" class="product-detail"></p>
+          <p class="product-info__eyebrow">Scarfs & accessories</p>
+          <h1 id="product-name"></h1>
+          <div class="product-rating-row">
+            <p id="product-rating" class="rating"></p>
+            <span>Ready for everyday styling</span>
+          </div>
+          <p id="product-detail" class="product-detail"></p>
 
+          <div class="product-purchase">
             <div class="product-price-shop">
               <div>
+                <span class="product-price__label">Price</span>
                 <p class="product-price">
-                  <span class="price">PRICE:</span>
                   <span class="currency">$</span>
                   <span id="product-price" class="price"></span>
                 </p>
               </div>
-           
-              <a href="cart.html?id=velvet-winter-wrap">
-                <button class="buy-prod">
-                  Add
-                </button>
-              </a>
+              <button class="buy-prod" type="button">Add to bag</button>
             </div>
+            <p class="product-purchase__note"><i class="fas fa-lock"></i> Secure checkout · Five-day delivery</p>
+          </div>
 
-
-            <p id="product-rating" class="rating"></p>
+          <div class="product-perks" aria-label="Product details">
+            <div><strong>01</strong><span>Thoughtful materials</span></div>
+            <div><strong>02</strong><span>Easy everyday styling</span></div>
+            <div><strong>03</strong><span>Prepared beautifully</span></div>
           </div>
         </div>
       </section>
 
       <section class="product-rec">
-        <h3>Similar Products</h3>
+        <div class="section-heading">
+          <p>Continue exploring</p>
+          <h2>Pieces with a similar point of view</h2>
+          <a href="shop.html">View all <span aria-hidden="true">&rAarr;</span></a>
+        </div>
         <div class="similar-products">
-          <img class="product-rec-img" src="Scarfs_n_Accessories/flaviu-costin-_BNH7RrIp0k-unsplash.jpg" loading="lazy" alt="...">
-          <img class="product-rec-img" src="Scarfs_n_Accessories/flaviu-costin-_BNH7RrIp0k-unsplash.jpg" loading="lazy" alt="...">
-          <img class="product-rec-img" src="Scarfs_n_Accessories/flaviu-costin-_BNH7RrIp0k-unsplash.jpg" loading="lazy" alt="...">
-          <img class="product-rec-img" src="Scarfs_n_Accessories/flaviu-costin-_BNH7RrIp0k-unsplash.jpg" loading="lazy" alt="...">
-          <img class="product-rec-img" src="Scarfs_n_Accessories/flaviu-costin-_BNH7RrIp0k-unsplash.jpg" loading="lazy" alt="...">
-          <img class="product-rec-img" src="Scarfs_n_Accessories/flaviu-costin-_BNH7RrIp0k-unsplash.jpg" loading="lazy" alt="...">
-          <img class="product-rec-img" src="Scarfs_n_Accessories/flaviu-costin-_BNH7RrIp0k-unsplash.jpg" loading="lazy" alt="...">
-          <img class="product-rec-img" src="Scarfs_n_Accessories/flaviu-costin-_BNH7RrIp0k-unsplash.jpg" loading="lazy" alt="...">
+          <a class="product-rec-card" data-rec-card href="shop.html" aria-label="Recommended product">
+            <img data-rec-image loading="lazy" alt="">
+            <div><h3 data-rec-name></h3><span data-rec-price></span></div>
+          </a>
+          <a class="product-rec-card" data-rec-card href="shop.html" aria-label="Recommended product">
+            <img data-rec-image loading="lazy" alt="">
+            <div><h3 data-rec-name></h3><span data-rec-price></span></div>
+          </a>
+          <a class="product-rec-card" data-rec-card href="shop.html" aria-label="Recommended product">
+            <img data-rec-image loading="lazy" alt="">
+            <div><h3 data-rec-name></h3><span data-rec-price></span></div>
+          </a>
+          <a class="product-rec-card" data-rec-card href="shop.html" aria-label="Recommended product">
+            <img data-rec-image loading="lazy" alt="">
+            <div><h3 data-rec-name></h3><span data-rec-price></span></div>
+          </a>
         </div>
       </section>
 
       <section class="collection">
-        <h3>
-          OUR COLLECTION
-        </h3>
+        <h3>OUR COLLECTION</h3>
 
-      <!--  <div class="collection-display">
-         <div class="revolver">
-          <div class="revolver-img revolver-item-left">
-            <img src="Blog Scarfs/pexels-ali-rezaei-83910116-15617511.jpg" loading="lazy" alt="...">
-          </div>
+        <div class="revolver" aria-label="Our collections">
+          <a class="revolver-item revolver-item-left" href="shop.html?filter=collection">
+            <img src="Blog Scarfs/pexels-ali-rezaei-83910116-15617511.jpg" loading="lazy" alt="Silk collection scarf">
+            <span>Silk Edit</span>
+          </a>
 
-          <div class="revolver-img revolver-item-right">
-            <img src="Blog Scarfs/pexels-ali-rezaei-83910116-15617511.jpg" loading="lazy" alt="...">
-          </div>
+          <a class="revolver-item revolver-item-right" href="shop.html?filter=collection">
+            <img src="Featured Collection/pexels-esra-salturk-1165434438-38264776.jpg" loading="lazy" alt="Wool collection scarf">
+            <span>Wool Edit</span>
+          </a>
 
-          <div class="revolver-img revolver-item-center">
-            <img src="Blog Scarfs/pexels-ali-rezaei-83910116-15617511.jpg" loading="lazy" alt="...">
-          </div>
-         </div>
-
-          <div></div>
-
-          <div></div>
-        </div>-->
+          <a class="revolver-item revolver-item-center" href="shop.html?filter=collection">
+            <img src="Scarfs_n_Accessories/flaviu-costin-_BNH7RrIp0k-unsplash.jpg" loading="lazy" alt="Cashmere collection scarf">
+            <span>Cashmere Edit</span>
+          </a>
+        </div>
       </section>
     </div>
-  </main>  <footer>
-    <div class="footer-top">
-      <a class="footer-link" href="newsletter.html">NEWSLETTER</a>
-      <a class="footer-link" href="contact.html">CONTACT US</a>
-      <a class="footer-link" href="about.html">ABOUT US</a>
-      <a class="footer-link" href="faqs.html">FAQS</a>
-      </div>
-    </div>
+  </main>
 
-    
-    <div class="footer-content-info">
-      <p class="footer-content-par">©Copyright RT Scarfs, 2026.</p>
-      <p class="footer-content-par">All Rights Reserved.</p>
-    </div>
-      
-      
-    <div class="social-icons">
-      <a href="https://instagram.com/yourhandle" aria-label="Instagram"><i class="si si-instagram"></i></a>
-      <a href="https://pinterest.com/yourhandle" aria-label="Pinterest"><i class="si si-pinterest"></i></a>
-      <a href="https://tiktok.com/@yourhandle" aria-label="TikTok"><i class="si si-tiktok"></i></a>
+  <footer>
+    <div class="luxury-footer">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <p class="footer-eyebrow">RT Scarfs</p>
+          <h4>Crafted Elegance For Individuality</h4>
+          <p class="footer-intro">Timeless silk and sculptural accessories designed to elevate every moment.</p>
+        </div>
+
+        <div class="footer-links">
+          <a class="footer-link" href="blog.html#newsletter-section">Newsletter</a>
+          <a class="footer-link" href="about.html">About Us</a>
+          <a class="footer-link" href="contact.html#faq-section">FAQs</a>
+          <a class="footer-link" href="contact.html">Contact Us</a>
+        </div>
+
+        <div class="footer-contact">
+          <h5>Visit the Atelier</h5>
+          <a href="mailto:odunayo2305@gmail.com">odunayo2305@gmail.com</a>
+          <div class="social-icons">
+            <a href="https://instagram.com/yourhandle" aria-label="Instagram" title="Instagram"><i class="si si-instagram" aria-hidden="true"></i></a>
+            <a href="https://tiktok.com/@yourhandle" aria-label="TikTok" title="TikTok"><i class="si si-tiktok" aria-hidden="true"></i></a>
+            <a href="https://pinterest.com/yourhandle" aria-label="Pinterest" title="Pinterest"><i class="si si-pinterest" aria-hidden="true"></i></a>
+            <a href="mailto:odunayo2305@gmail.com" aria-label="Email" title="Email"><i class="si si-gmail" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-content-info">
+        <p class="footer-content-par">© 2026 RT Scarfs. All Rights Reserved.</p>
+        <p class="footer-content-par">Crafted elegance for Individuality.</p>
+      </div>
     </div>
   </footer>
 </body>

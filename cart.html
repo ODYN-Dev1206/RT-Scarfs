@@ -54,8 +54,8 @@
     </div>
   </header>
 
-  <main>
-    <h1 class="header-paragraph">CHECK OUT &rAarr;</h1>
+  <main class="cart-page-main">
+    <h1 class="header-paragraph">CART</h1>
     <section class="cart-product__grid">
       <article class="cart-product" hidden>
         <img id="product-img" class="cart-product-img product-img" src="" loading="lazy" alt="...">
@@ -71,9 +71,9 @@
             <div class="cart-product-quantity">
               <p class="qty-p">Pcs</p>
               <div class="product-qty">
-                <button id="dcr-btn" class="qty__inc">-</button>
+                <button id="dcr-btn" class="qty__inc qty-dcr">-</button>
                 <input id="product-qty" placeholder="-" type="text" inputmode="numeric" class="qty-input cart-quantity">
-                <button id="inc-btn" class="qty__inc">+</button>
+                <button id="inc-btn" class="qty__inc qty-inc">+</button>
               </div>
             </div>
             
@@ -84,5 +84,26 @@
         </div>
       </article>
     </section>
+    <section class="cart-empty-state" hidden>
+      <p>Your bag is waiting for something beautiful.</p>
+      <a href="shop.html">Explore the collection <span aria-hidden="true">&rAarr;</span></a>
+    </section>
+
+    <div class="checkout-action" hidden>
+      <a href="checkout.html" class="checkout-btn">CHECKOUT <span aria-hidden="true">&rAarr;</span></a>
+    </div>
   </main>
+  <footer class="minimal-footer">
+    <div class="minimal-footer__inner">
+      <a class="minimal-footer__brand" href="index.html">RT Scarfs</a>
+      <nav aria-label="Cart footer navigation">
+        <a href="shop.html">Continue shopping</a>
+        <a href="contact.html#faq-section">Need help?</a>
+      </nav>
+      <div class="minimal-footer__copyright">
+        <p>© 2026 RT Scarfs. All Rights Reserved.</p>
+        <p>Crafted elegance for Individuality.</p>
+      </div>
+    </div>
+  </footer>
 </body>

@@ -1,4 +1,56 @@
 import { addToCart, cartUpdate } from "./cart";
+import { PRODUCTS } from "./product-data";
+
+import "./auth.js";
+
+function applyContactLinks() {
+  document.querySelectorAll('a[href^="mailto:hello@rtscarfs.com"]').forEach((link) => {
+    link.href = 'mailto:odunayo2305@gmail.com';
+    if (link.textContent.includes('hello@rtscarfs.com')) {
+      link.textContent = 'odunayo2305@gmail.com';
+    }
+  });
+
+  document.querySelectorAll('a[href*="x.com"]').forEach((link) => {
+    link.href = 'https://x.com/thee__odunayor';
+  });
+}
+
+applyContactLinks();
+
+function renderHomepageProducts() {
+  document.querySelectorAll('.best-sell-card').forEach((card) => {
+    const product = PRODUCTS.find((item) => item.id === card.dataset.id);
+    if (!product) return;
+
+    const link = card.querySelector('a');
+    const image = card.querySelector('.best-sell-img');
+    const name = card.querySelector('.new-prod-name');
+    const description = card.querySelector('.new-prod-descr');
+    const price = card.querySelector('.new-product-price');
+
+    card.dataset.category = product.categories.join(' ');
+    if (link) link.href = `product.html?id=${product.id}`;
+    if (image) image.alt = product.alt || product.name;
+    if (name) name.textContent = product.name;
+    if (description) description.textContent = product.description;
+    if (price) price.innerHTML = `<span class="currency">$</span>${product.price}`;
+  });
+
+  document.querySelectorAll('.new-arrival-main, .new-arrival-sub > div, .new-arrival-bottom').forEach((tile) => {
+    const product = PRODUCTS.find((item) => item.id === tile.dataset.id);
+    if (!product) return;
+
+    const image = tile.querySelector('img');
+    if (image) image.alt = product.alt || product.name;
+    tile.dataset.category = product.categories.join(' ');
+    tile.addEventListener('click', () => {
+      window.location.href = `product.html?id=${product.id}`;
+    });
+  });
+}
+
+renderHomepageProducts();
 
 export function hamburgerAction() {
   const hamBurger = document.querySelector('.hamburger');
@@ -28,9 +80,6 @@ export function buyButton() {
     addToCart(productId);
     cartUpdate();
 
-    if (!window.location.pathname.includes('cart.html')) {
-      window.location.href = 'cart.html';
-    }
   });
 }
 
@@ -70,8 +119,6 @@ hamburgerAction();
 buyButton();
 activeNavLink();
 cartUpdate();
-
-  console.trace('main.js running');
 
 
   if (import.meta.hot) {

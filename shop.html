@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="/Styles/main.scss">
   <script type="module" src="Scripts/shop.js"></script>
 </head>
-<body>
+<body class="catalog-page">
 
   <header class="site-header">
     <div class="left">
@@ -75,66 +75,733 @@
             </div>
           </div>
           <div class="search">
-            <input class="search-bar" type="text" placeholder="Search">
+            <input class="search-bar" type="search" aria-label="Search products by name or category" placeholder="Search by name or category">
             <img class="search-icon" src="Icons/search.svg" alt="search-icon">
           </div>
         </div>
 
         <section class="shop-grid">
           <article class="product-card">
-            <a href="#">
+            <a href="product.html?id=product-201">
               <div class="product-card-image">
                 <img src="Blog Scarfs/pexels-serdargoksu-29182819.jpg" alt="Silk Paisley Scarf">
               </div>
               <h3 class="product-card__name">Shemagh-style Scarf</h3>
               <p class="product-card__price">Price: &nbsp;$120</p>
-              <button id="shemagh-style-scarf" data-id="shemagh-style-scarf" class="buy-prod">Add</button>
+              <button id="product-201" data-id="product-201" class="buy-prod">Add</button>
             </a>
           </article>
 
           <article class="product-card">
-            <a href="product.html?id=shemagh-style-scarf">
+            <a href="product.html?id=product-202">
               <div class="product-card-image">
                 <img src="Blog Scarfs/pexels-aminnaderloei-31976998.jpg" alt="Silk Paisley Scarf">
               </div>
               <h3 class="product-card__name">Shemagh-style Scarf</h3>
               <p class="product-card__price">Price: &nbsp;$120</p>
             </a>
+            <button type="button" class="buy-prod" data-id="product-202">Add</button>
           </article>
 
           <article class="product-card" data-category="best-sell">
-            <a href="product.html?id=shemagh-style-scarf">
+            <a href="product.html?id=product-203">
               <div class="product-card-image">
                 <img src="Scarfs_n_Accessories/flaviu-costin-oqCZdctdaL4-unsplash.jpg" alt="Silk Paisley Scarf">
               </div>
               <h3 class="product-card__name">Shemagh-style Scarf</h3>
               <p class="product-card__price">Price: &nbsp;$120</p>
-              <button id="4">Add</button>
             </a>
+            <button type="button" class="buy-prod" data-id="product-203">Add</button>
           </article>
 
           <article class="product-card" data-category="best-sell">
-            <a href="product.html?id=shemagh-style-scarf">
+            <a href="product.html?id=product-204">
               <div class="product-card-image">
                 <img src="Scarfs_n_Accessories/flaviu-costin-_BNH7RrIp0k-unsplash.jpg" alt="Silk Paisley Scarf">
               </div>
               <h3 class="product-card__name">Shemagh-style Scarf</h3>
               <p class="product-card__price">Price: &nbsp;$120</p>
             </a>
+            <button type="button" class="buy-prod" data-id="product-204">Add</button>
           </article>
 
           <article class="product-card">
-            <a href="product.html?id=shemagh-style-scarf">
+            <a href="product.html?id=product-205">
               <div class="product-card-image">
                 <img src="Blog Scarfs/pexels-sam2piccs-14455241.jpg" alt="Silk Paisley Scarf">
               </div>
               <h3 class="product-card__name">Shemagh-style Scarf</h3>
               <p class="product-card__price">Price: &nbsp;$20</p>
             </a>
+            <button type="button" class="buy-prod" data-id="product-205">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-101">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-76506226-11217153.jpg" alt="Pexels 76506226 11217153">
+              </div>
+              <h3 class="product-card__name">Pexels 76506226 11217153</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-101">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-102">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-ali-rezaei-83910116-15617511.jpg" alt="Pexels Ali Rezaei 83910116 15617511">
+              </div>
+              <h3 class="product-card__name">Pexels Ali Rezaei 83910116 15617511</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-102">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-103">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-aminnaderloei-31977000.jpg" alt="Pexels Aminnaderloei 31977000">
+              </div>
+              <h3 class="product-card__name">Pexels Aminnaderloei 31977000</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-103">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-104">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-aminnaderloei-32031992.jpg" alt="Pexels Aminnaderloei 32031992">
+              </div>
+              <h3 class="product-card__name">Pexels Aminnaderloei 32031992</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-104">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-105">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-aminnaderloei-33217046.jpg" alt="Pexels Aminnaderloei 33217046">
+              </div>
+              <h3 class="product-card__name">Pexels Aminnaderloei 33217046</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-105">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-106">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-amir-mazlumi-507859842-30715222.jpg" alt="Pexels Amir Mazlumi 507859842 30715222">
+              </div>
+              <h3 class="product-card__name">Pexels Amir Mazlumi 507859842 30715222</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-106">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-107">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-amirali-parsa-150087344-12744309.jpg" alt="Pexels Amirali Parsa 150087344 12744309">
+              </div>
+              <h3 class="product-card__name">Pexels Amirali Parsa 150087344 12744309</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-107">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-108">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-anuj-yadav-34803963-7870646.jpg" alt="Pexels Anuj Yadav 34803963 7870646">
+              </div>
+              <h3 class="product-card__name">Pexels Anuj Yadav 34803963 7870646</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-108">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-109">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-atahandemir-14696810.jpg" alt="Pexels Atahandemir 14696810">
+              </div>
+              <h3 class="product-card__name">Pexels Atahandemir 14696810</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-109">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-110">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-atahandemir-14697013.jpg" alt="Pexels Atahandemir 14697013">
+              </div>
+              <h3 class="product-card__name">Pexels Atahandemir 14697013</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-110">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-111">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-benedict-7029065.jpg" alt="Pexels Benedict 7029065">
+              </div>
+              <h3 class="product-card__name">Pexels Benedict 7029065</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-111">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-112">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-bobbydimas-30769966.jpg" alt="Pexels Bobbydimas 30769966">
+              </div>
+              <h3 class="product-card__name">Pexels Bobbydimas 30769966</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-112">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-113">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-brianasarejr-12422261.jpg" alt="Pexels Brianasarejr 12422261">
+              </div>
+              <h3 class="product-card__name">Pexels Brianasarejr 12422261</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-113">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-114">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-carmel-nsenga-735492-11214241.jpg" alt="Pexels Carmel Nsenga 735492 11214241">
+              </div>
+              <h3 class="product-card__name">Pexels Carmel Nsenga 735492 11214241</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-114">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-115">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-cottonbro-4972940.jpg" alt="Pexels Cottonbro 4972940">
+              </div>
+              <h3 class="product-card__name">Pexels Cottonbro 4972940</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-115">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-116">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-cottonbro-7496335.jpg" alt="Pexels Cottonbro 7496335">
+              </div>
+              <h3 class="product-card__name">Pexels Cottonbro 7496335</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-116">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-117">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-danikprihodko-19510922.jpg" alt="Pexels Danikprihodko 19510922">
+              </div>
+              <h3 class="product-card__name">Pexels Danikprihodko 19510922</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-117">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-118">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-dauphotographer-36455711.jpg" alt="Pexels Dauphotographer 36455711">
+              </div>
+              <h3 class="product-card__name">Pexels Dauphotographer 36455711</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-118">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-119">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-donald-dondada-matsoga-2557845-4625992.jpg" alt="Pexels Donald Dondada Matsoga 2557845 4625992">
+              </div>
+              <h3 class="product-card__name">Pexels Donald Dondada Matsoga 2557845 4625992</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-119">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-120">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-esra-salturk-1165434438-38264776.jpg" alt="Pexels Esra Salturk 1165434438 38264776">
+              </div>
+              <h3 class="product-card__name">Pexels Esra Salturk 1165434438 38264776</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-120">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-121">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-hiday-t-i-sg-nd-rsoy-1178625345-23092144.jpg" alt="Pexels Hiday T I Sg Nd Rsoy 1178625345 23092144">
+              </div>
+              <h3 class="product-card__name">Pexels Hiday T I Sg Nd Rsoy 1178625345 23092144</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-121">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-122">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-israyosoy-27155315.jpg" alt="Pexels Israyosoy 27155315">
+              </div>
+              <h3 class="product-card__name">Pexels Israyosoy 27155315</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-122">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-123">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-jonathanborba-5533842.jpg" alt="Pexels Jonathanborba 5533842">
+              </div>
+              <h3 class="product-card__name">Pexels Jonathanborba 5533842</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-123">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-124">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-khaliifah-hussein-1904370898-34225153.jpg" alt="Pexels Khaliifah Hussein 1904370898 34225153">
+              </div>
+              <h3 class="product-card__name">Pexels Khaliifah Hussein 1904370898 34225153</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-124">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-125">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-kwnos-iv-250460536-27609511.jpg" alt="Pexels Kwnos Iv 250460536 27609511">
+              </div>
+              <h3 class="product-card__name">Pexels Kwnos Iv 250460536 27609511</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-125">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-126">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-luizmartins-4185810.jpg" alt="Pexels Luizmartins 4185810">
+              </div>
+              <h3 class="product-card__name">Pexels Luizmartins 4185810</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-126">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-127">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-mahdibafande-11830673.jpg" alt="Pexels Mahdibafande 11830673">
+              </div>
+              <h3 class="product-card__name">Pexels Mahdibafande 11830673</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-127">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-128">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-manzano-27230001.jpg" alt="Pexels Manzano 27230001">
+              </div>
+              <h3 class="product-card__name">Pexels Manzano 27230001</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-128">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-129">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-manzano-27230009.jpg" alt="Pexels Manzano 27230009">
+              </div>
+              <h3 class="product-card__name">Pexels Manzano 27230009</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-129">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-130">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-mitrofan-pictures-9438661.jpg" alt="Pexels Mitrofan Pictures 9438661">
+              </div>
+              <h3 class="product-card__name">Pexels Mitrofan Pictures 9438661</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-130">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-131">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-mizunokozuki-12887032.jpg" alt="Pexels Mizunokozuki 12887032">
+              </div>
+              <h3 class="product-card__name">Pexels Mizunokozuki 12887032</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-131">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-132">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-mohammad-saaraan-3679231-5567211.jpg" alt="Pexels Mohammad Saaraan 3679231 5567211">
+              </div>
+              <h3 class="product-card__name">Pexels Mohammad Saaraan 3679231 5567211</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-132">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-133">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-momo-183274690-37609721.jpg" alt="Pexels Momo 183274690 37609721">
+              </div>
+              <h3 class="product-card__name">Pexels Momo 183274690 37609721</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-133">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-134">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-nelson-ribeiro-973316-5607318.jpg" alt="Pexels Nelson Ribeiro 973316 5607318">
+              </div>
+              <h3 class="product-card__name">Pexels Nelson Ribeiro 973316 5607318</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-134">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-135">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-nishantdas-33372359.jpg" alt="Pexels Nishantdas 33372359">
+              </div>
+              <h3 class="product-card__name">Pexels Nishantdas 33372359</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-135">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-136">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-pavelpolyakov-9552153.jpg" alt="Pexels Pavelpolyakov 9552153">
+              </div>
+              <h3 class="product-card__name">Pexels Pavelpolyakov 9552153</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-136">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-137">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-peg1997-20002323.jpg" alt="Pexels Peg1997 20002323">
+              </div>
+              <h3 class="product-card__name">Pexels Peg1997 20002323</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-137">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-138">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-rachel-claire-5864273.jpg" alt="Pexels Rachel Claire 5864273">
+              </div>
+              <h3 class="product-card__name">Pexels Rachel Claire 5864273</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-138">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-139">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-rasul-lotfi-16110887-14416487.jpg" alt="Pexels Rasul Lotfi 16110887 14416487">
+              </div>
+              <h3 class="product-card__name">Pexels Rasul Lotfi 16110887 14416487</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-139">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-140">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-rodrigo-ortega-2044210904-30213222.jpg" alt="Pexels Rodrigo Ortega 2044210904 30213222">
+              </div>
+              <h3 class="product-card__name">Pexels Rodrigo Ortega 2044210904 30213222</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-140">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-141">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-sahar-photography-914616632-19980514 (1).jpg" alt="Pexels Sahar Photography 914616632 19980514 1">
+              </div>
+              <h3 class="product-card__name">Pexels Sahar Photography 914616632 19980514 1</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-141">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-142">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-sahar-photography-914616632-19980514.jpg" alt="Pexels Sahar Photography 914616632 19980514">
+              </div>
+              <h3 class="product-card__name">Pexels Sahar Photography 914616632 19980514</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-142">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-143">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-sara-kazemi-2148049458-30676581.jpg" alt="Pexels Sara Kazemi 2148049458 30676581">
+              </div>
+              <h3 class="product-card__name">Pexels Sara Kazemi 2148049458 30676581</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-143">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-144">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-sasha-kim-8484117.jpg" alt="Pexels Sasha Kim 8484117">
+              </div>
+              <h3 class="product-card__name">Pexels Sasha Kim 8484117</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-144">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-145">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-sasha-kim-8484118.jpg" alt="Pexels Sasha Kim 8484118">
+              </div>
+              <h3 class="product-card__name">Pexels Sasha Kim 8484118</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-145">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-146">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-sasha-kim-8484157.jpg" alt="Pexels Sasha Kim 8484157">
+              </div>
+              <h3 class="product-card__name">Pexels Sasha Kim 8484157</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-146">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-147">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-sasha-kim-8484307.jpg" alt="Pexels Sasha Kim 8484307">
+              </div>
+              <h3 class="product-card__name">Pexels Sasha Kim 8484307</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-147">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-148">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-seljansalim-27954375.jpg" alt="Pexels Seljansalim 27954375">
+              </div>
+              <h3 class="product-card__name">Pexels Seljansalim 27954375</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-148">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-149">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-sepehr-ghadrdan-409202650-19552829.jpg" alt="Pexels Sepehr Ghadrdan 409202650 19552829">
+              </div>
+              <h3 class="product-card__name">Pexels Sepehr Ghadrdan 409202650 19552829</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-149">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-150">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-sol-pinto-3266054-13257488.jpg" alt="Pexels Sol Pinto 3266054 13257488">
+              </div>
+              <h3 class="product-card__name">Pexels Sol Pinto 3266054 13257488</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-150">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-151">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-spaceprince-8891490.jpg" alt="Pexels Spaceprince 8891490">
+              </div>
+              <h3 class="product-card__name">Pexels Spaceprince 8891490</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-151">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-152">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-tarek-shahin-153182669-12369786.jpg" alt="Pexels Tarek Shahin 153182669 12369786">
+              </div>
+              <h3 class="product-card__name">Pexels Tarek Shahin 153182669 12369786</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-152">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-153">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-thirdman-6500614.jpg" alt="Pexels Thirdman 6500614">
+              </div>
+              <h3 class="product-card__name">Pexels Thirdman 6500614</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-153">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-154">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-thisisjooh-31714352.jpg" alt="Pexels Thisisjooh 31714352">
+              </div>
+              <h3 class="product-card__name">Pexels Thisisjooh 31714352</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-154">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-155">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-viktoria-stelmakh-31300553-15017422.jpg" alt="Pexels Viktoria Stelmakh 31300553 15017422">
+              </div>
+              <h3 class="product-card__name">Pexels Viktoria Stelmakh 31300553 15017422</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-155">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-156">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/pexels-vitalyagorbachev-13234233.jpg" alt="Pexels Vitalyagorbachev 13234233">
+              </div>
+              <h3 class="product-card__name">Pexels Vitalyagorbachev 13234233</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-156">Add</button>
+          </article>
+
+          <article class="product-card">
+            <a href="product.html?id=product-157">
+              <div class="product-card-image">
+                <img src="Blog Scarfs/puscas-adryan-0iLzAb4_-lA-unsplash (1).jpg" alt="Puscas Adryan 0iLzAb4 L A Unsplash 1">
+              </div>
+              <h3 class="product-card__name">Puscas Adryan 0iLzAb4 L A Unsplash 1</h3>
+              <p class="product-card__price">Price: &nbsp;$120</p>
+            </a>
+            <button type="button" class="buy-prod" data-id="product-157">Add</button>
           </article>
         </section>
       </section>
     </main>
   </div>
+
+    <footer>
+      <div class="luxury-footer">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <p class="footer-eyebrow">RT Scarfs</p>
+            <h4>Refined pieces for graceful dressing.</h4>
+            <p class="footer-intro">Timeless silk and sculptural accessories designed to elevate every moment.</p>
+          </div>
+
+          <div class="footer-links">
+            <a class="footer-link" href="blog.html#newsletter-section">Newsletter</a>
+            <a class="footer-link" href="about.html">About Us</a>
+            <a class="footer-link" href="contact.html#faq-section">FAQs</a>
+            <a class="footer-link" href="contact.html">Contact Us</a>
+          </div>
+
+          <div class="footer-contact">
+            <h5>Visit the Atelier</h5>
+            <a href="mailto:odunayo2305@gmail.com">odunayo2305@gmail.com</a>
+            <div class="social-icons">
+              <a href="mailto:odunayo2305@gmail.com" aria-label="Email"><i class="si si-gmail"></i></a>
+              <a href="https://facebook.com/@yourhandle" aria-label="Facebook"><i class="si si-facebook"></i></a>
+              <a href="https://x.com/thee__odunayor" aria-label="X"><i class="si si-x"></i></a>
+              <a href="https://instagram.com/yourhandle" aria-label="Instagram"><i class="si si-instagram"></i></a>
+              <a href="https://pinterest.com/yourhandle" aria-label="Pinterest"><i class="si si-pinterest"></i></a>
+              <a href="https://tiktok.com/@yourhandle" aria-label="TikTok"><i class="si si-tiktok"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-content-info">
+          <p class="footer-content-par">© 2026 RT Scarfs. All Rights Reserved.</p>
+          <p class="footer-content-par">Crafted elegance for Individuality.</p>
+        </div>
+      </div>
+    </footer>
 </body>
 </html>

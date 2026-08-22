@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RT Scarfs</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons-font@latest/font/simple-icons.min.css">
+
+
+  <link rel="stylesheet" href="Styles/main.scss">
+  <script type="module" src="Scripts/main.js"></script>
+  <script type="module" src="Scripts/checkout.js"></script>
+</head>
+
+
+<body>
+  <header class="header-info">
+    <div class="left">
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <a href="index.html"><p><span class="main-name">Righteous</span> <span class="sub-name">Scarfs&nbsp;&&nbsp;Accessories</span></p></a>
+    </div>
+
+    <nav class="nav-menu">
+      <ul>
+        <li><a class="header-link" href="index.html">HOME</a></li>
+        <li><a class="header-link" href="shop.html">SHOP</a></li>
+        <li><a class="header-link" href="about.html">ABOUT US</a></li>
+        <li><a class="header-link" href="blog.html">BLOG</a></li>
+        <li><a class="header-link" href="#contact">CONTACT US</a></li>
+      </ul>
+    </nav>
+
+    <div class="right">
+      <div class="cart-section">
+        <a href="cart.html">
+          <img class="icon" src="/Icons/bag.svg" alt="Shopping bag icon">
+        </a>
+        <p id="cart-no" class="notification cart-quantity"></p>
+      </div>
+
+      <div class="user-account">
+        <img class="icon" src="/Icons/user.svg" alt="Mona Lisa icon">
+        <a class="user-sign-in" href="#">
+          <p>Sign In</p>
+        </a>
+      </div>
+    </div>
+  </header>
+
+
+  <main class="check-main">
+    <h1 class="check-out">CHECKOUT &rAarr;</h1>
+    <form id="checkout-form" class="check-order">
+      <section class="user-details">
+        <div class="contact-section">
+          <h2 class="contact-info-h"><p>1</p>CONTACT INFORMATION</h2>
+
+          <div class="name-section">
+            <div class="input-group">
+              <label for="first-name">First Name</label>
+              <input type="text" id="first-name" name="first-name">
+            </div>
+
+            <div class="input-group">
+              <label for="last-name">Last Name</label>
+              <input type="text" id="last-name" name="last-name">
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email">
+          </div>
+          <div class="input-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+        </div>
+
+        <div class="delivery-section">
+          <h2 class="contact-info-h">
+            <p class="index">2</p>
+            DELIVERY INFORMATION
+          </h2>
+          <div class="input-group">
+            <label for="address">Email Address</label>
+            <input type="text" id="address" name="address">
+          </div>
+          <div class="input-group">
+            <label for="apartment">Apartment, suite, etc. (optional)</label>
+            <input type="text" id="apartment" name="apartment">
+          </div>
+
+          <div class="region">
+            <div class="input-group">
+              <label for="city">City</label>
+              <input type="text" id="city" name="city">
+            </div>
+            <div class="input-group">
+              <label for="state">State</label>
+              <input type="text" id="state" name="state ">
+            </div>
+          </div>
+          
+          <div class="input-group">
+            <label for="instructions">Delivery Instructions (optional)</label>
+            <textarea type="text" id="instructions" name="instructions"></textarea>
+          </div>
+        </div>
+
+        <div class="payment-section">
+          <h2 class="contact-info-h p-par">Payment Method</h2>
+
+          <div class="payment-option">
+            <div class="card-section">
+              <div>
+                <input class="radio-input" type="radio" id="card" name="payment" value="card">
+                <label for="card">Card</label>
+              </div>
+              
+              
+              <div class="payment-icons">
+                <i class="fa-brands fa-cc-visa"></i>
+                <i class="fa-brands fa-cc-mastercard"></i>
+                <i class="fa-brands fa-cc-paypal"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="payment-option">
+            <input type="radio" id="transfer" name="payment" value="bank-transfer">
+            <label for="transfer">Bank Transfer</label>
+          </div>
+
+          <div class="payment-option">
+            <input type="radio" id="cash" name="payment" value="cash-on-delivery">
+            <label for="cash">Cash on Delivery</label>
+          </div>
+        </div>
+      </section>
+
+      <section class="order__price">
+        <h2 class="order-p">YOUR ORDER</h2>
+        <div class="order-price__cal">
+          <div class="order-products">
+            <div class="p_order-detail">
+              <img src="" loading="lazy" alt="...">
+              <div class="order-details">
+                <h3></h3>
+                <div class="qty-prc">
+                  <p>Pcs: <span class="pcs-qty"></span></p>
+                  <p class="product-price">
+                    <span>$</span>
+                    <span class="price"></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="price__calc">
+            <div class="sub-total">
+              <p>Subtotal</p>
+              <p class="sub-total_price">
+                <span>$</span>
+              </p>
+            </div>
+
+            <div class="sub-total delivery">
+              <p>Delivery</p>
+              <p class="delivery-fee">
+                <span>$</span>
+                <span class="delivery-amount"></span>
+              </p>
+            </div>
+
+            <div class="total">
+              <h4>Total</h4>
+              <p class="total-price">
+                <span>$</span>
+                <span class="total-amount"></span>
+              </p>
+            </div>
+            
+            <div class="place-order-section">
+              <button class="place-order-btn" type="submit">
+                PLACE ORDER
+              </button>
+              <p class="order-status" role="status" aria-live="polite"></p>
+              <p>
+                <i class="fas fa-lock"></i>
+                Your information is secured and will only be used to process your payment</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </form>
+
+  </main>
+
+  <div class="order-modal" role="dialog" aria-modal="true" aria-labelledby="order-modal-title" hidden>
+    <div class="order-modal__content">
+      <button class="order-modal__close" type="button" aria-label="Close confirmation">&times;</button>
+      <h2 id="order-modal-title">Order Confirmed</h2>
+      <p>Your order has been placed, your order will be in your possesion within five working days</p>
+      <button class="order-modal__continue" type="button">CONTINUE SHOPPING</button>
+    </div>
+  </div>
+
+  <div class="payment-modal" role="dialog" aria-modal="true" aria-labelledby="payment-modal-title" hidden>
+    <div class="payment-modal__content">
+      <span class="payment-modal__icon" aria-hidden="true"><i class="fas fa-wallet"></i></span>
+      <button class="payment-modal__close" type="button" aria-label="Close payment warning">&times;</button>
+      <p class="payment-modal__eyebrow">Almost there</p>
+      <h2 id="payment-modal-title">Choose a payment method</h2>
+      <p>Select one of the available payment options before placing your order.</p>
+      <button class="payment-modal__action" type="button">BACK TO PAYMENT OPTIONS</button>
+    </div>
+  </div>
+
+  <footer class="minimal-footer">
+    <div class="minimal-footer__inner">
+      <a class="minimal-footer__brand" href="index.html">RT Scarfs</a>
+      <nav aria-label="Checkout footer navigation">
+        <a href="shop.html">Continue shopping</a>
+        <a href="contact.html#faq-section">Need help?</a>
+      </nav>
+      <div class="minimal-footer__copyright">
+        <p>© 2026 RT Scarfs. All Rights Reserved.</p>
+        <p>Crafted elegance for Individuality.</p>
+      </div>
+    </div>
+  </footer>
+</body>  
