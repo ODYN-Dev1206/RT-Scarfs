@@ -1,4 +1,6 @@
-import { activeNavLink, hamburgerAction } from "./main";
+//import { activeNavLink, hamburgerAction } from "./main";
+
+import "./main";
 
 const urlParams = new URLSearchParams(window.location.search);
 const filterFromURL = urlParams.get('filter');
@@ -164,6 +166,3 @@ if (filterFromURL) {
   document.querySelector('.filter-button[data-filter="all"]')?.classList.add('active');
   renderBlogFilterState();
 }
-
-activeNavLink();
-hamburgerAction();

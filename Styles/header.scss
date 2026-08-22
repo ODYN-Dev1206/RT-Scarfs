@@ -56,8 +56,7 @@ header{
 
     .main-name{
       letter-spacing: 0.07em;
-      text-decoration: underline 1.25px $richgold;
-      text-underline-offset: 6px;
+      text-decoration: none;
       text-align: center;
       font-size: clamp(0.75rem, 1.25vw, 1.5rem);
       color: $warmcream;

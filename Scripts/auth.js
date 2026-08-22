@@ -98,7 +98,9 @@ function updateSignInUI(user) {
       };
     }
     signInBtn.removeEventListener('click', handleSignIn);
+    accountIcon?.removeEventListener('click', handleSignIn);
     signInBtn.addEventListener('click', handleSignOut);
+    accountIcon?.addEventListener('click', handleSignOut);
   } else {
     signInBtn.querySelector('p').textContent = 'Sign In';
     if (accountIcon) {
@@ -107,7 +109,9 @@ function updateSignInUI(user) {
       accountIcon.classList.remove('profile-picture');
     }
     signInBtn.removeEventListener('click', handleSignOut);
+    accountIcon?.removeEventListener('click', handleSignOut);
     signInBtn.addEventListener('click', handleSignIn);
+    accountIcon?.addEventListener('click', handleSignIn);
   }
 }
 
@@ -122,4 +126,7 @@ onAuthStateChanged(auth, (user) => {
 
 if (signInBtn) {
   signInBtn.addEventListener('click', handleSignIn);
+}
+if (accountIcon) {
+  accountIcon.addEventListener('click', handleSignIn);
 }
