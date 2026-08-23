@@ -1,6 +1,6 @@
 @use "variables" as *;
 
-@import url(https://fonts.googleapis.com/css?family=Playfair+Display:regular,500,600,700,800,900,italic,500italic,600italic,700italic,800italic,900italic);
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@200;400;500;600&family=Lato:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600;1,700&display=swap');
 
 
 html{
@@ -33,6 +33,7 @@ body{
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  font-family: "Playfair Display", serif;
   /**background-image: url(pawel-czerwinski-VlgBaRLkpX0-unsplash.jpg);**/
   background-color: $warm-cream;
   background-size: cover;
@@ -50,6 +51,7 @@ button{
   position: relative;
   isolation: isolate;
   overflow: hidden;
+  font-family: inherit;
   width: auto;
   font-size: clamp(0.85rem, 1vw, 1.5rem);
   padding: clamp(0.35rem, 0.3vw, 0.5rem) clamp(0.5rem, 0.75vw, 1.2rem);

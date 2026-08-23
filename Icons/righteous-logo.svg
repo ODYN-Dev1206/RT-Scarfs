@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 176" role="img" aria-labelledby="logo-title logo-desc">
+  <title id="logo-title">Righteous Scarves and Accessories</title>
+  <desc id="logo-desc">A gold circular R crest above the Righteous Scarves and Accessories wordmark.</desc>
+  <g fill="none" stroke="#b68a3d" stroke-width="2">
+    <circle cx="260" cy="43" r="34"/>
+    <circle cx="260" cy="43" r="28"/>
+    <path d="M260 3v10M260 73v10M220 43h10M290 43h10M231 14l8 8M281 64l8 8M289 14l-8 8M239 64l-8 8"/>
+  </g>
+  <g fill="#b68a3d">
+    <circle cx="260" cy="3" r="2.5"/><circle cx="260" cy="83" r="2.5"/>
+    <circle cx="220" cy="43" r="2.5"/><circle cx="300" cy="43" r="2.5"/>
+    <text x="260" y="56" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="42" font-style="italic">R</text>
+    <text x="260" y="124" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="43" letter-spacing="5">RIGHTEOUS</text>
+    <text x="260" y="153" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" letter-spacing="3.5">SCARVES &amp; ACCESSORIES</text>
+  </g>
+</svg>

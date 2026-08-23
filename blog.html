@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-icons-font@latest/font/simple-icons.min.css">
 
   <link rel="stylesheet" href="Styles/main.scss">
+  <link rel="icon" type="image/svg+xml" href="/Icons/righteous-crest.svg">
   <script type="module" src="Scripts/blog.js"></script>
 </head>
 
@@ -23,7 +24,7 @@
         <span></span>
         <span></span>
       </button>
-      <a href="index.html"><p><span class="main-name">Righteous</span> <span class="sub-name">Scarfs&nbsp;&&nbsp;Accessories</span></p></a>
+      <a href="index.html" aria-label="Righteous Scarves and Accessories home"><img class="brand-logo" src="/Icons/righteous-logo.svg" alt="Righteous Scarves and Accessories"></a>
     </div>
 
     <nav class="nav-menu">
@@ -542,14 +543,14 @@
           <div class="text-content">
             <h3>Stay Inspired</h3>
             <p>Get styling tips, new arrivals, and exclusive offers.</p>
-            <a class="subscribe-button">SUBSCRIBE NOW</a>
+            <button type="button" class="subscribe-button">SUBSCRIBE NOW</button>
           </div>
         </div>
         <div class="newsletter-subscribe">
           <!--<label for="email">Email</label>-->
           <input
           class="newsletter-bar"
-          type="text" id="email"
+          type="email" id="email" required
           name="email"
           autocomplete="email"
           placeholder="Enter email address">

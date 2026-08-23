@@ -16,9 +16,29 @@ const blogGrid = document.querySelector('.blog-detail');
 const readButtons = document.querySelectorAll('.read, .article-button');
 const subscribeButton = document.querySelector('.subscribe-button');
 const newsletterForm = document.querySelector('.newsletter-subscribe');
+const newsletterSection = document.querySelector('.newsletter-section');
+const newsletterEmail = document.querySelector('.newsletter-bar');
+const newsletterSubmit = document.querySelector('.newsletter-sub-btn');
+const newsletterStorageKey = 'righteous-newsletter-subscriber';
 
 let activeFilter = 'all';
 let searchTerm = '';
+
+function showNewsletterMessage(message, isError = false) {
+  document.querySelector('.newsletter-message')?.remove();
+
+  const messageBox = document.createElement('div');
+  messageBox.className = `newsletter-message${isError ? ' is-error' : ''}`;
+  messageBox.setAttribute('role', isError ? 'alert' : 'status');
+  messageBox.innerHTML = `<p>${message}</p><button type="button" aria-label="Close message">&times;</button>`;
+  document.body.append(messageBox);
+  messageBox.querySelector('button').addEventListener('click', () => messageBox.remove());
+  window.setTimeout(() => messageBox.remove(), 6500);
+}
+
+if (localStorage.getItem(newsletterStorageKey) === 'subscribed') {
+  newsletterSection?.remove();
+}
 
 const blogImages = [
   'pexels-ali-rezaei-83910116-15617511.jpg',
@@ -157,6 +177,19 @@ readButtons.forEach((button) => {
 
 subscribeButton?.addEventListener('click', () => {
   newsletterForm?.classList.add('subscribe');
+  newsletterEmail?.focus();
+});
+
+newsletterSubmit?.addEventListener('click', () => {
+  if (!newsletterEmail?.checkValidity()) {
+    newsletterEmail?.reportValidity();
+    showNewsletterMessage('Please enter a valid email address to join the edit.', true);
+    return;
+  }
+
+  localStorage.setItem(newsletterStorageKey, 'subscribed');
+  newsletterSection?.remove();
+  showNewsletterMessage('You are subscribed. Welcome to the Righteous edit.');
 });
 
 if (filterFromURL) {

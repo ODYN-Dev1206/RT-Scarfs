@@ -1,6 +1,7 @@
 import { auth, db, googleProvider } from './firebase-config.js';
 import {
   signInWithPopup,
+  signInWithRedirect,
   signOut,
   onAuthStateChanged
 } from 'firebase/auth';
@@ -24,8 +25,24 @@ async function handleSignIn(e) {
   try {
     await signInWithPopup(auth, googleProvider);
   } catch (err) {
-    console.error('Sign-in failed:', err);
+    console.error('Sign-in failed:', err.code, err.message);
+    if (err.code === 'auth/popup-blocked') {
+      showAuthMessage('Opening Google sign-in...');
+      await signInWithRedirect(auth, googleProvider);
+      return;
+    }
+    showAuthMessage(`Google sign-in failed (${err.code || 'unknown error'}). Check Firebase Authorized Domains.`);
   }
+}
+
+function showAuthMessage(message) {
+  document.querySelector('.auth-message')?.remove();
+  const messageBox = document.createElement('div');
+  messageBox.className = 'auth-message';
+  messageBox.setAttribute('role', 'alert');
+  messageBox.textContent = message;
+  document.body.append(messageBox);
+  window.setTimeout(() => messageBox.remove(), 7000);
 }
 
 // --- Sign out ---
@@ -124,9 +141,3 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
-if (signInBtn) {
-  signInBtn.addEventListener('click', handleSignIn);
-}
-if (accountIcon) {
-  accountIcon.addEventListener('click', handleSignIn);
-}

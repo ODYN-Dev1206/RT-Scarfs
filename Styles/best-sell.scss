@@ -9,7 +9,7 @@
 }
 
 .best-sell-header{
-  font-family: "Playfarir Display", serif;
+  font-family: "Playfair Display", serif;
   font-weight: 800;
   margin-bottom: 2rem;
   text-align: center;
@@ -39,7 +39,7 @@
   overflow-x: scroll;
   scroll-snap-type: mandatory;
   scroll-behavior: smooth;
-  scrollbar-width: none;
+  @include hide-scrollbar;
   margin-bottom: 4rem;
 
   .more{

@@ -1,6 +1,7 @@
 import { PRODUCTS } from './product-data.js';
 import { auth } from './firebase-config.js';
 import { saveUserDetails } from './auth.js';
+import "./main";
 
 const DELIVERY_FEE = 10;
 

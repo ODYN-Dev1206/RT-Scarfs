@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="crest-title">
+  <title id="crest-title">Righteous R crest</title>
+  <g fill="none" stroke="#b68a3d" stroke-width="2">
+    <circle cx="60" cy="60" r="38"/>
+    <circle cx="60" cy="60" r="31"/>
+    <path d="M60 10v13M60 97v13M10 60h13M97 60h13M24.6 24.6l9.2 9.2M86.2 86.2l9.2 9.2M95.4 24.6l-9.2 9.2M33.8 86.2l-9.2 9.2"/>
+  </g>
+  <g fill="#b68a3d">
+    <circle cx="60" cy="10" r="3"/><circle cx="60" cy="110" r="3"/>
+    <circle cx="10" cy="60" r="3"/><circle cx="110" cy="60" r="3"/>
+    <text x="60" y="74" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-style="italic">R</text>
+  </g>
+</svg>

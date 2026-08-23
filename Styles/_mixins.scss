@@ -95,6 +95,15 @@
   margin-bottom: 7vw;
 }
 
+@mixin hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 @mixin a-link{
   color: $warmcream;
   gap: 1.5vw;

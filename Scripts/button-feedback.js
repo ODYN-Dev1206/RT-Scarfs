@@ -2,7 +2,7 @@ const feedbackTimers = new WeakMap();
 
 document.addEventListener('click', (event) => {
   const button = event.target.closest('button');
-  if (!button) return;
+  if (!button || button.classList.contains('hamburger')) return;
 
   button.classList.remove('clicked-feedback');
   window.requestAnimationFrame(() => button.classList.add('clicked-feedback'));

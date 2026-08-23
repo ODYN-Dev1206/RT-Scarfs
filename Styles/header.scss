@@ -50,6 +50,7 @@ header{
     color: $warmcream;
     margin-left: 0.5rem;
 
+
     @media (min-width: 768px) {
       padding-left: 0.75rem;
     }
@@ -71,6 +72,13 @@ header{
       text-decoration: none;
       color: rgba($warmcream, 0.84);
     }
+  }
+
+  .brand-logo {
+    display: block;
+    width: clamp(8rem, 11vw, 10rem);
+    max-width: 100%;
+    height: auto;
   }
 
   img{
@@ -136,6 +144,7 @@ header{
     display: flex;
     flex-direction: column;
     position: absolute;
+    z-index: 201;
     top: 100%;
     align-items: left;
     left: 0;
@@ -475,6 +484,10 @@ header {
   .left {
     flex: 1 1 auto;
     gap: 0.6rem;
+
+    .brand-logo {
+      width: clamp(6.75rem, 25vw, 8rem);
+    }
   }
 
   .right {
@@ -496,7 +509,7 @@ header {
     padding: 0.65rem;
     border: 1px solid rgba($richgold, 0.38);
     border-radius: 0.5rem;
-    background: rgba($deep-brown-black, 0.98);
+    background: $deep-brown-black;
     box-shadow: 0 1rem 2rem rgba($deep-brown-black, 0.28);
 
     ul {

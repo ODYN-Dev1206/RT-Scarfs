@@ -210,7 +210,7 @@
     min-height: 5.5rem;
     max-height: 16.5rem;
     overflow-y: scroll;
-    scrollbar-width: none;
+    @include hide-scrollbar;
 
     &:focus {
       border: 1px solid $brown !important;
