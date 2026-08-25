@@ -1,3 +1,19 @@
+window.addEventListener('error', (e) => {
+  const box = document.createElement('div');
+  box.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:99999;background:red;color:white;padding:12px;font-size:14px;white-space:pre-wrap;';
+  box.textContent = 'JS ERROR: ' + e.message + '\n' + (e.filename || '') + ':' + e.lineno;
+  document.body.appendChild(box);
+});
+
+window.addEventListener('unhandledrejection', (e) => {
+  const box = document.createElement('div');
+  box.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:99999;background:orange;color:black;padding:12px;font-size:14px;white-space:pre-wrap;';
+  box.textContent = 'PROMISE ERROR: ' + (e.reason?.message || e.reason);
+  document.body.appendChild(box);
+});
+
+
+
 import { addToCart, cartUpdate } from "./cart";
 import { PRODUCTS } from "./product-data";
 import "./button-feedback.js";
