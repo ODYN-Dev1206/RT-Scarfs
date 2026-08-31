@@ -222,6 +222,47 @@ window.addEventListener('scroll', () => {
   header.classList.toggle('scrolled', window.scrollY > 50);
 });
 
+function initRevealAnimations() {
+  if (window.__revealAnimationsInitialized) return;
+  window.__revealAnimationsInitialized = true;
+
+  const revealTargets = document.querySelectorAll(
+    '.product-card, .best-sell-card, .new-arrival-main, .new-arrival-sub > div, .new-arrival-bottom, .featured-info, .footer-link, .nav-menu a, .shop-button, .buy-prod, .add-to-cart-btn'
+  );
+
+  if (revealTargets.length === 0) return;
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hasTouchDevice = window.matchMedia('(hover: none)').matches;
+
+  if (prefersReducedMotion || hasTouchDevice) {
+    revealTargets.forEach((target) => {
+      target.classList.add('reveal-on-scroll', 'is-visible');
+      target.style.transitionDelay = '0ms';
+    });
+    return;
+  }
+
+  revealTargets.forEach((target, index) => {
+    target.classList.add('reveal-on-scroll');
+    target.style.transitionDelay = `${Math.min(index * 60, 220)}ms`;
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -20px 0px'
+  });
+
+  revealTargets.forEach((target) => observer.observe(target));
+}
+
 const heroBtn = document.querySelector('.shop-button');
 if (heroBtn) {
   heroBtn.addEventListener('click', () => {
@@ -229,6 +270,7 @@ if (heroBtn) {
   });
 }
 
+initRevealAnimations();
 hamburgerAction();
 buyButton();
 activeNavLink();

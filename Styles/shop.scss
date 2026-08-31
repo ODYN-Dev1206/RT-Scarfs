@@ -196,12 +196,13 @@
     height: 220px;
     object-fit: contain;
     object-position: center;
-    transition: transform 0.35s ease;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), filter 0.45s ease;
   }
 }
 
 .product-card:hover .product-card-image img {
-  transform: scale(1.04);
+  transform: scale(1.08);
+  filter: saturate(1.08);
 }
 
 .product-card__name {
