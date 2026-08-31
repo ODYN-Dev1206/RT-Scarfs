@@ -422,15 +422,137 @@
   font-family: 'Lato', sans-serif;
   font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
-  transition: background-color 0.2s ease, transform 0.2s ease;
 
-  &:hover,
-  &:focus-visible {
-    background: $richgold;
-    color: $deep-brown-black;
-    outline: none;
-    transform: translateY(-2px);
+  &:hover {
+    background: darken($brown, 5%);
+  }
+}
+
+// --- Checkout Authentication Modal ---
+.checkout-auth-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  backdrop-filter: blur(2px);
+
+  .checkout-auth-modal {
+    position: relative;
+    background: #f8f5f0;
+    border-radius: 8px;
+    padding: 2.5rem 2rem;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s ease-out;
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 32px;
+      height: 32px;
+      padding: 0;
+      border: none;
+      background: none;
+      font-size: 24px;
+      color: $charcoal;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        color: $brown;
+      }
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      color: $charcoal;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    p {
+      font-family: 'Lato', sans-serif;
+      font-size: 1rem;
+      color: $charcoal;
+      line-height: 1.5;
+      margin-bottom: 2rem;
+    }
+
+    .modal-signin-btn,
+    .modal-cancel-btn {
+      width: 100%;
+      padding: 1rem;
+      border: none;
+      border-radius: 4px;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.12em;
+
+      &:hover,
+      &:focus-visible {
+        background: $richgold;
+        color: $deep-brown-black;
+        outline: none;
+        transform: translateY(-2px);
+      }
+    }
+
+    .modal-signin-btn {
+      background: $brown;
+      color: #f8f5f0;
+
+      &:hover {
+        background: darken($brown, 10%);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+
+    .modal-cancel-btn {
+      background: transparent;
+      color: $charcoal;
+      border: 2px solid $charcoal;
+
+      &:hover {
+        background: rgba($charcoal, 0.05);
+        border-color: $brown;
+        color: $brown;
+      }
+
+      &:active {
+        background: rgba($charcoal, 0.1);
+      }
+    }
   }
 }
 

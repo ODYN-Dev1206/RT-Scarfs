@@ -35,12 +35,11 @@
 
 .contact-info-h {
   display: grid;
-  grid-template-columns: 1.5rem 1fr;
+  grid-template-columns: auto 1fr;
   align-items: center;
-  white-space: nowrap;
   letter-spacing: 0.05em;
-  gap: 2px;
-  margin-bottom: 0.25rem;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
   font-size: clamp(1rem, 3vw, 1.75rem);
 
   p {
@@ -48,12 +47,26 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 1rem;
-    width: 1rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    min-width: 2.5rem;
+    min-height: 2.5rem;
     border-radius: 50%;
     background-color: $brown;
     color: $whitesilk;
-    font-size: clamp(0.7rem, 1vw, 1rem);
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    line-height: 1;
+    box-shadow: 0 2px 8px rgba($brown, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  &:hover p {
+    background-color: $richgold;
+    box-shadow: 0 4px 12px rgba($richgold, 0.3);
+    transform: scale(1.05);
   }
 }
 
@@ -155,26 +168,202 @@
   margin-bottom: 1rem;
 }
 
-
-
-.card-section {
-  display: grid;
-  align-items: center;
-  grid-template-columns: 5rem 1rem //minmax(1fr, 0.5rem) minmax(0.3rem, 0.6rem);
-}
-.payment-icons {
+// --- Payment Section Styling ---
+.payment-section {
   display: flex;
-  gap: 10px;
-  align-items: center;
+  flex-direction: column;
+  flex: 1;
+  padding: 0.85rem;
+  gap: 1.2rem;
+  border-radius: 7px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
 
-  i {
-      font-size: 12px;
+  .contact-info-h {
+    margin-bottom: 0.5rem;
   }
 }
 
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 2px solid $champagne;
+  border-radius: 8px;
+  background: #fefbf8;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+
+  &:hover {
+    border-color: $richgold;
+    background: #fffdf9;
+    box-shadow: 0 2px 8px rgba($brown, 0.08);
+  }
+
+  input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid $brown;
+    border-radius: 50%;
+    cursor: pointer;
+    background: $whitesilk;
+    transition: all 0.25s ease;
+    flex-shrink: 0;
+
+    &:hover {
+      border-color: $richgold;
+      box-shadow: 0 0 0 3px rgba($richgold, 0.1);
+    }
+
+    &:checked {
+      border-color: $brown;
+      background: $brown;
+      box-shadow: inset 0 0 0 3px $whitesilk, 0 0 0 3px rgba($brown, 0.15);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba($richgold, 0.2);
+    }
+  }
+
+  label {
+    flex: 1;
+    font-family: 'Lato', sans-serif;
+    font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+    color: $brown;
+    cursor: pointer;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    margin: 0;
+
+    &:hover {
+      color: $richgold;
+    }
+  }
+
+  &:has(input:checked) {
+    border-color: $richgold;
+    background: rgba($richgold, 0.04);
+    box-shadow: 0 2px 12px rgba($brown, 0.12);
+
+    label {
+      color: $brown;
+      font-weight: 600;
+    }
+  }
+}
+
+.card-section {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+  width: 100%;
+
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    input[type="radio"] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid $brown;
+      border-radius: 50%;
+      cursor: pointer;
+      background: $whitesilk;
+      transition: all 0.25s ease;
+      flex-shrink: 0;
+
+      &:hover {
+        border-color: $richgold;
+        box-shadow: 0 0 0 3px rgba($richgold, 0.1);
+      }
+
+      &:checked {
+        border-color: $brown;
+        background: $brown;
+        box-shadow: inset 0 0 0 3px $whitesilk, 0 0 0 3px rgba($brown, 0.15);
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba($richgold, 0.2);
+      }
+    }
+
+    label {
+      font-family: 'Lato', sans-serif;
+      font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+      color: $brown;
+      cursor: pointer;
+      font-weight: 500;
+      margin: 0;
+    }
+  }
+}
+
+.payment-icons {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  justify-content: center;
+
+  i {
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    color: $brown;
+    opacity: 0.7;
+    transition: all 0.25s ease;
+
+    &:hover {
+      opacity: 1;
+      color: $richgold;
+      transform: translateY(-2px);
+    }
+  }
+
+  @media (max-width: 480px) {
+    gap: 0.6rem;
+
+    i {
+      font-size: 1.3rem;
+    }
+  }
+}
 
 .radio-input {
-  color: $brown;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid $brown;
+  border-radius: 50%;
+  cursor: pointer;
+  background: $whitesilk;
+  transition: all 0.25s ease;
+
+  &:hover {
+    border-color: $richgold;
+    box-shadow: 0 0 0 3px rgba($richgold, 0.1);
+  }
+
+  &:checked {
+    border-color: $brown;
+    background: $brown;
+    box-shadow: inset 0 0 0 3px $whitesilk, 0 0 0 3px rgba($brown, 0.15);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($richgold, 0.2);
+  }
 }
 
 

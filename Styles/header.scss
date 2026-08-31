@@ -497,7 +497,15 @@ header {
       padding-right: 0.35rem;
 
       .user-sign-in {
+        display: inline-flex;
+      }
+
+      .user-sign-in.is-signed-in p {
         display: none;
+      }
+
+      .user-menu-caret {
+        display: inline-flex;
       }
     }
   }

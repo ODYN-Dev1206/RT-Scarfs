@@ -1,6 +1,9 @@
 import { PRODUCTS } from './product-data.js';
-import { auth } from './firebase-config.js';
+import { auth, db } from './firebase-config.js';
+import { onAuthStateChanged } from 'firebase/auth';
 import { saveUserDetails } from './auth.js';
+import { listenToCartChanges } from './cart.js';
+import { setDoc, doc } from 'firebase/firestore';
 import "./main";
 
 const DELIVERY_FEE = 10;
@@ -58,6 +61,25 @@ deliveryEl.innerHTML = `<span>$</span> ${cart.length ? DELIVERY_FEE.toFixed(2) :
 }
 
 document.addEventListener('DOMContentLoaded', renderOrderSummary);
+
+// --- Listen to cart changes in real-time (multi-device sync) ---
+if (auth.currentUser) {
+  listenToCartChanges(auth.currentUser.uid);
+} else {
+  // For non-logged in users, check if they log in during checkout
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      listenToCartChanges(user.uid);
+    }
+  });
+}
+
+// --- Re-render order summary when cart changes ---
+window.addEventListener('storage', (e) => {
+  if (e.key === 'cart') {
+    renderOrderSummary();
+  }
+});
 
 
 function showFieldError(input, message) {
@@ -135,6 +157,14 @@ function validateForm() {
 function submitOrder(cart) {
   console.log('Order submitted (stub):', cart);
   localStorage.removeItem('cart');
+  
+  // Clear cart from Firebase if user is logged in
+  if (auth.currentUser) {
+    setDoc(doc(db, 'users', auth.currentUser.uid, 'cartData', 'items'), 
+      { items: [], timestamp: new Date() }, 
+      { merge: true }
+    ).catch(err => console.error('Error clearing Firebase cart:', err));
+  }
 }
 
 function setOrderStatus(message, type = '') {

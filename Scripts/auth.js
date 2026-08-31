@@ -6,6 +6,7 @@ import {
   onAuthStateChanged
 } from 'firebase/auth';
 import { doc, setDoc, getDoc } from 'firebase/firestore';
+import { mergeGuestCart, loadCartFromFirebase, listenToCartChanges, clearCart } from './cart.js';
 
 const signInBtn = document.querySelector('.user-sign-in');
 const accountIcon = document.querySelector('.user-account .icon');
@@ -17,6 +18,59 @@ function getProfilePhotoUrl(user) {
   if (!photoUrl) return '';
 
   return photoUrl.replace(/=s\d+(-c)?$/, '=s96-c');
+}
+
+function getAccountMenu() {
+  const account = document.querySelector('.user-account');
+  if (!account) return null;
+
+  let menu = account.querySelector('.user-account-menu');
+  if (!menu) {
+    menu = document.createElement('div');
+    menu.className = 'user-account-menu';
+    menu.setAttribute('role', 'menu');
+    menu.innerHTML = `
+      <a href="checkout.html" class="user-account-menu-item" role="menuitem">Checkout</a>
+      <button type="button" class="user-account-menu-item user-account-signout" role="menuitem">Sign out</button>
+    `;
+
+    menu.querySelector('.user-account-signout').addEventListener('click', async (event) => {
+      event.preventDefault();
+      try {
+        await signOut(auth);
+      } catch (err) {
+        console.error('Sign-out failed:', err);
+      }
+      closeAccountMenu();
+    });
+
+    account.appendChild(menu);
+  }
+
+  return menu;
+}
+
+function setAccountMenuOpen(isOpen) {
+  const menu = getAccountMenu();
+  const accountButton = document.querySelector('.user-sign-in');
+  if (!menu || !accountButton) return;
+
+  menu.classList.toggle('is-open', isOpen);
+  accountButton.setAttribute('aria-expanded', String(isOpen));
+}
+
+function closeAccountMenu() {
+  setAccountMenuOpen(false);
+}
+
+function toggleAccountMenu(event) {
+  if (event) event.preventDefault();
+  const menu = getAccountMenu();
+  const accountButton = document.querySelector('.user-sign-in');
+  if (!menu || !accountButton || !auth.currentUser) return;
+
+  const isOpen = menu.classList.contains('is-open');
+  setAccountMenuOpen(!isOpen);
 }
 
 // --- Sign in with Google ---
@@ -49,11 +103,50 @@ function showAuthMessage(message) {
 async function handleSignOut(e) {
   e.preventDefault();
   try {
+    clearCart();
     await signOut(auth);
   } catch (err) {
     console.error('Sign-out failed:', err);
   }
 }
+
+function ensureSignedInCaret() {
+  if (!signInBtn) return;
+
+  let caret = signInBtn.querySelector('.user-menu-caret');
+  if (!caret) {
+    caret = document.createElement('span');
+    caret.className = 'user-menu-caret';
+    caret.innerHTML = `
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M6 9.5l6 6 6-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </svg>
+    `;
+    signInBtn.appendChild(caret);
+  }
+  signInBtn.classList.add('is-signed-in');
+}
+
+function clearSignedInCaret() {
+  if (!signInBtn) return;
+
+  const caret = signInBtn.querySelector('.user-menu-caret');
+  if (caret) caret.remove();
+  signInBtn.classList.remove('is-signed-in');
+  signInBtn.removeAttribute('aria-expanded');
+}
+
+function attachOutsideClickHandler() {
+  document.addEventListener('click', (event) => {
+    const account = document.querySelector('.user-account');
+    if (!account) return;
+    if (!account.contains(event.target)) {
+      closeAccountMenu();
+    }
+  });
+}
+
+attachOutsideClickHandler();
 
 // --- Save checkout form data to Firestore, tied to uid ---
 export async function saveUserDetails(uid) {
@@ -114,10 +207,11 @@ function updateSignInUI(user) {
         accountIcon.classList.remove('profile-picture');
       };
     }
-    signInBtn.removeEventListener('click', handleSignIn);
-    accountIcon?.removeEventListener('click', handleSignIn);
-    signInBtn.addEventListener('click', handleSignOut);
-    accountIcon?.addEventListener('click', handleSignOut);
+
+    ensureSignedInCaret();
+    signInBtn.onclick = (event) => toggleAccountMenu(event);
+    accountIcon.onclick = (event) => toggleAccountMenu(event);
+    closeAccountMenu();
   } else {
     signInBtn.querySelector('p').textContent = 'Sign In';
     if (accountIcon) {
@@ -125,19 +219,28 @@ function updateSignInUI(user) {
       accountIcon.alt = 'User account icon';
       accountIcon.classList.remove('profile-picture');
     }
-    signInBtn.removeEventListener('click', handleSignOut);
-    accountIcon?.removeEventListener('click', handleSignOut);
-    signInBtn.addEventListener('click', handleSignIn);
-    accountIcon?.addEventListener('click', handleSignIn);
+
+    clearSignedInCaret();
+    signInBtn.onclick = handleSignIn;
+    accountIcon.onclick = handleSignIn;
+    closeAccountMenu();
   }
 }
 
 // --- Watches auth state on every page load ---
-onAuthStateChanged(auth, (user) => {
+onAuthStateChanged(auth, async (user) => {
   updateSignInUI(user);
 
-  if (user && document.querySelector('.check-main')) {
-    prefillForm(user.uid);
+  if (user) {
+    // User logged in: merge guest cart with user's cart and load from Firebase
+    await mergeGuestCart(user.uid);
+    listenToCartChanges(user.uid);
+    
+    if (document.querySelector('.check-main')) {
+      prefillForm(user.uid);
+    }
+  } else {
+    clearCart();
   }
 });
 

@@ -60,10 +60,22 @@ function setupLoadingExperience() {
   }
 
   let loadCompleted = false;
+  const showLoader = () => {
+    loadCompleted = false;
+    loader.classList.remove('is-ready');
+    loader.style.display = 'grid';
+    loader.style.visibility = 'visible';
+    loader.style.opacity = '1';
+  };
+
   const hideLoader = () => {
     if (loadCompleted) return;
     loadCompleted = true;
-    window.setTimeout(() => loader.classList.add('is-ready'), 450);
+    window.setTimeout(() => {
+      loader.classList.add('is-ready');
+      loader.style.visibility = 'hidden';
+      loader.style.opacity = '0';
+    }, 450);
   };
 
   if (document.readyState !== 'loading') {
@@ -76,21 +88,20 @@ function setupLoadingExperience() {
     }, { once: true });
   }
 
+  window.addEventListener('pageshow', (event) => {
+    if (event.persisted || document.visibilityState === 'visible') {
+      showLoader();
+      window.setTimeout(hideLoader, 180);
+    }
+  }, { once: false });
+
+  window.addEventListener('popstate', () => {
+    showLoader();
+    window.setTimeout(hideLoader, 200);
+  });
+
   window.setTimeout(hideLoader, 10000);
 
-  window.addEventListener('pointerup', (event) => {
-    const link = event.target.closest('a');
-    if (!link || link.target === '_blank' || link.hasAttribute('download')) return;
-
-    const destination = new URL(link.href, window.location.href);
-    const isInternalPage = destination.origin === window.location.origin
-      && destination.pathname.endsWith('.html')
-      && destination.pathname !== window.location.pathname;
-
-    if (isInternalPage) {
-      loader.classList.remove('is-ready');
-    }
-  });
 }
 
 setupLoadingExperience();

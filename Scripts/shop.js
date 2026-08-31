@@ -1,8 +1,8 @@
-import { activeNavLink } from "./main";
-import { hamburgerAction } from "./main";
+import { activeNavLink } from "./main.js";
+import { hamburgerAction } from "./main.js";
 import "./button-feedback.js";
 
-import { PRODUCTS } from "./product-data";
+import { PRODUCTS } from "./product-data.js";
 
 const urlParams = new URLSearchParams(window.location.search);
 const filterFromURL = urlParams.get('filter');
